@@ -572,6 +572,17 @@ strong { color: #111; }
             document.getElementById('progress-total').textContent = total;
             document.getElementById('progress-fill').style.width = percentNum + '%';
             document.getElementById('progress-percentage-text').textContent = percentText + '%';
+            // --- NEW N8N WEBHOOK CONNECTION ---
+            fetch('http://localhost:5678/webhook/fac25992-a97a-4a4f-b883-959632b0f877', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    score: learned,
+                    total: total,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(e => console.log("Webhook skipped (normal on live site)."));
+            // ----------------------------------
         }
 
         const catFilters = document.querySelectorAll('.cat-filter');

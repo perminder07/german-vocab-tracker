@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import urllib.request
 import json
 from datetime import datetime
@@ -9,30 +10,36 @@ try:
     url = "http://localhost:5678/webhook/current-score"
     response = urllib.request.urlopen(url)
     data = json.loads(response.read().decode())
-    live_score = data['score']  # Extracts the number from the n8n JSON
+    live_score = data['score']
     
-    # 2. Append today's date and live score to the CSV
     today = datetime.now().strftime('%Y-%m-%d')
     df_new = pd.DataFrame({'Date': [today], 'Score': [live_score]})
     df_new.to_csv('progress.csv', mode='a', header=False, index=False)
     print(f"Successfully fetched live score: {live_score}")
 except Exception as e:
-    print("Could not fetch live score from n8n. Using existing CSV data.")
+    print(f"Could not fetch live score from n8n. Error: {e}")
 
-# 3. Read the CSV and clean up any duplicate entries for the same day
+# 2. Read, clean, and chronologically sort the data
 df = pd.read_csv('progress.csv')
 df = df.drop_duplicates(subset=['Date'], keep='last')
-df.to_csv('progress.csv', index=False)
+df['Date'] = pd.to_datetime(df['Date'])
+df = df.sort_values('Date')
+df.to_csv('progress.csv', index=False, date_format='%Y-%m-%d')
 
-# 4. Draw the chart
-plt.figure(figsize=(10, 5))
-plt.plot(df['Date'], df['Score'], marker='o', linestyle='-', color='#5bcc6b', linewidth=2.5)
+# 3. Draw the chart with anti-compression formatting
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.plot(df['Date'], df['Score'], marker='o', linestyle='-', color='#5bcc6b', linewidth=2.5)
+
+# 4. Auto-format X-axis to prevent overlapping dates
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+fig.autofmt_xdate(rotation=45)
 
 # 5. Styling
-plt.title('DTZ B1 Vocabulary Progress', fontsize=14, fontweight='bold')
-plt.xlabel('Date', fontsize=11)
-plt.ylabel('Words Learned', fontsize=11)
-plt.grid(True, linestyle='--', alpha=0.7)
+ax.set_title('DTZ B1 Vocabulary Progress', fontsize=14, fontweight='bold')
+ax.set_xlabel('Date', fontsize=11)
+ax.set_ylabel('Words Learned', fontsize=11)
+ax.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
 
 # 6. Save image

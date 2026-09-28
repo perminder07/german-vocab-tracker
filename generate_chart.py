@@ -9,7 +9,7 @@ try:
     url = "http://localhost:5678/webhook/current-score"
     response = urllib.request.urlopen(url)
     data = json.loads(response.read().decode())
-    live_score = data[0]['score']  # Extracts the number from the n8n JSON
+    live_score = data['score']  # Extracts the number from the n8n JSON
     
     # 2. Append today's date and live score to the CSV
     today = datetime.now().strftime('%Y-%m-%d')

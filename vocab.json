@@ -797,6 +797,356 @@
             "meaning": "bumper (car)",
             "synonyms": "die Stoßstange",
             "example": "Das Design des <strong>Stoßfängers</strong> ist wichtig für die Sicherheit."
+        },
+        {
+            "word": "der Alltag (-)",
+            "genderClass": "der",
+            "meaning": "everyday life, daily routine",
+            "synonyms": "die Routine, das tägliche Leben",
+            "example": "Im <strong>Alltag</strong> bleibt oft wenig Zeit für Sport und Entspannung."
+        },
+        {
+            "word": "die Gewohnheit (-en)",
+            "genderClass": "die",
+            "meaning": "habit",
+            "synonyms": "der Brauch, die Routine",
+            "example": "Es ist eine gute <strong>Gewohnheit</strong>, morgens ein Glas Wasser zu trinken."
+        },
+        {
+            "word": "die Nachbarschaft (-en)",
+            "genderClass": "die",
+            "meaning": "neighborhood",
+            "synonyms": "die Wohngegend, das Viertel",
+            "example": "In unserer <strong>Nachbarschaft</strong> gibt es viele kleine Cafés."
+        },
+        {
+            "word": "das Viertel (-)",
+            "genderClass": "das",
+            "meaning": "neighborhood, quarter",
+            "synonyms": "der Stadtteil, der Bezirk",
+            "example": "Das <strong>Viertel</strong> ist besonders bei jungen Familien sehr beliebt."
+        },
+        {
+            "word": "die Haltestelle (-n)",
+            "genderClass": "die",
+            "meaning": "bus/tram stop",
+            "synonyms": "die Station",
+            "example": "Die nächste <strong>Haltestelle</strong> ist nur zwei Minuten zu Fuß entfernt."
+        },
+        {
+            "word": "die Verspätung (-en)",
+            "genderClass": "die",
+            "meaning": "delay",
+            "synonyms": "der Verzug",
+            "example": "Wegen einer Baustelle hat der Zug heute <strong>Verspätung</strong>."
+        },
+        {
+            "word": "die Fahrkarte (-n)",
+            "genderClass": "die",
+            "meaning": "ticket (transport)",
+            "synonyms": "das Ticket, der Fahrschein",
+            "example": "Vergiss nicht, deine <strong>Fahrkarte</strong> vor der Fahrt zu entwerten."
+        },
+        {
+            "word": "die Verbindung (-en)",
+            "genderClass": "die",
+            "meaning": "connection (transport/relation)",
+            "synonyms": "der Anschluss, der Kontakt",
+            "example": "Gibt es um diese Uhrzeit noch eine direkte <strong>Verbindung</strong> zum Hauptbahnhof?"
+        },
+        {
+            "word": "der Haushalt (-e)",
+            "genderClass": "der",
+            "meaning": "household, chores",
+            "synonyms": "die Hausarbeit",
+            "example": "Wir teilen uns die Aufgaben im <strong>Haushalt</strong> gerecht auf."
+        },
+        {
+            "word": "das Gerät (-e)",
+            "genderClass": "das",
+            "meaning": "appliance, device",
+            "synonyms": "der Apparat, die Maschine",
+            "example": "Dieses <strong>Gerät</strong> spart in der Küche eine Menge Zeit."
+        },
+        {
+            "word": "die Reparatur (-en)",
+            "genderClass": "die",
+            "meaning": "repair",
+            "synonyms": "die Instandsetzung",
+            "example": "Die <strong>Reparatur</strong> der Waschmaschine hat fast zweihundert Euro gekostet."
+        },
+        {
+            "word": "der Handwerker (-)",
+            "genderClass": "der",
+            "meaning": "craftsman, repairman",
+            "synonyms": "der Monteur, der Fachmann",
+            "example": "Morgen früh kommt der <strong>Handwerker</strong>, um das Waschbecken zu reparieren."
+        },
+        {
+            "word": "das Werkzeug (-e)",
+            "genderClass": "das",
+            "meaning": "tool",
+            "synonyms": "das Utensil",
+            "example": "Hast du das passende <strong>Werkzeug</strong>, um diesen Schrank aufzubauen?"
+        },
+        {
+            "word": "die Mülltrennung (-en)",
+            "genderClass": "die",
+            "meaning": "waste separation",
+            "synonyms": "das Recycling",
+            "example": "In Deutschland ist die <strong>Mülltrennung</strong> im Alltag sehr wichtig."
+        },
+        {
+            "word": "der Einkauf (Einkäufe)",
+            "genderClass": "der",
+            "meaning": "purchase, groceries",
+            "synonyms": "die Besorgung",
+            "example": "Am Samstag machen wir immer den großen <strong>Einkauf</strong> für die ganze Woche."
+        },
+        {
+            "word": "das Angebot (-e)",
+            "genderClass": "das",
+            "meaning": "offer, special deal",
+            "synonyms": "das Schnäppchen, der Rabatt",
+            "example": "Erdbeeren sind diese Woche im Supermarkt im <strong>Angebot</strong>."
+        },
+        {
+            "word": "die Quittung (-en)",
+            "genderClass": "die",
+            "meaning": "receipt",
+            "synonyms": "der Beleg, der Kassenbon",
+            "example": "Brauchen Sie die <strong>Quittung</strong> oder soll ich sie wegwerfen?"
+        },
+        {
+            "word": "das Bargeld (-er)",
+            "genderClass": "das",
+            "meaning": "cash",
+            "synonyms": "die Scheine und Münzen",
+            "example": "In manchen Bäckereien kann man immer noch nur mit <strong>Bargeld</strong> zahlen."
+        },
+        {
+            "word": "die Kleidung (-en)",
+            "genderClass": "die",
+            "meaning": "clothing",
+            "synonyms": "die Klamotten, die Anziehsachen",
+            "example": "Für den Winter braucht man warme <strong>Kleidung</strong>."
+        },
+        {
+            "word": "die Ernährung (-en)",
+            "genderClass": "die",
+            "meaning": "nutrition, diet",
+            "synonyms": "die Kost, das Essen",
+            "example": "Eine gesunde <strong>Ernährung</strong> mit viel Gemüse stärkt das Immunsystem."
+        },
+        {
+            "word": "die Mahlzeit (-en)",
+            "genderClass": "die",
+            "meaning": "meal",
+            "synonyms": "das Essen, die Speise",
+            "example": "Das Frühstück ist für viele Menschen die wichtigste <strong>Mahlzeit</strong> des Tages."
+        },
+        {
+            "word": "die Verpackung (-en)",
+            "genderClass": "die",
+            "meaning": "packaging",
+            "synonyms": "der Karton, die Hülle",
+            "example": "Man sollte versuchen, Produkte mit wenig <strong>Verpackung</strong> zu kaufen."
+        },
+        {
+            "word": "die Umwelt (-)",
+            "genderClass": "die",
+            "meaning": "environment",
+            "synonyms": "die Natur",
+            "example": "Wer mit dem Fahrrad fährt, schont die <strong>Umwelt</strong>."
+        },
+        {
+            "word": "das Wetter (-)",
+            "genderClass": "das",
+            "meaning": "weather",
+            "synonyms": "die Witterung",
+            "example": "Bei schönem <strong>Wetter</strong> machen wir am Wochenende einen Ausflug an den See."
+        },
+        {
+            "word": "der Ausflug (Ausflüge)",
+            "genderClass": "der",
+            "meaning": "excursion, day trip",
+            "synonyms": "die Tour, die Reise",
+            "example": "Der <strong>Ausflug</strong> in die Berge hat der ganzen Familie gefallen."
+        },
+        {
+            "word": "die Veranstaltung (-en)",
+            "genderClass": "die",
+            "meaning": "event",
+            "synonyms": "das Event, das Fest",
+            "example": "Heute Abend findet auf dem Marktplatz eine kulturelle <strong>Veranstaltung</strong> statt."
+        },
+        {
+            "word": "die Stimmung (-en)",
+            "genderClass": "die",
+            "meaning": "mood, atmosphere",
+            "synonyms": "die Laune, die Atmosphäre",
+            "example": "Auf der Geburtstagsfeier war die <strong>Stimmung</strong> fantastisch."
+        },
+        {
+            "word": "die Einladung (-en)",
+            "genderClass": "die",
+            "meaning": "invitation",
+            "synonyms": "die Aufforderung",
+            "example": "Vielen Dank für die nette <strong>Einladung</strong> zum Abendessen!"
+        },
+        {
+            "word": "die Feier (-n)",
+            "genderClass": "die",
+            "meaning": "celebration, party",
+            "synonyms": "das Fest, die Party",
+            "example": "Zur <strong>Feier</strong> des Tages haben wir eine Torte gekauft."
+        },
+        {
+            "word": "die Beziehung (-en)",
+            "genderClass": "die",
+            "meaning": "relationship",
+            "synonyms": "das Verhältnis, die Partnerschaft",
+            "example": "Eine gute <strong>Beziehung</strong> basiert auf Vertrauen und Respekt."
+        },
+        {
+            "word": "die Nachricht (-en)",
+            "genderClass": "die",
+            "meaning": "message, news",
+            "synonyms": "die Mitteilung, die Information",
+            "example": "Ich habe dir vorhin eine kurze <strong>Nachricht</strong> auf WhatsApp geschickt."
+        },
+        {
+            "word": "das Geheimnis (-se)",
+            "genderClass": "das",
+            "meaning": "secret",
+            "synonyms": "das Rätsel",
+            "example": "Kannst du ein <strong>Geheimnis</strong> für dich behalten?"
+        },
+        {
+            "word": "die Wahrheit (-en)",
+            "genderClass": "die",
+            "meaning": "truth",
+            "synonyms": "die Realität",
+            "example": "Es ist im Zweifel immer am besten, die reine <strong>Wahrheit</strong> zu sagen."
+        },
+        {
+            "word": "der Ratschlag (Ratschläge)",
+            "genderClass": "der",
+            "meaning": "advice, tip",
+            "synonyms": "der Tipp, die Empfehlung",
+            "example": "Danke für deinen guten <strong>Ratschlag</strong>, er hat mir sehr geholfen."
+        },
+        {
+            "word": "die Meinung (-en)",
+            "genderClass": "die",
+            "meaning": "opinion",
+            "synonyms": "die Ansicht, der Standpunkt",
+            "example": "Meiner <strong>Meinung</strong> nach sollten wir noch etwas abwarten."
+        },
+        {
+            "word": "der Eindruck (Eindrücke)",
+            "genderClass": "der",
+            "meaning": "impression",
+            "synonyms": "das Gefühl, die Wirkung",
+            "example": "Die Stadt hat auf mich sofort einen freundlichen <strong>Eindruck</strong> gemacht."
+        },
+        {
+            "word": "das Missverständnis (-se)",
+            "genderClass": "das",
+            "meaning": "misunderstanding",
+            "synonyms": "der Irrtum",
+            "example": "Das war ein reines <strong>Missverständnis</strong>, ich meinte etwas ganz anderes."
+        },
+        {
+            "word": "die Geduld (-)",
+            "genderClass": "die",
+            "meaning": "patience",
+            "synonyms": "die Ausdauer",
+            "example": "Beim Deutschlernen braucht man vor allem Ausdauer und <strong>Geduld</strong>."
+        },
+        {
+            "word": "die Ruhe (-)",
+            "genderClass": "die",
+            "meaning": "peace, quiet",
+            "synonyms": "die Stille, die Entspannung",
+            "example": "Nach einem langen Tag brauche ich einfach ein bisschen <strong>Ruhe</strong>."
+        },
+        {
+            "word": "der Lärm (-)",
+            "genderClass": "der",
+            "meaning": "noise",
+            "synonyms": "das Geräusch, der Krach",
+            "example": "Der <strong>Lärm</strong> von der Straße stört mich beim Schlafen."
+        },
+        {
+            "word": "der Geruch (Gerüche)",
+            "genderClass": "der",
+            "meaning": "smell, scent",
+            "synonyms": "der Duft, das Aroma",
+            "example": "Der <strong>Geruch</strong> von frischem Kaffee zog durch die ganze Wohnung."
+        },
+        {
+            "word": "die Schmerzen (Pl.)",
+            "genderClass": "die",
+            "meaning": "pain, ache",
+            "synonyms": "das Leiden, die Beschwerden",
+            "example": "Nach der langen Wanderung hatte er starke <strong>Schmerzen</strong> im Knie."
+        },
+        {
+            "word": "die Besserung (-en)",
+            "genderClass": "die",
+            "meaning": "recovery, improvement",
+            "synonyms": "die Genesung, die Erholung",
+            "example": "Ich wünsche dir von Herzen gute <strong>Besserung</strong>!"
+        },
+        {
+            "word": "die Apotheke (-n)",
+            "genderClass": "die",
+            "meaning": "pharmacy",
+            "synonyms": "die Drogerie (similar)",
+            "example": "Dieses Schmerzmittel bekommt man ohne Rezept in jeder <strong>Apotheke</strong>."
+        },
+        {
+            "word": "das Medikament (-e)",
+            "genderClass": "das",
+            "meaning": "medicine, medication",
+            "synonyms": "die Arznei, die Tablette",
+            "example": "Sie muss das <strong>Medikament</strong> zweimal täglich nach dem Essen einnehmen."
+        },
+        {
+            "word": "das Gepäck (-)",
+            "genderClass": "das",
+            "meaning": "luggage, baggage",
+            "synonyms": "der Koffer, die Taschen",
+            "example": "Wir haben das <strong>Gepäck</strong> am Bahnhof im Schließfach gelassen."
+        },
+        {
+            "word": "die Richtung (-en)",
+            "genderClass": "die",
+            "meaning": "direction",
+            "synonyms": "der Weg, der Kurs",
+            "example": "Gehen Sie etwa hundert Meter in diese <strong>Richtung</strong>, dann sehen Sie die Post."
+        },
+        {
+            "word": "die Kreuzung (-en)",
+            "genderClass": "die",
+            "meaning": "intersection, crossroads",
+            "synonyms": "die Einmündung",
+            "example": "An der nächsten <strong>Kreuzung</strong> müssen Sie links abbiegen."
+        },
+        {
+            "word": "der Fußgänger (-)",
+            "genderClass": "der",
+            "meaning": "pedestrian",
+            "synonyms": "der Passant",
+            "example": "An diesem Zebrastreifen haben die <strong>Fußgänger</strong> Vorrang."
+        },
+        {
+            "word": "das Ziel (-e)",
+            "genderClass": "das",
+            "meaning": "destination, goal",
+            "synonyms": "die Endstation, die Absicht",
+            "example": "Nach zwei Stunden Fahrt haben wir unser <strong>Ziel</strong> endlich erreicht."
         }
     ],
     "adjektive": [
@@ -997,6 +1347,66 @@
             "meaning": "clear, well-arranged",
             "opposite": "unübersichtlich, chaotisch",
             "example": "Das neue Layout macht den Bericht viel <strong>übersichtlicher</strong>."
+        },
+        {
+            "word": "angenehm",
+            "meaning": "pleasant, comfortable",
+            "opposite": "unangenehm",
+            "example": "Im Schatten ist die Temperatur heute wirklich sehr <strong>angenehm</strong>."
+        },
+        {
+            "word": "bequem",
+            "meaning": "comfortable",
+            "opposite": "unbequem",
+            "example": "Dieses Sofa im Wohnzimmer ist unglaublich <strong>bequem</strong>."
+        },
+        {
+            "word": "gemütlich",
+            "meaning": "cozy, homely",
+            "opposite": "ungemütlich",
+            "example": "Wir haben uns einen sehr <strong>gemütlichen</strong> Abend vor dem Fernseher gemacht."
+        },
+        {
+            "word": "sauber",
+            "meaning": "clean",
+            "opposite": "schmutzig, dreckig",
+            "example": "Das Hotelzimmer war ordentlich und absolut <strong>sauber</strong>."
+        },
+        {
+            "word": "frisch",
+            "meaning": "fresh",
+            "opposite": "alt, verdorben",
+            "example": "Auf dem Wochenmarkt gibt es jeden Samstag <strong>frisches</strong> Obst."
+        },
+        {
+            "word": "lecker",
+            "meaning": "tasty, delicious",
+            "opposite": "ungenießbar",
+            "example": "Der Tee duftet herrlich und schmeckt wirklich <strong>lecker</strong>."
+        },
+        {
+            "word": "geduldig",
+            "meaning": "patient",
+            "opposite": "ungeduldig",
+            "example": "Die Verkäuferin war trotz des großen Andrangs sehr <strong>geduldig</strong>."
+        },
+        {
+            "word": "höflich",
+            "meaning": "polite",
+            "opposite": "unhöflich, frech",
+            "example": "Es ist wichtig, im Umgang mit anderen Menschen immer <strong>höflich</strong> zu bleiben."
+        },
+        {
+            "word": "vorsichtig",
+            "meaning": "careful, cautious",
+            "opposite": "unvorsichtig, leichtsinnig",
+            "example": "Seien Sie <strong>vorsichtig</strong>, die Treppe ist durch den Regen sehr rutschig."
+        },
+        {
+            "word": "pünktlich",
+            "meaning": "punctual, on time",
+            "opposite": "unpünktlich, verspätet",
+            "example": "Er ist immer absolut <strong>pünktlich</strong> und lässt niemanden warten."
         }
     ],
     "verben": [
@@ -1659,6 +2069,276 @@
             "perfekt": "hat gebacken",
             "meaning": "to bake",
             "example": "Am Wochenende <strong>backen</strong> wir oft frische Pizza im Ofen."
+        },
+        {
+            "word": "aufstehen",
+            "perfekt": "ist aufgestanden",
+            "meaning": "to get up, stand up",
+            "example": "Ich <strong>stehe</strong> unter der Woche meistens um sechs Uhr morgens <strong>auf</strong>."
+        },
+        {
+            "word": "einschlafen",
+            "perfekt": "ist eingeschlafen",
+            "meaning": "to fall asleep",
+            "example": "Wegen der Hitze konnte er gestern erst sehr spät <strong>einschlafen</strong>."
+        },
+        {
+            "word": "aufräumen",
+            "perfekt": "hat aufgeräumt",
+            "meaning": "to tidy up, clean up",
+            "example": "Am Wochenende müssen wir unbedingt die Küche gründlich <strong>aufräumen</strong>."
+        },
+        {
+            "word": "putzen",
+            "perfekt": "hat geputzt",
+            "meaning": "to clean",
+            "example": "Er <strong>putzt</strong> jeden Samstag die Fenster und den Boden."
+        },
+        {
+            "word": "waschen",
+            "perfekt": "hat gewaschen",
+            "meaning": "to wash",
+            "example": "Ich muss heute Abend noch zwei Maschinen Wäsche <strong>waschen</strong>."
+        },
+        {
+            "word": "einkaufen",
+            "perfekt": "hat eingekauft",
+            "meaning": "to shop, buy groceries",
+            "example": "Kannst du nach Feierabend noch schnell Milch und Brot <strong>einkaufen</strong>?"
+        },
+        {
+            "word": "kochen",
+            "perfekt": "hat gekocht",
+            "meaning": "to cook, boil",
+            "example": "Heute Abend <strong>kochen</strong> wir gemeinsam eine frische Gemüsesuppe."
+        },
+        {
+            "word": "zubereiten",
+            "perfekt": "hat zubereitet",
+            "meaning": "to prepare (food)",
+            "example": "Das Frühstück lässt sich am Vorabend schon bequem <strong>zubereiten</strong>."
+        },
+        {
+            "word": "schneiden",
+            "perfekt": "hat geschnitten",
+            "meaning": "to cut, slice",
+            "example": "Bitte <strong>schneide</strong> die Zwiebeln und Tomaten in kleine Stücke."
+        },
+        {
+            "word": "probieren",
+            "perfekt": "hat probiert",
+            "meaning": "to try, taste",
+            "example": "Möchtest du mal von diesem leckeren Kuchen <strong>probieren</strong>?"
+        },
+        {
+            "word": "schmecken",
+            "perfekt": "hat geschmeckt",
+            "meaning": "to taste",
+            "example": "Das Essen in diesem Restaurant hat wirklich hervorragend <strong>geschmeckt</strong>."
+        },
+        {
+            "word": "mitbringen",
+            "perfekt": "hat mitgebracht",
+            "meaning": "to bring along",
+            "example": "Soll ich zur Party noch etwas zum Trinken <strong>mitbringen</strong>?"
+        },
+        {
+            "word": "mitkommen",
+            "perfekt": "ist mitgekommen",
+            "meaning": "to come along",
+            "example": "Wir gehen heute ins Kino, möchtest du spontan <strong>mitkommen</strong>?"
+        },
+        {
+            "word": "einladen",
+            "perfekt": "hat eingeladen",
+            "meaning": "to invite",
+            "example": "Sie hat alle ihre Nachbarn zum Sommerfest <strong>eingeladen</strong>."
+        },
+        {
+            "word": "treffen",
+            "perfekt": "hat getroffen",
+            "meaning": "to meet",
+            "example": "Ich <strong>treffe</strong> mich heute Nachmittag mit einer alten Schulfreundin."
+        },
+        {
+            "word": "kennenlernen",
+            "perfekt": "hat kennengelernt",
+            "meaning": "to get to know, meet",
+            "example": "Im Sprachkurs habe ich viele nette Menschen <strong>kennengelernt</strong>."
+        },
+        {
+            "word": "unterhalten",
+            "perfekt": "hat unterhalten",
+            "meaning": "to chat, converse",
+            "example": "Wir haben uns gestern stundenlang über alte Zeiten <strong>unterhalten</strong>."
+        },
+        {
+            "word": "spazieren",
+            "perfekt": "ist spaziert",
+            "meaning": "to go for a walk, stroll",
+            "example": "Sonntags <strong>spazieren</strong> wir gerne durch den nahegelegenen Stadtpark."
+        },
+        {
+            "word": "ausruhen",
+            "perfekt": "hat ausgeruht",
+            "meaning": "to rest, relax",
+            "example": "Nach dem langen Arbeitstag muss ich mich erst einmal kurz <strong>ausruhen</strong>."
+        },
+        {
+            "word": "erholen",
+            "perfekt": "hat erholt",
+            "meaning": "to recover, recuperate",
+            "example": "Im Urlaub im Süden konnte sie sich wunderbar vom Stress <strong>erholen</strong>."
+        },
+        {
+            "word": "anrufen",
+            "perfekt": "hat angerufen",
+            "meaning": "to call (phone)",
+            "example": "Ich <strong>rufe</strong> dich an, sobald ich am Bahnhof angekommen bin."
+        },
+        {
+            "word": "erreichen",
+            "perfekt": "hat erreicht",
+            "meaning": "to reach (someone / a goal)",
+            "example": "Unter dieser Handynummer kann man ihn fast den ganzen Tag <strong>erreichen</strong>."
+        },
+        {
+            "word": "erklären",
+            "perfekt": "hat erklärt",
+            "meaning": "to explain",
+            "example": "Können Sie mir bitte noch einmal den Weg zum Bahnhof <strong>erklären</strong>?"
+        },
+        {
+            "word": "beschreiben",
+            "perfekt": "hat beschrieben",
+            "meaning": "to describe",
+            "example": "Kannst du mir die vermisste Tasche etwas genauer <strong>beschreiben</strong>?"
+        },
+        {
+            "word": "empfehlen",
+            "perfekt": "hat empfohlen",
+            "meaning": "to recommend",
+            "example": "Welches Gericht auf der Speisekarte können Sie uns <strong>empfehlen</strong>?"
+        },
+        {
+            "word": "vorschlagen",
+            "perfekt": "hat vorgeschlagen",
+            "meaning": "to propose, suggest",
+            "example": "Ich <strong>schlage vor</strong>, dass wir heute Abend einfach eine Pizza bestellen."
+        },
+        {
+            "word": "zustimmen",
+            "perfekt": "hat zugestimmt",
+            "meaning": "to agree with",
+            "example": "In diesem konkreten Punkt kann ich dir voll und ganz <strong>zustimmen</strong>."
+        },
+        {
+            "word": "entschuldigen",
+            "perfekt": "hat entschuldigt",
+            "meaning": "to apologize, excuse",
+            "example": "Bitte <strong>entschuldigen</strong> Sie die kurze Verspätung."
+        },
+        {
+            "word": "bedanken",
+            "perfekt": "hat bedankt",
+            "meaning": "to thank",
+            "example": "Er hat sich bei allen Helfern herzlich für die Unterstützung <strong>bedankt</strong>."
+        },
+        {
+            "word": "vergessen",
+            "perfekt": "hat vergessen",
+            "meaning": "to forget",
+            "example": "Ich habe leider völlig <strong>vergessen</strong>, meine Hausschlüssel einzupacken."
+        },
+        {
+            "word": "verlieren",
+            "perfekt": "hat verloren",
+            "meaning": "to lose",
+            "example": "Er hat unterwegs im Bus sein Portemonnaie <strong>verloren</strong>."
+        },
+        {
+            "word": "finden",
+            "perfekt": "hat gefunden",
+            "meaning": "to find",
+            "example": "Glücklicherweise hat jemand den Schlüsselbund im Park <strong>gefunden</strong>."
+        },
+        {
+            "word": "suchen",
+            "perfekt": "hat gesucht",
+            "meaning": "to search, look for",
+            "example": "Ich <strong>suche</strong> schon seit einer halben Stunde nach meiner Brille."
+        },
+        {
+            "word": "behalten",
+            "perfekt": "hat behalten",
+            "meaning": "to keep, retain",
+            "example": "Das Rückgeld können Sie gerne als Trinkgeld <strong>behalten</strong>."
+        },
+        {
+            "word": "tauschen",
+            "perfekt": "hat getauscht",
+            "meaning": "to exchange, swap",
+            "example": "Können wir vielleicht die Plätze <strong>tauschen</strong>, damit ich am Fenster sitze?"
+        },
+        {
+            "word": "umtauschen",
+            "perfekt": "hat umgetauscht",
+            "meaning": "to exchange (a store item)",
+            "example": "Mit dem Kassenbon kann man die Jacke innerhalb von zwei Wochen <strong>umtauschen</strong>."
+        },
+        {
+            "word": "ausleihen",
+            "perfekt": "hat ausgeliehen",
+            "meaning": "to borrow, lend",
+            "example": "Kann ich mir für das Wochenende deinen Regenschirm <strong>ausleihen</strong>?"
+        },
+        {
+            "word": "zurückgeben",
+            "perfekt": "hat zurückgegeben",
+            "meaning": "to return, give back",
+            "example": "Ich muss das geliehene Buch morgen in der Bibliothek <strong>zurückgeben</strong>."
+        },
+        {
+            "word": "einpacken",
+            "perfekt": "hat eingepackt",
+            "meaning": "to pack, wrap up",
+            "example": "Hast du schon alle warmen Sachen für den Winterurlaub <strong>eingepackt</strong>?"
+        },
+        {
+            "word": "auspacken",
+            "perfekt": "hat ausgepackt",
+            "meaning": "to unpack",
+            "example": "Nach der langen Reise haben wir erst einmal in Ruhe die Koffer <strong>ausgepackt</strong>."
+        },
+        {
+            "word": "mitnehmen",
+            "perfekt": "hat mitgenommen",
+            "meaning": "to take along",
+            "example": "Nimm auf jeden Fall eine Jacke <strong>mit</strong>, heute Abend wird es kühl."
+        },
+        {
+            "word": "abbiegen",
+            "perfekt": "ist abgebogen",
+            "meaning": "to turn (direction)",
+            "example": "An der nächsten Ampel müssen Sie vorsichtig nach rechts <strong>abbiegen</strong>."
+        },
+        {
+            "word": "anhalten",
+            "perfekt": "hat angehalten",
+            "meaning": "to stop (vehicle)",
+            "example": "Der Bus musste ganz plötzlich an der Kreuzung <strong>anhalten</strong>."
+        },
+        {
+            "word": "umsteigen",
+            "perfekt": "ist umgestiegen",
+            "meaning": "to change (trains/buses)",
+            "example": "In Hannover müssen wir vom Regionalzug in die S-Bahn <strong>umsteigen</strong>."
+        },
+        {
+            "word": "aussteigen",
+            "perfekt": "ist ausgestiegen",
+            "meaning": "to get off (train/bus)",
+            "example": "Bitte achten Sie beim <strong>Aussteigen</strong> auf den Spalt zwischen Zug und Bahnsteig."
         }
     ],
     "praepositionen": [
@@ -1829,6 +2509,66 @@
             "prep": "<span class=\"arrow\">über</span> +Akk",
             "meaning": "to discuss about",
             "example": "Wir haben lange über die neuen Display-Technologien <strong>diskutiert</strong>."
+        },
+        {
+            "word": "<strong>passen</strong>",
+            "prep": "<span class=\"arrow\">zu</span> +Dat",
+            "meaning": "to suit, match (clothes/style)",
+            "example": "Dieses Hemd <strong>passt</strong> farblich hervorragend <strong>zu</strong> deiner Hose."
+        },
+        {
+            "word": "<strong>einladen</strong>",
+            "prep": "<span class=\"arrow\">zu</span> +Dat",
+            "meaning": "to invite to",
+            "example": "Ich möchte dich herzlich <strong>zu</strong> meiner Geburtstagsfeier <strong>einladen</strong>."
+        },
+        {
+            "word": "<strong>gehören</strong>",
+            "prep": "<span class=\"arrow\">zu</span> +Dat",
+            "meaning": "to belong to, be part of",
+            "example": "Ein gutes Frühstück <strong>gehört</strong> für mich einfach <strong>zu</strong> einem perfekten Sonntag."
+        },
+        {
+            "word": "<strong>gratulieren</strong>",
+            "prep": "<span class=\"arrow\">zu</span> +Dat",
+            "meaning": "to congratulate on",
+            "example": "Wir <strong>gratulieren</strong> dir ganz herzlich <strong>zur</strong> bestandenen Prüfung!"
+        },
+        {
+            "word": "<strong>bitten</strong>",
+            "prep": "<span class=\"arrow\">um</span> +Akk",
+            "meaning": "to ask for (help/patience)",
+            "example": "Darf ich Sie kurz <strong>um</strong> einen Gefallen <strong>bitten</strong>?"
+        },
+        {
+            "word": "<strong>sich ärgern</strong>",
+            "prep": "<span class=\"arrow\">über</span> +Akk",
+            "meaning": "to be annoyed about",
+            "example": "Er <strong>ärgert sich</strong> jedes Mal <strong>über</strong> die ständigen Zugverspätungen."
+        },
+        {
+            "word": "<strong>sich wundern</strong>",
+            "prep": "<span class=\"arrow\">über</span> +Akk",
+            "meaning": "to wonder / be surprised about",
+            "example": "Ich <strong>wundere mich</strong> sehr <strong>über</strong> das plötzliche kalte Wetter."
+        },
+        {
+            "word": "<strong>träumen</strong>",
+            "prep": "<span class=\"arrow\">von</span> +Dat",
+            "meaning": "to dream of",
+            "example": "Sie <strong>träumt</strong> schon seit Jahren <strong>von</strong> einer langen Reise nach Italien."
+        },
+        {
+            "word": "<strong>erzählen</strong>",
+            "prep": "<span class=\"arrow\">von</span> +Dat",
+            "meaning": "to tell / speak about",
+            "example": "Opa <strong>erzählt</strong> den Kindern gerne Geschichten <strong>von</strong> seiner Jugend."
+        },
+        {
+            "word": "<strong>aufhören</strong>",
+            "prep": "<span class=\"arrow\">mit</span> +Dat",
+            "meaning": "to stop / quit (an action)",
+            "example": "Wann <strong>hörst</strong> du heute Nachmittag <strong>mit</strong> der Gartenarbeit <strong>auf</strong>?"
         }
     ]
 }

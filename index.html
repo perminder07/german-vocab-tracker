@@ -14,11 +14,10 @@ body {
     background: #faf9f6;
     color: #222;
 }
-
 h1 { font-size: 1.4em; margin: 0; }
 h2 { border-bottom: 2px solid #444; padding-bottom: 4px; margin-top: 30px; }
 
-/* Sticky Top Section Wrapper (Ultra-Compact) */
+/* Sticky Top Section Wrapper */
 #sticky-header {
     position: sticky;
     top: 0;
@@ -46,169 +45,51 @@ td { padding: 5px 10px; border-bottom: 1px solid #ddd; vertical-align: top; font
 tr:nth-child(even) { background: #fff; }
 tr:nth-child(odd) { background: #f2f0ea; }
 
-/* 1. Header & Progress Bar Layout */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.title-area {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+/* Header & Progress Bar Layout */
+.top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 10px; }
+.title-area { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
 .title-area p.legend { margin: 0; font-size: 1.05em; }
+.progress-area { display: flex; align-items: center; gap: 12px; }
+.progress-text { font-size: 1.05em; font-weight: bold; color: #444; white-space: nowrap; }
 
-.progress-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.progress-text {
-    font-size: 1.05em;
-    font-weight: bold;
-    color: #444;
-    white-space: nowrap;
-}
-/* Progress Bar Refinements */
-.progress-bar {
-    background: #e2e8f0;
-    border-radius: 10px;
-    height: 22px;
-    width: 280px;
-    position: relative;
-    border: 1px solid #cbd5e1;
-    overflow: hidden;
-}
-.progress-fill {
-    background: #5bcc6b;
-    height: 100%;
-    width: 0%;
-    transition: width 0.3s ease-out;
-}
-/* Absolute text */
-.progress-percentage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #111;
-    font-size: 0.85em;
-    font-weight: bold;
-    pointer-events: none;
-}
+.progress-bar { background: #e2e8f0; border-radius: 10px; height: 22px; width: 280px; position: relative; border: 1px solid #cbd5e1; overflow: hidden; }
+.progress-fill { background: #5bcc6b; height: 100%; width: 0%; transition: width 0.3s ease-out; }
+.progress-percentage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #111; font-size: 0.85em; font-weight: bold; pointer-events: none; }
 
-/* 2. Seamless Inline Controls Bar */
-.controls-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 1.1em;
-    padding-top: 6px;
-}
-.checkbox-group {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.checkbox-group label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-/* Enlarged Checkboxes */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 8px;
-    transform: scale(1.4);
-    cursor: pointer;
-}
+/* Controls Bar */
+.controls-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 1.1em; padding-top: 6px; }
+.checkbox-group { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.checkbox-group label { cursor: pointer; display: flex; align-items: center; margin: 0; }
+.checkbox-group input[type="checkbox"] { margin-right: 8px; transform: scale(1.4); cursor: pointer; }
+#searchInput { padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; width: 280px; font-size: 1em; }
 
-/* 3. Live Search Bar Styling */
-#searchInput {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 280px;
-    font-size: 1em;
-}
-
-/* 4. Quiz Mode Toggle Styling */
-.quiz-toggle-label {
-    font-weight: bold;
-    color: #1a3d5c;
-    background: #e6f2ff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid #b3d4fc;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.quiz-toggle-label input[type="checkbox"] {
-    transform: scale(1.4);
-    cursor: pointer;
-    margin-right: 4px;
-}
+/* Quiz Mode */
+.quiz-toggle-label { font-weight: bold; color: #1a3d5c; background: #e6f2ff; padding: 8px 12px; border-radius: 4px; border: 1px solid #b3d4fc; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.quiz-toggle-label input[type="checkbox"] { transform: scale(1.4); cursor: pointer; margin-right: 4px; }
 .quiz-toggle-label:hover { background: #cce4ff; }
+body.quiz-mode td.ex, body.quiz-mode td.reveal-col { filter: blur(6px); transition: filter 0.3s ease; cursor: help; background-color: #e2e8f0; }
+body.quiz-mode td.ex:hover, body.quiz-mode td.reveal-col:hover { filter: blur(0); background-color: transparent; }
 
-/* Quiz Mode Blur Effect - Now targets the Beispielsatz and either Synonym/Gegenteil */
-body.quiz-mode td.ex,
-body.quiz-mode td.reveal-col {
-    filter: blur(6px);
-    transition: filter 0.3s ease;
-    cursor: help;
-    background-color: #e2e8f0; 
-}
-body.quiz-mode td.ex:hover,
-body.quiz-mode td.reveal-col:hover {
-    filter: blur(0);
-    background-color: transparent;
-}
-
-/* 5. Progress Tracker */
+/* Progress Tracker & Formatting */
 tr.learned { opacity: 0.4; background-color: #e2e8f0 !important; }
 tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
 .learned-cb { cursor: pointer; width: 18px; height: 18px; }
-
-/* Vocabulary Colors */
-.der{color:#0b86ea;font-weight:bold}
-.die{color:#a6157f;font-weight:bold}
-.das{color:#1a8a3c;font-weight:bold}
-.ex{font-style:italic;color:#444}
-.arrow{font-family:monospace;color:#a05a00;font-weight:bold}
+.der{color:#0b86ea;font-weight:bold} .die{color:#a6157f;font-weight:bold} .das{color:#1a8a3c;font-weight:bold}
+.ex{font-style:italic;color:#444} .arrow{font-family:monospace;color:#a05a00;font-weight:bold}
 .legend span{padding:1px 6px;border-radius:4px;margin-right:6px;font-weight:bold}
-.sub{color:#888;font-size:.82em}
-strong { color: #111; }
-.syn { color: #555; font-size: 0.9em; }
+.sub{color:#888;font-size:.82em} strong { color: #111; } .syn { color: #555; font-size: 0.9em; }
 </style>
 </head>
 <body>
 
-<!-- MAIN STICKY HEADER ZONE -->
 <div id="sticky-header">
     <div class="top-header">
         <div class="title-area">
-            <h1>DTZ B1 Vokabeln <span style="font-size: 0.5em; color: #888; vertical-align: middle;">v1.0.0</span></h1>
+            <h1>DTZ B1 Vokabeln <span style="font-size: 0.5em; color: #888; vertical-align: middle;">v2.0.0</span></h1>
             <p class="legend">
-                <span class="der">der</span> = maskulin &nbsp;
-                <span class="die">die</span> = feminin &nbsp;
-                <span class="das">das</span> = neutral
+                <span class="der">der</span> = maskulin &nbsp; <span class="die">die</span> = feminin &nbsp; <span class="das">das</span> = neutral
             </p>
         </div>
-        
         <div class="progress-area">
             <div class="progress-text">Gelernt: <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
             <div class="progress-bar">
@@ -217,8 +98,6 @@ strong { color: #111; }
             </div>
         </div>
     </div>
-
-    <!-- Seamless Compact Controls Bar -->
     <div class="controls-bar">
         <div class="checkbox-group">
             <strong>Anzeigen:</strong>
@@ -227,7 +106,6 @@ strong { color: #111; }
             <label><input type="checkbox" class="cat-filter" value="sec-verben" checked> Verben</label>
             <label><input type="checkbox" class="cat-filter" value="sec-praepositionen" checked> Verben m. Präp.</label>
         </div>
-        
         <div class="checkbox-group">
             <input type="text" id="searchInput" placeholder="🔍 Suchen...">
             <label class="quiz-toggle-label">
@@ -237,428 +115,146 @@ strong { color: #111; }
     </div>
 </div>
 
-<!-- Nouns Section -->
-<div id="sec-nomen" class="vokabel-section">
-    <h2>Nomen</h2>
-    <table>
-    <tr><th>Wort (Plural)</th><th>Bedeutung</th><th>Synonyme / Ähnlich</th><th>Beispielsatz</th></tr>
-    <tr><td><span class="die">die Erfahrung (-en)</span></td><td class="reveal-col">experience</td><td class="syn">die Praxis, das Erlebnis</td><td class="ex">Für diese Stelle braucht man mehrere Jahre <strong>Erfahrung</strong> im Verkauf.</td></tr>
-    <tr><td><span class="die">die Verantwortung (-en)</span></td><td class="reveal-col">responsibility</td><td class="syn">die Pflicht, die Zuständigkeit</td><td class="ex">Als Teamleiter trägt er die <strong>Verantwortung</strong> für zehn Mitarbeiter.</td></tr>
-    <tr><td><span class="die">die Voraussetzung (-en)</span></td><td class="reveal-col">prerequisite</td><td class="syn">die Bedingung, das Kriterium</td><td class="ex">Gute Deutschkenntnisse sind eine wichtige <strong>Voraussetzung</strong> für diesen Job.</td></tr>
-    <tr><td><span class="der">der Antrag (Anträge)</span></td><td class="reveal-col">application, request</td><td class="syn">das Gesuch, die Bewerbung</td><td class="ex">Sie muss den <strong>Antrag</strong> auf Elterngeld noch bis Freitag einreichen.</td></tr>
-    <tr><td><span class="der">der Nachweis (-e)</span></td><td class="reveal-col">proof, evidence</td><td class="syn">der Beweis, das Zertifikat</td><td class="ex">Ohne einen <strong>Nachweis</strong> über die Anmeldung bekommt er keinen Termin.</td></tr>
-    <tr><td><span class="der">der Termin (-e)</span></td><td class="reveal-col">appointment</td><td class="syn">die Verabredung, die Frist</td><td class="ex">Ich habe morgen einen <strong>Termin</strong> beim Zahnarzt um neun Uhr.</td></tr>
-    <tr><td><span class="die">die Anmeldung (-en)</span></td><td class="reveal-col">registration</td><td class="syn">die Registrierung</td><td class="ex">Die <strong>Anmeldung</strong> für den Kurs ist ab sofort online möglich.</td></tr>
-    <tr><td><span class="die">die Bescheinigung (-en)</span></td><td class="reveal-col">certificate</td><td class="syn">das Zertifikat, der Nachweis</td><td class="ex">Für das Kindergeld braucht das Amt eine <strong>Bescheinigung</strong> der Schule.</td></tr>
-    <tr><td><span class="der">der Vertrag (Verträge)</span></td><td class="reveal-col">contract</td><td class="syn">die Vereinbarung, das Abkommen</td><td class="ex">Bevor du unterschreibst, solltest du den <strong>Vertrag</strong> genau lesen.</td></tr>
-    <tr><td><span class="die">die Kündigung (-en)</span></td><td class="reveal-col">termination, notice</td><td class="syn">die Entlassung, der Rücktritt</td><td class="ex">Er hat die <strong>Kündigung</strong> seiner Wohnung drei Monate im Voraus geschickt.</td></tr>
-    <tr><td><span class="das">das Einkommen (-)</span></td><td class="reveal-col">income</td><td class="syn">das Gehalt, der Lohn, der Verdienst</td><td class="ex">Das monatliche <strong>Einkommen</strong> der Familie reicht kaum für die Miete.</td></tr>
-    <tr><td><span class="die">die Ausbildung (-en)</span></td><td class="reveal-col">vocational training</td><td class="syn">die Lehre, das Studium</td><td class="ex">Nach der Schule beginnt sie eine <strong>Ausbildung</strong> zur Krankenschwester.</td></tr>
-    <tr><td><span class="der">der Arbeitgeber (-)</span></td><td class="reveal-col">employer</td><td class="syn">der Chef, das Unternehmen</td><td class="ex">Ihr <strong>Arbeitgeber</strong> bietet flexible Arbeitszeiten und Homeoffice an.</td></tr>
-    <tr><td><span class="der">der Lebenslauf (Lebensläufe)</span></td><td class="reveal-col">CV, resume</td><td class="syn">die Biografie, das Profil</td><td class="ex">Bitte schicken Sie Ihren <strong>Lebenslauf</strong> zusammen mit dem Anschreiben.</td></tr>
-    <tr><td><span class="die">die Behörde (-n)</span></td><td class="reveal-col">authority, agency</td><td class="syn">das Amt, die Verwaltung</td><td class="ex">Für den neuen Pass muss man persönlich zur <strong>Behörde</strong> gehen.</td></tr>
-    <tr><td><span class="die">die Frist (-en)</span></td><td class="reveal-col">deadline</td><td class="syn">der Termin, die Laufzeit</td><td class="ex">Die <strong>Frist</strong> für die Steuererklärung endet Ende Juli.</td></tr>
-    <tr><td><span class="die">die Unterlage (-n)</span></td><td class="reveal-col">document</td><td class="syn">das Dokument, das Papier</td><td class="ex">Bringen Sie bitte alle <strong>Unterlagen</strong> im Original zum Termin mit.</td></tr>
-    <tr><td><span class="der">der Umzug (Umzüge)</span></td><td class="reveal-col">move, relocation</td><td class="syn">der Wohnungswechsel</td><td class="ex">Der <strong>Umzug</strong> in die neue Wohnung war anstrengend, aber es hat sich gelohnt.</td></tr>
-    <tr><td><span class="die">die Miete (-n)</span></td><td class="reveal-col">rent</td><td class="syn">die Pacht</td><td class="ex">Die <strong>Miete</strong> steigt jedes Jahr ein wenig in dieser Gegend.</td></tr>
-    <tr><td><span class="der">der Mietvertrag (-verträge)</span></td><td class="reveal-col">rental contract</td><td class="syn">der Pachtvertrag</td><td class="ex">Bevor sie einzieht, unterschreibt sie den <strong>Mietvertrag</strong> beim Vermieter.</td></tr>
-    <tr><td><span class="die">die Rücksicht (-en)</span></td><td class="reveal-col">consideration</td><td class="syn">die Aufmerksamkeit, der Respekt</td><td class="ex">Man sollte im Zug auf andere Fahrgäste <strong>Rücksicht</strong> nehmen.</td></tr>
-    <tr><td><span class="der">der Streit (-e)</span></td><td class="reveal-col">argument, dispute</td><td class="syn">der Konflikt, die Diskussion</td><td class="ex">Der <strong>Streit</strong> zwischen den Nachbarn ging um die laute Musik.</td></tr>
-    <tr><td><span class="die">die Beschwerde (-n)</span></td><td class="reveal-col">complaint</td><td class="syn">die Reklamation, die Kritik</td><td class="ex">Nach dem schlechten Service hat er eine <strong>Beschwerde</strong> beim Chef eingereicht.</td></tr>
-    <tr><td><span class="der">der Versicherungsschutz (-)</span></td><td class="reveal-col">insurance coverage</td><td class="syn">die Absicherung</td><td class="ex">Ohne <strong>Versicherungsschutz</strong> kann eine Behandlung im Ausland sehr teuer werden.</td></tr>
-    <tr><td><span class="die">die Gesundheit (-)</span></td><td class="reveal-col">health</td><td class="syn">das Wohlbefinden</td><td class="ex">Regelmäßiger Sport tut der <strong>Gesundheit</strong> auf lange Sicht gut.</td></tr>
-    <tr><td><span class="der">der Fortschritt (-e)</span></td><td class="reveal-col">progress</td><td class="syn">die Entwicklung, die Verbesserung</td><td class="ex">Sie macht in ihrem Deutschkurs jede Woche deutliche <strong>Fortschritte</strong>.</td></tr>
-    <tr><td><span class="die">die Entscheidung (-en)</span></td><td class="reveal-col">decision</td><td class="syn">der Beschluss, das Urteil</td><td class="ex">Die <strong>Entscheidung</strong>, umzuziehen, ist ihm nicht leichtgefallen.</td></tr>
-    <tr><td><span class="der">der Zweck (-e)</span></td><td class="reveal-col">purpose</td><td class="syn">das Ziel, das Motiv</td><td class="ex">Der <strong>Zweck</strong> des Formulars ist mir noch nicht ganz klar.</td></tr>
-    <tr><td><span class="das">das Verhalten (-)</span></td><td class="reveal-col">behavior</td><td class="syn">das Benehmen, die Reaktion</td><td class="ex">Sein <strong>Verhalten</strong> während der Prüfung war ruhig und konzentriert.</td></tr>
-    <tr><td><span class="die">die Rücksprache (-n)</span></td><td class="reveal-col">consultation</td><td class="syn">die Beratung, das Gespräch</td><td class="ex">Ich muss vor der Entscheidung noch <strong>Rücksprache</strong> mit meinem Chef halten.</td></tr>
-    <tr><td><span class="der">der Aufenthalt (-e)</span></td><td class="reveal-col">stay, residence</td><td class="syn">die Anwesenheit</td><td class="ex">Ihr <strong>Aufenthalt</strong> in Deutschland ist bis nächstes Jahr genehmigt.</td></tr>
-    <tr><td><span class="die">die Staatsangehörigkeit (-en)</span></td><td class="reveal-col">nationality</td><td class="syn">die Bürgerschaft, die Nationalität</td><td class="ex">Er hat seit letztem Jahr die deutsche <strong>Staatsangehörigkeit</strong>.</td></tr>
-    <tr><td><span class="der">der Wohnsitz (-e)</span></td><td class="reveal-col">place of residence</td><td class="syn">die Adresse, der Aufenthaltsort</td><td class="ex">Sie muss ihren neuen <strong>Wohnsitz</strong> innerhalb von zwei Wochen anmelden.</td></tr>
-    <tr><td><span class="die">die Meldebescheinigung (-en)</span></td><td class="reveal-col">registration certificate</td><td class="syn">die Anmeldebestätigung</td><td class="ex">Für die Bankkonto-Eröffnung braucht die Bank eine <strong>Meldebescheinigung</strong>.</td></tr>
-    <tr><td><span class="der">der Ausweis (-e)</span></td><td class="reveal-col">ID card</td><td class="syn">der Pass, das Dokument</td><td class="ex">Bitte zeigen Sie mir Ihren <strong>Ausweis</strong> am Schalter.</td></tr>
-    <tr><td><span class="die">die Gebühr (-en)</span></td><td class="reveal-col">fee</td><td class="syn">die Kosten, der Preis</td><td class="ex">Für die Verlängerung des Passes fällt eine <strong>Gebühr</strong> an.</td></tr>
-    <tr><td><span class="die">die Steuer (-n)</span></td><td class="reveal-col">tax</td><td class="syn">die Abgabe, der Zoll</td><td class="ex">Jeden Monat wird ein Teil des Gehalts als <strong>Steuer</strong> abgezogen.</td></tr>
-    <tr><td><span class="das">das Finanzamt (-ämter)</span></td><td class="reveal-col">tax office</td><td class="syn">die Steuerbehörde</td><td class="ex">Die Steuererklärung muss beim <strong>Finanzamt</strong> eingereicht werden.</td></tr>
-    <tr><td><span class="der">der Beleg (-e)</span></td><td class="reveal-col">receipt</td><td class="syn">die Quittung, die Rechnung</td><td class="ex">Ohne <strong>Beleg</strong> kann sie die Kosten nicht zurückfordern.</td></tr>
-    <tr><td><span class="die">die Rechnung (-en)</span></td><td class="reveal-col">invoice, bill</td><td class="syn">der Beleg, die Quittung</td><td class="ex">Die <strong>Rechnung</strong> für die Reparatur kam erst nach zwei Wochen.</td></tr>
-    <tr><td><span class="das">das Konto (Konten)</span></td><td class="reveal-col">account</td><td class="syn">die Bankverbindung</td><td class="ex">Er hat ein <strong>Konto</strong> bei einer Onlinebank eröffnet.</td></tr>
-    <tr><td><span class="die">die Überweisung (-en)</span></td><td class="reveal-col">bank transfer</td><td class="syn">die Zahlung, der Transfer</td><td class="ex">Die <strong>Überweisung</strong> dauert bei dieser Bank meist zwei Werktage.</td></tr>
-    <tr><td><span class="das">das Gehalt (Gehälter)</span></td><td class="reveal-col">salary</td><td class="syn">das Einkommen, der Lohn</td><td class="ex">Ihr <strong>Gehalt</strong> wird immer am letzten Werktag des Monats überwiesen.</td></tr>
-    <tr><td><span class="die">die Kündigungsfrist (-en)</span></td><td class="reveal-col">notice period</td><td class="syn">die Abmeldefrist</td><td class="ex">Die <strong>Kündigungsfrist</strong> für die Wohnung beträgt drei Monate.</td></tr>
-    <tr><td><span class="der">der Vermieter (-)</span></td><td class="reveal-col">landlord</td><td class="syn">der Eigentümer</td><td class="ex">Der <strong>Vermieter</strong> hat die Reparatur der Heizung zugesagt.</td></tr>
-    <tr><td><span class="der">der Mieter (-)</span></td><td class="reveal-col">tenant</td><td class="syn">der Bewohner</td><td class="ex">Der <strong>Mieter</strong> muss den Schaden dem Vermieter sofort melden.</td></tr>
-    <tr><td><span class="die">die Nebenkosten (Pl.)</span></td><td class="reveal-col">utility costs</td><td class="syn">die Betriebskosten</td><td class="ex">Die <strong>Nebenkosten</strong> für Heizung und Wasser sind stark gestiegen.</td></tr>
-    <tr><td><span class="der">der Schaden (Schäden)</span></td><td class="reveal-col">damage</td><td class="syn">der Defekt, der Nachteil</td><td class="ex">Der <strong>Schaden</strong> am Auto wurde von der Versicherung übernommen.</td></tr>
-    <tr><td><span class="die">die Versicherung (-en)</span></td><td class="reveal-col">insurance</td><td class="syn">die Absicherung, der Schutz</td><td class="ex">Ohne <strong>Versicherung</strong> darf man in Deutschland kein Auto fahren.</td></tr>
-    <tr><td><span class="der">der Anspruch (Ansprüche)</span></td><td class="reveal-col">entitlement, claim</td><td class="syn">das Recht, die Forderung</td><td class="ex">Sie hat <strong>Anspruch</strong> auf Elterngeld, weil sie vorher gearbeitet hat.</td></tr>
-    <tr><td><span class="die">die Leistung (-en)</span></td><td class="reveal-col">benefit, performance</td><td class="syn">das Ergebnis, der Service</td><td class="ex">Das Jobcenter zahlt bestimmte <strong>Leistungen</strong> nur bei Bedürftigkeit.</td></tr>
-    <tr><td><span class="das">das Jobcenter (-)</span></td><td class="reveal-col">job center</td><td class="syn">die Arbeitsagentur</td><td class="ex">Er hat einen Termin beim <strong>Jobcenter</strong> wegen seiner Bewerbung.</td></tr>
-    <tr><td><span class="die">die Stelle (-n)</span></td><td class="reveal-col">position, job</td><td class="syn">der Arbeitsplatz, der Job</td><td class="ex">Die <strong>Stelle</strong> wurde intern schon lange vor der Ausschreibung besetzt.</td></tr>
-    <tr><td><span class="der">der Betrieb (-e)</span></td><td class="reveal-col">company, operation</td><td class="syn">das Unternehmen, die Firma</td><td class="ex">Der <strong>Betrieb</strong> beschäftigt über hundert Mitarbeiter in zwei Städten.</td></tr>
-    <tr><td><span class="die">die Fortbildung (-en)</span></td><td class="reveal-col">further training</td><td class="syn">die Weiterbildung, der Kurs</td><td class="ex">Der Arbeitgeber bietet regelmäßig <strong>Fortbildungen</strong> für das Team an.</td></tr>
-    <tr><td><span class="das">das Zeugnis (-se)</span></td><td class="reveal-col">certificate, reference</td><td class="syn">die Bescheinigung, das Zertifikat</td><td class="ex">Am Ende der Ausbildung bekommt sie ein <strong>Zeugnis</strong> mit einer guten Note.</td></tr>
-    <tr><td><span class="die">die Qualifikation (-en)</span></td><td class="reveal-col">qualification</td><td class="syn">die Fähigkeit, die Kompetenz</td><td class="ex">Für diese Position werden mehrere Jahre <strong>Qualifikation</strong> im Bereich verlangt.</td></tr>
-    <tr><td><span class="das">das Vorstellungsgespräch (-e)</span></td><td class="reveal-col">job interview</td><td class="syn">das Interview, das Bewerbungsgespräch</td><td class="ex">Sie hat sich intensiv auf das <strong>Vorstellungsgespräch</strong> vorbereitet.</td></tr>
-    <tr><td><span class="die">die Probezeit (-en)</span></td><td class="reveal-col">probation period</td><td class="syn">die Testphase</td><td class="ex">In der <strong>Probezeit</strong> kann der Vertrag mit kurzer Frist gekündigt werden.</td></tr>
-    <tr><td><span class="der">der Arbeitsvertrag (-verträge)</span></td><td class="reveal-col">employment contract</td><td class="syn">die Anstellung</td><td class="ex">Im <strong>Arbeitsvertrag</strong> stehen die genaue Arbeitszeit und das Gehalt.</td></tr>
-    <tr><td><span class="die">die Kinderbetreuung (-en)</span></td><td class="reveal-col">childcare</td><td class="syn">die Kita, die Pflege</td><td class="ex">Ohne gute <strong>Kinderbetreuung</strong> ist es für sie schwer, Vollzeit zu arbeiten.</td></tr>
-    <tr><td><span class="der">der Kindergarten (Kindergärten)</span></td><td class="reveal-col">kindergarten</td><td class="syn">die Kita, die Vorschule</td><td class="ex">Ihr Sohn geht seit September in den <strong>Kindergarten</strong>.</td></tr>
-    <tr><td><span class="die">die Elternzeit (-en)</span></td><td class="reveal-col">parental leave</td><td class="syn">der Mutterschutz (similar)</td><td class="ex">Er nimmt sechs Monate <strong>Elternzeit</strong>, um sich um das Baby zu kümmern.</td></tr>
-    <tr><td><span class="das">das Elterngeld (-er)</span></td><td class="reveal-col">parental allowance</td><td class="syn">die Förderung, die Hilfe</td><td class="ex">Das <strong>Elterngeld</strong> wird vom Staat für bis zu vierzehn Monate gezahlt.</td></tr>
-    <tr><td><span class="die">die Geburtsurkunde (-n)</span></td><td class="reveal-col">birth certificate</td><td class="syn">die Bescheinigung</td><td class="ex">Für den Antrag braucht man die <strong>Geburtsurkunde</strong> des Kindes.</td></tr>
-    <tr><td><span class="die">die Heirat (-en)</span></td><td class="reveal-col">marriage</td><td class="syn">die Hochzeit, die Eheschließung</td><td class="ex">Nach der <strong>Heirat</strong> hat sie ihren Nachnamen geändert.</td></tr>
-    <tr><td><span class="das">das Standesamt (-ämter)</span></td><td class="reveal-col">registry office</td><td class="syn">die Behörde</td><td class="ex">Die Hochzeit findet im <strong>Standesamt</strong> am Freitagmorgen statt.</td></tr>
-    <tr><td><span class="die">die Scheidung (-en)</span></td><td class="reveal-col">divorce</td><td class="syn">die Trennung</td><td class="ex">Nach der <strong>Scheidung</strong> zog er in eine kleinere Wohnung.</td></tr>
-    <tr><td><span class="der">der Umgang (Umgänge)</span></td><td class="reveal-col">contact, handling</td><td class="syn">der Kontakt, die Beziehung</td><td class="ex">Der <strong>Umgang</strong> mit den Kunden erfordert viel Geduld.</td></tr>
-    <tr><td><span class="die">die Sprechstunde (-n)</span></td><td class="reveal-col">consultation hours</td><td class="syn">die Öffnungszeit</td><td class="ex">Die <strong>Sprechstunde</strong> des Arztes ist nur dienstags und donnerstags.</td></tr>
-    <tr><td><span class="die">die Untersuchung (-en)</span></td><td class="reveal-col">examination</td><td class="syn">die Prüfung, der Check-up</td><td class="ex">Die <strong>Untersuchung</strong> beim Hausarzt hat nichts Ernstes ergeben.</td></tr>
-    <tr><td><span class="die">die Überweisung (-en)</span></td><td class="reveal-col">referral (medical)</td><td class="syn">die Zuweisung</td><td class="ex">Der Hausarzt hat ihr eine <strong>Überweisung</strong> zum Facharzt gegeben.</td></tr>
-    <tr><td><span class="das">das Rezept (-e)</span></td><td class="reveal-col">prescription</td><td class="syn">die Verordnung</td><td class="ex">Ohne <strong>Rezept</strong> bekommt man dieses Medikament nicht in der Apotheke.</td></tr>
-    <tr><td><span class="die">die Nebenwirkung (-en)</span></td><td class="reveal-col">side effect</td><td class="syn">die Begleiterscheinung</td><td class="ex">Der Arzt hat vor möglichen <strong>Nebenwirkungen</strong> des Medikaments gewarnt.</td></tr>
-    <tr><td><span class="die">die Praxis (Praxen)</span></td><td class="reveal-col">doctor's office</td><td class="syn">die Klinik (similar)</td><td class="ex">Die <strong>Praxis</strong> hat mittwochs nachmittags geschlossen.</td></tr>
-    <tr><td><span class="der">der Krankenschein (-e)</span></td><td class="reveal-col">medical certificate</td><td class="syn">die Krankschreibung, das Attest</td><td class="ex">Bei Krankheit muss man dem Arbeitgeber einen <strong>Krankenschein</strong> schicken.</td></tr>
-    <tr><td><span class="die">die Impfung (-en)</span></td><td class="reveal-col">vaccination</td><td class="syn">der Schutz, die Spritze</td><td class="ex">Die <strong>Impfung</strong> gegen Grippe wird jedes Jahr im Herbst empfohlen.</td></tr>
-    <tr><td><span class="der">der Notfall (Notfälle)</span></td><td class="reveal-col">emergency</td><td class="syn">die Krise, die Gefahr</td><td class="ex">Im <strong>Notfall</strong> sollte man sofort die Notaufnahme aufsuchen.</td></tr>
-    <tr><td><span class="die">die Beratung (-en)</span></td><td class="reveal-col">counselling, advice</td><td class="syn">das Gespräch, die Hilfe</td><td class="ex">Die <strong>Beratung</strong> bei der Behörde war freundlich und ausführlich.</td></tr>
-    <tr><td><span class="der">der Sachbearbeiter (-)</span></td><td class="reveal-col">clerk, caseworker</td><td class="syn">der Beamte, der Mitarbeiter</td><td class="ex">Der <strong>Sachbearbeiter</strong> hat ihren Antrag noch nicht bearbeitet.</td></tr>
-    <tr><td><span class="das">das Formular (-e)</span></td><td class="reveal-col">form</td><td class="syn">das Dokument, das Blatt</td><td class="ex">Das <strong>Formular</strong> muss in Blockschrift ausgefüllt werden.</td></tr>
-    <tr><td><span class="der">der Bescheid (-e)</span></td><td class="reveal-col">official notice</td><td class="syn">die Antwort, der Brief</td><td class="ex">Der <strong>Bescheid</strong> vom Amt kam erst nach sechs Wochen.</td></tr>
-    <tr><td><span class="der">der Widerspruch (Widersprüche)</span></td><td class="reveal-col">objection</td><td class="syn">der Protest, die Beschwerde</td><td class="ex">Gegen den Bescheid kann man innerhalb eines Monats <strong>Widerspruch</strong> einlegen.</td></tr>
-    <tr><td><span class="die">die Ausschreibung (-en)</span></td><td class="reveal-col">job posting, tender</td><td class="syn">die Anzeige, das Angebot</td><td class="ex">Die <strong>Ausschreibung</strong> für die Stelle endet nächste Woche.</td></tr>
-    <tr><td><span class="der">der Nachmieter (-)</span></td><td class="reveal-col">next tenant</td><td class="syn">der neue Mieter</td><td class="ex">Wenn sie einen <strong>Nachmieter</strong> findet, kommt sie früher aus dem Vertrag raus.</td></tr>
-    <tr><td><span class="die">die Kaution (-en)</span></td><td class="reveal-col">deposit</td><td class="syn">die Sicherheit, das Pfand</td><td class="ex">Die <strong>Kaution</strong> beträgt meist drei Monatsmieten.</td></tr>
-    <tr><td><span class="der">der Nebenjob (-s)</span></td><td class="reveal-col">side job</td><td class="syn">die Aushilfe, der Minijob</td><td class="ex">Neben dem Studium hat sie einen <strong>Nebenjob</strong> im Café.</td></tr>
-    <tr><td><span class="die">die Arbeitszeit (-en)</span></td><td class="reveal-col">working hours</td><td class="syn">die Schicht, die Gleitzeit</td><td class="ex">Die <strong>Arbeitszeit</strong> kann in dieser Firma flexibel gestaltet werden.</td></tr>
-    <tr><td><span class="der">der Feiertag (-e)</span></td><td class="reveal-col">public holiday</td><td class="syn">das Fest, der Ruhetag</td><td class="ex">An gesetzlichen <strong>Feiertagen</strong> bleiben die meisten Geschäfte geschlossen.</td></tr>
-    <tr><td><span class="der">der Urlaubsanspruch (-ansprüche)</span></td><td class="reveal-col">vacation entitlement</td><td class="syn">die Ferientage, das Recht</td><td class="ex">Ihr <strong>Urlaubsanspruch</strong> liegt bei dreißig Tagen im Jahr.</td></tr>
-    <tr><td><span class="die">die Überstunde (-n)</span></td><td class="reveal-col">overtime</td><td class="syn">die Mehrarbeit</td><td class="ex">Er macht diese Woche viele <strong>Überstunden</strong> wegen eines wichtigen Projekts.</td></tr>
-    <tr><td><span class="die">die Gleitzeit (-en)</span></td><td class="reveal-col">flexitime</td><td class="syn">die flexible Arbeitszeit</td><td class="ex">Dank der <strong>Gleitzeit</strong> kann sie morgens später anfangen.</td></tr>
-    <tr><td><span class="der">der Betriebsrat (-räte)</span></td><td class="reveal-col">works council</td><td class="syn">die Personalvertretung</td><td class="ex">Bei Problemen mit dem Chef kann man sich an den <strong>Betriebsrat</strong> wenden.</td></tr>
-    <tr><td><span class="die">die Gewerkschaft (-en)</span></td><td class="reveal-col">trade union</td><td class="syn">die Arbeitnehmervertretung</td><td class="ex">Viele Kollegen sind Mitglied in einer <strong>Gewerkschaft</strong>.</td></tr>
-    <tr><td><span class="der">der Tarifvertrag (-verträge)</span></td><td class="reveal-col">collective agreement</td><td class="syn">der Arbeitsvertrag (similar)</td><td class="ex">Das Gehalt richtet sich nach dem <strong>Tarifvertrag</strong> der Branche.</td></tr>
-    <tr><td><span class="die">die Abfindung (-en)</span></td><td class="reveal-col">severance payment</td><td class="syn">die Entschädigung</td><td class="ex">Nach der Kündigung erhielt er eine kleine <strong>Abfindung</strong>.</td></tr>
-    <tr><td><span class="das">das Arbeitslosengeld (-er)</span></td><td class="reveal-col">unemployment benefit</td><td class="syn">die Stütze, die Hilfe</td><td class="ex">Nach der Kündigung beantragte sie sofort <strong>Arbeitslosengeld</strong>.</td></tr>
-    <tr><td><span class="die">die Meldung (-en)</span></td><td class="reveal-col">notification, report</td><td class="syn">die Nachricht, die Anzeige</td><td class="ex">Die <strong>Meldung</strong> des Umzugs muss innerhalb von zwei Wochen erfolgen.</td></tr>
-    <tr><td><span class="der">der Wohnungswechsel (-)</span></td><td class="reveal-col">change of residence</td><td class="syn">der Umzug</td><td class="ex">Ein <strong>Wohnungswechsel</strong> muss beim Bürgeramt angemeldet werden.</td></tr>
-    <tr><td><span class="das">das Bürgeramt (-ämter)</span></td><td class="reveal-col">citizens' registration office</td><td class="syn">die Behörde, das Amt</td><td class="ex">Für die Anmeldung braucht man einen Termin beim <strong>Bürgeramt</strong>.</td></tr>
-    <tr><td><span class="die">die Warteliste (-n)</span></td><td class="reveal-col">waiting list</td><td class="syn">die Reservierung</td><td class="ex">Für den Kitaplatz steht sie schon seit Monaten auf der <strong>Warteliste</strong>.</td></tr>
-    <tr><td><span class="der">der Anlass (Anlässe)</span></td><td class="reveal-col">occasion, reason</td><td class="syn">der Grund, das Motiv</td><td class="ex">Aus welchem <strong>Anlass</strong> wurde die Feier eigentlich organisiert?</td></tr>
-    
-    <!-- NEW PERSONALIZED NOUNS -->
-    <tr><td><span class="die">die Norm (-en)</span></td><td class="reveal-col">standard, norm</td><td class="syn">die Regel, der Standard</td><td class="ex">Bei der Konstruktion müssen wir die UN ECE <strong>Normen</strong> beachten.</td></tr>
-    <tr><td><span class="das">das Dashboard (-s)</span></td><td class="reveal-col">dashboard</td><td class="syn">die Übersicht, die Tafel</td><td class="ex">Ich habe ein neues <strong>Dashboard</strong> in Power BI erstellt.</td></tr>
-    <tr><td><span class="die">die Visualisierung (-en)</span></td><td class="reveal-col">visualization</td><td class="syn">die Darstellung</td><td class="ex">Mit Python ist die <strong>Visualisierung</strong> der Daten sehr einfach.</td></tr>
-    <tr><td><span class="die">die Umgebung (-en)</span></td><td class="reveal-col">environment</td><td class="syn">der Bereich, die Sphäre</td><td class="ex">Ich habe Docker Desktop für meine lokale <strong>Umgebung</strong> installiert.</td></tr>
-    <tr><td><span class="das">das Visum (Visa)</span></td><td class="reveal-col">visa</td><td class="syn">die Einreiseerlaubnis</td><td class="ex">Wir brauchen ein gültiges <strong>Visum</strong> für die Reise nach Asien.</td></tr>
-    <tr><td><span class="das">das Gewürz (-e)</span></td><td class="reveal-col">spice</td><td class="syn">das Kraut, das Aroma</td><td class="ex">Dieses traditionelle iranische Gericht braucht viele <strong>Gewürze</strong>.</td></tr>
-    <tr><td><span class="der">der Schläger (-)</span></td><td class="reveal-col">racket (sports)</td><td class="syn">das Sportgerät</td><td class="ex">Ich habe mir gestern einen neuen <strong>Schläger</strong> für das Training gekauft.</td></tr>
-    <tr><td><span class="die">die Zutat (-en)</span></td><td class="reveal-col">ingredient</td><td class="syn">der Bestandteil, das Element</td><td class="ex">Spinat ist eine wichtige <strong>Zutat</strong> für dieses Rezept.</td></tr>
-    <tr><td><span class="die">die Automatisierung (-en)</span></td><td class="reveal-col">automation</td><td class="syn">die Steuerung</td><td class="ex">Die <strong>Automatisierung</strong> spart im Projektmanagement viel Zeit.</td></tr>
-    <tr><td><span class="der">der Meilenstein (-e)</span></td><td class="reveal-col">milestone</td><td class="syn">die Etappe, das Ziel</td><td class="ex">Wir haben unseren wichtigsten <strong>Meilenstein</strong> heute erreicht.</td></tr>
-    <tr><td><span class="die">die Optimierung (-en)</span></td><td class="reveal-col">optimization</td><td class="syn">die Verbesserung</td><td class="ex">Mein Fokus liegt auf der <strong>Optimierung</strong> der internen Prozesse.</td></tr>
-    <tr><td><span class="der">der Stoßfänger (-)</span></td><td class="reveal-col">bumper (car)</td><td class="syn">die Stoßstange</td><td class="ex">Das Design des <strong>Stoßfängers</strong> ist wichtig für die Sicherheit.</td></tr>
-    </table>
-</div>
-
-<!-- Adjectives Section -->
-<div id="sec-adjektive" class="vokabel-section">
-    <h2>Adjektive</h2>
-    <table>
-    <tr><th>Wort</th><th>Bedeutung</th><th>Gegenteil</th><th>Beispielsatz</th></tr>
-    <tr><td><strong>zuverlässig</strong></td><td class="reveal-col">reliable</td><td class="syn">unzuverlässig</td><td class="ex">Meine Kollegin ist sehr <strong>zuverlässig</strong>, sie kommt nie zu spät.</td></tr>
-    <tr><td><strong>gründlich</strong></td><td class="reveal-col">thorough</td><td class="syn">oberflächlich, flüchtig</td><td class="ex">Der Arzt hat die Untersuchung sehr <strong>gründlich</strong> durchgeführt.</td></tr>
-    <tr><td><strong>erforderlich</strong></td><td class="reveal-col">required, necessary</td><td class="syn">unnötig, freiwillig</td><td class="ex">Für die Anmeldung ist ein gültiger Ausweis <strong>erforderlich</strong>.</td></tr>
-    <tr><td><strong>gering</strong></td><td class="reveal-col">low, small (amount)</td><td class="syn">hoch, groß, viel</td><td class="ex">Die Wahrscheinlichkeit für Regen ist heute eher <strong>gering</strong>.</td></tr>
-    <tr><td><strong>freiwillig</strong></td><td class="reveal-col">voluntary</td><td class="syn">verpflichtend, gezwungen</td><td class="ex">Die Teilnahme an dem Kurs ist <strong>freiwillig</strong> und kostet nichts.</td></tr>
-    <tr><td><strong>verpflichtend</strong></td><td class="reveal-col">mandatory</td><td class="syn">freiwillig, optional</td><td class="ex">Die Impfung ist für dieses Land leider <strong>verpflichtend</strong>.</td></tr>
-    <tr><td><strong>dringend</strong></td><td class="reveal-col">urgent</td><td class="syn">unwichtig, gelassen</td><td class="ex">Er braucht <strong>dringend</strong> einen Termin, weil die Frist bald endet.</td></tr>
-    <tr><td><strong>ausführlich</strong></td><td class="reveal-col">detailed</td><td class="syn">kurz, knapp</td><td class="ex">Die Lehrerin hat die Aufgabe noch einmal <strong>ausführlich</strong> erklärt.</td></tr>
-    <tr><td><strong>selbstständig</strong></td><td class="reveal-col">independent</td><td class="syn">abhängig, angestellt</td><td class="ex">Sie arbeitet <strong>selbstständig</strong> und hat keinen festen Chef.</td></tr>
-    <tr><td><strong>geeignet</strong></td><td class="reveal-col">suitable</td><td class="syn">ungeeignet, falsch</td><td class="ex">Dieser Kurs ist auch für Anfänger <strong>geeignet</strong>.</td></tr>
-    <tr><td><strong>vorläufig</strong></td><td class="reveal-col">temporary, provisional</td><td class="syn">endgültig, definitiv</td><td class="ex">Das ist erst ein <strong>vorläufiges</strong> Ergebnis, die genaue Zahl folgt später.</td></tr>
-    <tr><td><strong>gültig</strong></td><td class="reveal-col">valid</td><td class="syn">ungültig, abgelaufen</td><td class="ex">Der Ausweis ist nur noch bis Ende des Jahres <strong>gültig</strong>.</td></tr>
-    <tr><td><strong>üblich</strong></td><td class="reveal-col">usual, common</td><td class="syn">unüblich, selten</td><td class="ex">Es ist in Deutschland <strong>üblich</strong>, sich für Termine vorher anzumelden.</td></tr>
-    <tr><td><strong>widersprüchlich</strong></td><td class="reveal-col">contradictory</td><td class="syn">einstimmig, logisch</td><td class="ex">Die Angaben in den beiden Dokumenten sind leider <strong>widersprüchlich</strong>.</td></tr>
-    <tr><td><strong>rücksichtsvoll</strong></td><td class="reveal-col">considerate</td><td class="syn">rücksichtslos, egoistisch</td><td class="ex">Er ist ein <strong>rücksichtsvoller</strong> Nachbar, der nie laute Musik spielt.</td></tr>
-    <tr><td><strong>beruflich</strong></td><td class="reveal-col">professional, work-related</td><td class="syn">privat, persönlich</td><td class="ex">Sie ist <strong>beruflich</strong> viel unterwegs und selten im Büro.</td></tr>
-    <tr><td><strong>angemessen</strong></td><td class="reveal-col">appropriate, reasonable</td><td class="syn">unangemessen, übertrieben</td><td class="ex">Die Miete für diese Wohnung ist für die Lage <strong>angemessen</strong>.</td></tr>
-    <tr><td><strong>unabhängig</strong></td><td class="reveal-col">independent</td><td class="syn">abhängig, gebunden</td><td class="ex">Er möchte finanziell <strong>unabhängig</strong> von seinen Eltern sein.</td></tr>
-    <tr><td><strong>überzeugend</strong></td><td class="reveal-col">convincing</td><td class="syn">schwach, unglaubwürdig</td><td class="ex">Ihre Argumente im Gespräch waren sehr <strong>überzeugend</strong>.</td></tr>
-    <tr><td><strong>belastend</strong></td><td class="reveal-col">stressful, burdensome</td><td class="syn">entspannend, leicht</td><td class="ex">Die lange Pendelzeit ist für ihn ziemlich <strong>belastend</strong>.</td></tr>
-    <tr><td><strong>vorhanden</strong></td><td class="reveal-col">available, existing</td><td class="syn">fehlend, abwesend</td><td class="ex">In der Küche ist bereits ein Kühlschrank <strong>vorhanden</strong>.</td></tr>
-    <tr><td><strong>fristgerecht</strong></td><td class="reveal-col">on time, within deadline</td><td class="syn">verspätet, zu spät</td><td class="ex">Die Unterlagen müssen <strong>fristgerecht</strong> bei der Behörde eingereicht werden.</td></tr>
-    <tr><td><strong>nachvollziehbar</strong></td><td class="reveal-col">understandable</td><td class="syn">unverständlich, unlogisch</td><td class="ex">Seine Entscheidung, zu kündigen, ist für mich gut <strong>nachvollziehbar</strong>.</td></tr>
-    <tr><td><strong>hilfsbereit</strong></td><td class="reveal-col">helpful</td><td class="syn">egoistisch, abweisend</td><td class="ex">Die neuen Nachbarn sind sehr <strong>hilfsbereit</strong> und freundlich.</td></tr>
-    <tr><td><strong>unzufrieden</strong></td><td class="reveal-col">dissatisfied</td><td class="syn">zufrieden, glücklich</td><td class="ex">Viele Mitarbeiter sind mit der neuen Regelung <strong>unzufrieden</strong>.</td></tr>
-    
-    <!-- NEW PERSONALIZED ADJECTIVES -->
-    <tr><td><strong>effizient</strong></td><td class="reveal-col">efficient</td><td class="syn">ineffizient, verschwenderisch</td><td class="ex">Das neue Design des Propellers ist extrem <strong>effizient</strong>.</td></tr>
-    <tr><td><strong>komplex</strong></td><td class="reveal-col">complex</td><td class="syn">einfach, simpel</td><td class="ex">Die Architektur der neuen Datenbank ist sehr <strong>komplex</strong>.</td></tr>
-    <tr><td><strong>pflanzlich</strong></td><td class="reveal-col">plant-based</td><td class="syn">tierisch</td><td class="ex">Ich trinke meinen Kaffee am liebsten mit <strong>pflanzlicher</strong> Milch.</td></tr>
-    <tr><td><strong>hochauflösend</strong></td><td class="reveal-col">high-resolution</td><td class="syn">unscharf, verpixelt</td><td class="ex">Der neue Fernseher hat ein <strong>hochauflösendes</strong> Display.</td></tr>
-    <tr><td><strong>fließend</strong></td><td class="reveal-col">fluent</td><td class="syn">stockend, gebrochen</td><td class="ex">Er spricht <strong>fließend</strong> Englisch und lernt jetzt Deutsch.</td></tr>
-    <tr><td><strong>sportlich</strong></td><td class="reveal-col">sporty, athletic</td><td class="syn">unsportlich, faul</td><td class="ex">Am Wochenende bin ich oft <strong>sportlich</strong> aktiv.</td></tr>
-    <tr><td><strong>traditionell</strong></td><td class="reveal-col">traditional</td><td class="syn">modern, innovativ</td><td class="ex">Wir kochen am Samstag oft <strong>traditionelle</strong> Gerichte.</td></tr>
-    <tr><td><strong>übersichtlich</strong></td><td class="reveal-col">clear, well-arranged</td><td class="syn">unübersichtlich, chaotisch</td><td class="ex">Das neue Layout macht den Bericht viel <strong>übersichtlicher</strong>.</td></tr>
-    </table>
-</div>
-
-<div id="sec-verben" class="vokabel-section">
-    <h2>Verben</h2>
-    <table>
-    <tr><th>Wort</th><th>Perfekt</th><th>Bedeutung</th><th>Beispielsatz</th></tr>
-    <tr><td><strong>beantragen</strong></td><td>hat beantragt</td><td class="reveal-col">to apply for (official)</td><td class="ex">Er möchte nächste Woche ein neues Visum <strong>beantragen</strong>.</td></tr>
-    <tr><td><strong>erledigen</strong></td><td>hat erledigt</td><td class="reveal-col">to take care of, finish</td><td class="ex">Ich muss noch schnell ein paar Sachen im Amt <strong>erledigen</strong>.</td></tr>
-    <tr><td><strong>vermeiden</strong></td><td>hat vermieden</td><td class="reveal-col">to avoid</td><td class="ex">Um Stress zu <strong>vermeiden</strong>, plant sie ihre Termine früh im Voraus.</td></tr>
-    <tr><td><strong>bestehen</strong></td><td>hat bestanden</td><td class="reveal-col">to pass (an exam)</td><td class="ex">Wenn er fleißig lernt, wird er die Prüfung sicher <strong>bestehen</strong>.</td></tr>
-    <tr><td><strong>berücksichtigen</strong></td><td>hat berücksichtigt</td><td class="reveal-col">to take into account</td><td class="ex">Bei der Planung sollte man auch das Wetter <strong>berücksichtigen</strong>.</td></tr>
-    <tr><td><strong>einreichen</strong></td><td>hat eingereicht</td><td class="reveal-col">to submit</td><td class="ex">Sie muss den Antrag bis Freitag beim Amt <strong>einreichen</strong>.</td></tr>
-    <tr><td><strong>überprüfen</strong></td><td>hat überprüft</td><td class="reveal-col">to check, verify</td><td class="ex">Der Sachbearbeiter <strong>überprüft</strong> alle Unterlagen, bevor er entscheidet.</td></tr>
-    <tr><td><strong>unterschreiben</strong></td><td>hat unterschrieben</td><td class="reveal-col">to sign</td><td class="ex">Bitte <strong>unterschreiben</strong> Sie den Vertrag auf der letzten Seite.</td></tr>
-    <tr><td><strong>verlängern</strong></td><td>hat verlängert</td><td class="reveal-col">to extend, renew</td><td class="ex">Sie möchte ihren Aufenthaltstitel um zwei Jahre <strong>verlängern</strong>.</td></tr>
-    <tr><td><strong>kündigen</strong></td><td>hat gekündigt</td><td class="reveal-col">to terminate, quit</td><td class="ex">Er hat seine Stelle <strong>gekündigt</strong>, um sich selbstständig zu machen.</td></tr>
-    <tr><td><strong>verzichten</strong></td><td>hat verzichtet</td><td class="reveal-col">to do without, give up</td><td class="ex">Sie <strong>verzichtet</strong> dieses Jahr auf den Urlaub, um Geld zu sparen.</td></tr>
-    <tr><td><strong>ausfüllen</strong></td><td>hat ausgefüllt</td><td class="reveal-col">to fill out (a form)</td><td class="ex">Bitte <strong>füllen</strong> Sie das Formular vollständig <strong>aus</strong>.</td></tr>
-    <tr><td><strong>abschließen</strong></td><td>hat abgeschlossen</td><td class="reveal-col">to complete, conclude</td><td class="ex">Er hat seine Ausbildung letztes Jahr erfolgreich <strong>abgeschlossen</strong>.</td></tr>
-    <tr><td><strong>abschließen</strong></td><td>hat abgeschlossen</td><td class="reveal-col">to lock (a door)</td><td class="ex">Vergiss nicht, die Wohnungstür <strong>abzuschließen</strong>, bevor du gehst.</td></tr>
-    <tr><td><strong>überweisen</strong></td><td>hat überwiesen</td><td class="reveal-col">to transfer (money)</td><td class="ex">Bitte <strong>überweisen</strong> Sie die Miete bis zum dritten Werktag.</td></tr>
-    <tr><td><strong>beraten</strong></td><td>hat beraten</td><td class="reveal-col">to advise</td><td class="ex">Die Mitarbeiterin hat mich ausführlich zu meinen Möglichkeiten <strong>beraten</strong>.</td></tr>
-    <tr><td><strong>vereinbaren</strong></td><td>hat vereinbart</td><td class="reveal-col">to arrange, agree on</td><td class="ex">Wir haben einen neuen Termin für nächste Woche <strong>vereinbart</strong>.</td></tr>
-    <tr><td><strong>nachweisen</strong></td><td>hat nachgewiesen</td><td class="reveal-col">to prove, provide evidence</td><td class="ex">Er musste seine Sprachkenntnisse mit einem Zertifikat <strong>nachweisen</strong>.</td></tr>
-    <tr><td><strong>versäumen</strong></td><td>hat versäumt</td><td class="reveal-col">to miss (a deadline/chance)</td><td class="ex">Wenn Sie die Frist <strong>versäumen</strong>, verlieren Sie den Anspruch.</td></tr>
-    <tr><td><strong>einhalten</strong></td><td>hat eingehalten</td><td class="reveal-col">to comply with, meet (a deadline)</td><td class="ex">Es ist wichtig, die vereinbarte Frist <strong>einzuhalten</strong>.</td></tr>
-    <tr><td><strong>beeinflussen</strong></td><td>hat beeinflusst</td><td class="reveal-col">to influence</td><td class="ex">Das Wetter kann die Stimmung stark <strong>beeinflussen</strong>.</td></tr>
-    <tr><td><strong>gestalten</strong></td><td>hat gestaltet</td><td class="reveal-col">to design, organize</td><td class="ex">Sie <strong>gestaltet</strong> ihre Arbeitszeit ganz flexibel.</td></tr>
-    <tr><td><strong>erfordern</strong></td><td>hat erfordert</td><td class="reveal-col">to require</td><td class="ex">Die neue Stelle <strong>erfordert</strong> gute Kenntnisse in Excel.</td></tr>
-    <tr><td><strong>verursachen</strong></td><td>hat verursacht</td><td class="reveal-col">to cause</td><td class="ex">Der Stau wurde durch einen Unfall auf der Autobahn <strong>verursacht</strong>.</td></tr>
-    <tr><td><strong>ermöglichen</strong></td><td>hat ermöglicht</td><td class="reveal-col">to enable, make possible</td><td class="ex">Das Stipendium <strong>ermöglicht</strong> ihr ein Studium im Ausland.</td></tr>
-    <tr><td><strong>widersprechen</strong></td><td>hat widersprochen</td><td class="reveal-col">to contradict, object</td><td class="ex">Er hat dem Bescheid des Amtes schriftlich <strong>widersprochen</strong>.</td></tr>
-    <tr><td><strong>abnehmen</strong></td><td>hat abgenommen</td><td class="reveal-col">to lose weight</td><td class="ex">Seit sie täglich joggt, hat sie fünf Kilo <strong>abgenommen</strong>.</td></tr>
-    <tr><td><strong>abnehmen</strong></td><td>hat abgenommen</td><td class="reveal-col">to take off, remove</td><td class="ex">Er <strong>nimmt</strong> beim Betreten der Wohnung immer die Schuhe <strong>ab</strong>.</td></tr>
-    <tr><td><strong>abnehmen</strong></td><td>hat abgenommen</td><td class="reveal-col">to decrease</td><td class="ex">Die Zahl der Bewerbungen hat in diesem Jahr deutlich <strong>abgenommen</strong>.</td></tr>
-    <tr><td><strong>abnehmen</strong></td><td>hat abgenommen</td><td class="reveal-col">to answer (the phone)</td><td class="ex">Er hat den Anruf nicht <strong>abgenommen</strong>, weil er im Meeting war.</td></tr>
-    <tr><td><strong>aufnehmen</strong></td><td>hat aufgenommen</td><td class="reveal-col">to take up, start</td><td class="ex">Sie <strong>nimmt</strong> im Herbst ihr Studium an der Universität <strong>auf</strong>.</td></tr>
-    <tr><td><strong>aufnehmen</strong></td><td>hat aufgenommen</td><td class="reveal-col">to record</td><td class="ex">Das Gespräch wurde zu Schulungszwecken <strong>aufgenommen</strong>.</td></tr>
-    <tr><td><strong>aufnehmen</strong></td><td>hat aufgenommen</td><td class="reveal-col">to take in, accept</td><td class="ex">Die Familie hat einen Austauschschüler bei sich <strong>aufgenommen</strong>.</td></tr>
-    <tr><td><strong>anmelden</strong></td><td>hat angemeldet</td><td class="reveal-col">to register (a person/thing)</td><td class="ex">Nach dem Umzug muss man sich innerhalb von zwei Wochen <strong>anmelden</strong>.</td></tr>
-    <tr><td><strong>anmelden</strong></td><td>hat angemeldet</td><td class="reveal-col">to enroll (in a course)</td><td class="ex">Sie hat sich für den Deutschkurs im Herbst <strong>angemeldet</strong>.</td></tr>
-    <tr><td><strong>abmelden</strong></td><td>hat abgemeldet</td><td class="reveal-col">to deregister</td><td class="ex">Vor dem Wegzug ins Ausland muss man sich beim Bürgeramt <strong>abmelden</strong>.</td></tr>
-    <tr><td><strong>umziehen</strong></td><td>ist umgezogen</td><td class="reveal-col">to move (house)</td><td class="ex">Nächsten Monat <strong>zieht</strong> die Familie in eine größere Wohnung <strong>um</strong>.</td></tr>
-    <tr><td><strong>umziehen</strong></td><td>hat umgezogen</td><td class="reveal-col">to change clothes</td><td class="ex">Nach dem Sport <strong>zieht</strong> er sich schnell <strong>um</strong>.</td></tr>
-    <tr><td><strong>ausziehen</strong></td><td>ist ausgezogen</td><td class="reveal-col">to move out</td><td class="ex">Sie ist mit achtzehn bei ihren Eltern <strong>ausgezogen</strong>.</td></tr>
-    <tr><td><strong>ausziehen</strong></td><td>hat ausgezogen</td><td class="reveal-col">to take off (clothes)</td><td class="ex">Bitte <strong>ziehen</strong> Sie im Wartezimmer schon die Jacke <strong>aus</strong>.</td></tr>
-    <tr><td><strong>einziehen</strong></td><td>ist eingezogen</td><td class="reveal-col">to move in</td><td class="ex">Nächste Woche <strong>zieht</strong> das neue Paar in die Wohnung nebenan <strong>ein</strong>.</td></tr>
-    <tr><td><strong>vorlegen</strong></td><td>hat vorgelegt</td><td class="reveal-col">to present, submit (a document)</td><td class="ex">Am Schalter muss man den Ausweis <strong>vorlegen</strong>.</td></tr>
-    <tr><td><strong>vorschlagen</strong></td><td>hat vorgeschlagen</td><td class="reveal-col">to suggest</td><td class="ex">Der Kollege hat einen neuen Termin für das Meeting <strong>vorgeschlagen</strong>.</td></tr>
-    <tr><td><strong>vorbereiten</strong></td><td>hat vorbereitet</td><td class="reveal-col">to prepare</td><td class="ex">Sie <strong>bereitet</strong> sich seit Wochen auf die Prüfung <strong>vor</strong>.</td></tr>
-    <tr><td><strong>durchführen</strong></td><td>hat durchgeführt</td><td class="reveal-col">to carry out, conduct</td><td class="ex">Die Behörde <strong>führt</strong> regelmäßig Kontrollen <strong>durch</strong>.</td></tr>
-    <tr><td><strong>durchsetzen</strong></td><td>hat durchgesetzt</td><td class="reveal-col">to enforce, get through</td><td class="ex">Er konnte seine Forderung leider nicht <strong>durchsetzen</strong>.</td></tr>
-    <tr><td><strong>durchsetzen</strong></td><td>hat sich durchgesetzt</td><td class="reveal-col">to prevail, assert oneself</td><td class="ex">Trotz vieler Konkurrenten hat sie sich im Bewerbungsverfahren <strong>durchgesetzt</strong>.</td></tr>
-    <tr><td><strong>klären</strong></td><td>hat geklärt</td><td class="reveal-col">to clarify</td><td class="ex">Wir sollten diese Frage vor dem Termin telefonisch <strong>klären</strong>.</td></tr>
-    <tr><td><strong>bearbeiten</strong></td><td>hat bearbeitet</td><td class="reveal-col">to process, handle</td><td class="ex">Der Antrag wird momentan von der Behörde <strong>bearbeitet</strong>.</td></tr>
-    <tr><td><strong>zustellen</strong></td><td>hat zugestellt</td><td class="reveal-col">to deliver</td><td class="ex">Die Post wird meistens am Vormittag <strong>zugestellt</strong>.</td></tr>
-    <tr><td><strong>zusenden</strong></td><td>hat zugesendet</td><td class="reveal-col">to send (to someone)</td><td class="ex">Bitte <strong>senden</strong> Sie mir die Unterlagen per E-Mail <strong>zu</strong>.</td></tr>
-    <tr><td><strong>weiterleiten</strong></td><td>hat weitergeleitet</td><td class="reveal-col">to forward</td><td class="ex">Ich habe die E-Mail direkt an die zuständige Kollegin <strong>weitergeleitet</strong>.</td></tr>
-    <tr><td><strong>informieren</strong></td><td>hat informiert</td><td class="reveal-col">to inform</td><td class="ex">Die Schule <strong>informiert</strong> die Eltern über wichtige Termine per Brief.</td></tr>
-    <tr><td><strong>benachrichtigen</strong></td><td>hat benachrichtigt</td><td class="reveal-col">to notify</td><td class="ex">Der Vermieter hat die Mieter über die Reparatur <strong>benachrichtigt</strong>.</td></tr>
-    <tr><td><strong>mitteilen</strong></td><td>hat mitgeteilt</td><td class="reveal-col">to inform, announce</td><td class="ex">Bitte <strong>teilen</strong> Sie uns Ihre neue Adresse rechtzeitig <strong>mit</strong>.</td></tr>
-    <tr><td><strong>beantworten</strong></td><td>hat beantwortet</td><td class="reveal-col">to answer</td><td class="ex">Er hat meine Fragen zum Vertrag ausführlich <strong>beantwortet</strong>.</td></tr>
-    <tr><td><strong>bestätigen</strong></td><td>hat bestätigt</td><td class="reveal-col">to confirm</td><td class="ex">Bitte <strong>bestätigen</strong> Sie den Termin per E-Mail.</td></tr>
-    <tr><td><strong>ablehnen</strong></td><td>hat abgelehnt</td><td class="reveal-col">to reject</td><td class="ex">Das Amt hat ihren Antrag leider <strong>abgelehnt</strong>.</td></tr>
-    <tr><td><strong>genehmigen</strong></td><td>hat genehmigt</td><td class="reveal-col">to approve</td><td class="ex">Der Chef hat den zusätzlichen Urlaubstag <strong>genehmigt</strong>.</td></tr>
-    <tr><td><strong>überzeugen</strong></td><td>hat überzeugt</td><td class="reveal-col">to convince</td><td class="ex">Mit guten Argumenten konnte sie den Kollegen <strong>überzeugen</strong>.</td></tr>
-    <tr><td><strong>überprüfen</strong></td><td>hat überprüft</td><td class="reveal-col">to double-check</td><td class="ex">Bevor Sie senden, <strong>überprüfen</strong> Sie bitte alle Angaben noch einmal.</td></tr>
-    <tr><td><strong>festlegen</strong></td><td>hat festgelegt</td><td class="reveal-col">to determine, set (a date/rule)</td><td class="ex">Die genaue Uhrzeit wird noch gemeinsam <strong>festgelegt</strong>.</td></tr>
-    <tr><td><strong>verschieben</strong></td><td>hat verschoben</td><td class="reveal-col">to postpone</td><td class="ex">Wegen Krankheit musste der Termin auf nächste Woche <strong>verschoben</strong> werden.</td></tr>
-    <tr><td><strong>absagen</strong></td><td>hat abgesagt</td><td class="reveal-col">to cancel</td><td class="ex">Sie musste den Termin kurzfristig <strong>absagen</strong>.</td></tr>
-    <tr><td><strong>zusagen</strong></td><td>hat zugesagt</td><td class="reveal-col">to accept, confirm attendance</td><td class="ex">Er hat für die Feier am Samstag bereits <strong>zugesagt</strong>.</td></tr>
-    <tr><td><strong>verpflichten</strong></td><td>hat verpflichtet</td><td class="reveal-col">to obligate</td><td class="ex">Der Vertrag <strong>verpflichtet</strong> ihn zu einer Mindestlaufzeit von einem Jahr.</td></tr>
-    <tr><td><strong>befreien</strong></td><td>hat befreit</td><td class="reveal-col">to exempt</td><td class="ex">Schüler mit einem Attest werden vom Schwimmunterricht <strong>befreit</strong>.</td></tr>
-    <tr><td><strong>beziehen</strong></td><td>hat bezogen</td><td class="reveal-col">to receive (benefits)</td><td class="ex">Sie <strong>bezieht</strong> seit der Geburt des Kindes Elterngeld.</td></tr>
-    <tr><td><strong>beziehen</strong></td><td>hat bezogen</td><td class="reveal-col">to move into (a home)</td><td class="ex">Nächsten Monat <strong>beziehen</strong> sie ihre neue Wohnung.</td></tr>
-    <tr><td><strong>ausstellen</strong></td><td>hat ausgestellt</td><td class="reveal-col">to issue (a document)</td><td class="ex">Der neue Ausweis wird direkt am Schalter <strong>ausgestellt</strong>.</td></tr>
-    <tr><td><strong>hinterlassen</strong></td><td>hat hinterlassen</td><td class="reveal-col">to leave (a message/impression)</td><td class="ex">Er hat mir eine kurze Nachricht auf dem Anrufbeantworter <strong>hinterlassen</strong>.</td></tr>
-    <tr><td><strong>abholen</strong></td><td>hat abgeholt</td><td class="reveal-col">to pick up, collect</td><td class="ex">Sie muss den neuen Pass persönlich beim Amt <strong>abholen</strong>.</td></tr>
-    <tr><td><strong>abgeben</strong></td><td>hat abgegeben</td><td class="reveal-col">to hand in, submit</td><td class="ex">Die Steuererklärung muss bis Ende Juli <strong>abgegeben</strong> werden.</td></tr>
-    <tr><td><strong>abgeben</strong></td><td>hat abgegeben</td><td class="reveal-col">to give away, hand over</td><td class="ex">Er hat sein altes Fahrrad an einen Nachbarn <strong>abgegeben</strong>.</td></tr>
-    <tr><td><strong>überlassen</strong></td><td>hat überlassen</td><td class="reveal-col">to leave (a decision) to someone</td><td class="ex">Die Wahl des Restaurants <strong>überlasse</strong> ich dir.</td></tr>
-    <tr><td><strong>berechnen</strong></td><td>hat berechnet</td><td class="reveal-col">to calculate, charge</td><td class="ex">Die Firma <strong>berechnet</strong> für die Lieferung eine kleine Gebühr.</td></tr>
-    <tr><td><strong>einschätzen</strong></td><td>hat eingeschätzt</td><td class="reveal-col">to assess, estimate</td><td class="ex">Der Anwalt <strong>schätzt</strong> die Erfolgschancen der Klage als gering <strong>ein</strong>.</td></tr>
-    <tr><td><strong>voraussetzen</strong></td><td>hat vorausgesetzt</td><td class="reveal-col">to presuppose, require</td><td class="ex">Die Stelle <strong>setzt</strong> gute Deutschkenntnisse <strong>voraus</strong>.</td></tr>
-    <tr><td><strong>gewährleisten</strong></td><td>hat gewährleistet</td><td class="reveal-col">to ensure, guarantee</td><td class="ex">Der Betrieb muss die Sicherheit der Mitarbeiter <strong>gewährleisten</strong>.</td></tr>
-    <tr><td><strong>verfügen</strong></td><td>hat verfügt</td><td class="reveal-col">to have at one's disposal</td><td class="ex">Er <strong>verfügt</strong> über langjährige Erfahrung in dieser Branche.</td></tr>
-    <tr><td><strong>bewilligen</strong></td><td>hat bewilligt</td><td class="reveal-col">to grant, approve</td><td class="ex">Der Kredit wurde von der Bank ohne Probleme <strong>bewilligt</strong>.</td></tr>
-    <tr><td><strong>zurückziehen</strong></td><td>hat zurückgezogen</td><td class="reveal-col">to withdraw (an application)</td><td class="ex">Sie hat ihre Bewerbung nach dem Gespräch wieder <strong>zurückgezogen</strong>.</td></tr>
-    <tr><td><strong>einlegen</strong></td><td>hat eingelegt</td><td class="reveal-col">to file (an objection)</td><td class="ex">Gegen den Bescheid kann man Widerspruch <strong>einlegen</strong>.</td></tr>
-    <tr><td><strong>überschreiten</strong></td><td>hat überschritten</td><td class="reveal-col">to exceed</td><td class="ex">Mit diesem Verdienst <strong>überschreitet</strong> er die Einkommensgrenze.</td></tr>
-    <tr><td><strong>einhalten</strong></td><td>hat eingehalten</td><td class="reveal-col">to keep, observe (rules)</td><td class="ex">Die Firma muss die gesetzlichen Vorschriften <strong>einhalten</strong>.</td></tr>
-    <tr><td><strong>anpassen</strong></td><td>hat angepasst</td><td class="reveal-col">to adjust</td><td class="ex">Die Miete wurde an die aktuelle Marktlage <strong>angepasst</strong>.</td></tr>
-    <tr><td><strong>reduzieren</strong></td><td>hat reduziert</td><td class="reveal-col">to reduce</td><td class="ex">Sie möchte nach der Geburt ihre Arbeitszeit <strong>reduzieren</strong>.</td></tr>
-    <tr><td><strong>erhöhen</strong></td><td>hat erhöht</td><td class="reveal-col">to increase</td><td class="ex">Der Vermieter darf die Miete nicht ohne Grund <strong>erhöhen</strong>.</td></tr>
-    <tr><td><strong>senken</strong></td><td>hat gesenkt</td><td class="reveal-col">to lower, decrease</td><td class="ex">Die Firma musste wegen der Krise die Preise <strong>senken</strong>.</td></tr>
-    <tr><td><strong>entfallen</strong></td><td>ist entfallen</td><td class="reveal-col">to be cancelled, not apply</td><td class="ex">Wegen Krankheit des Lehrers <strong>entfällt</strong> der Unterricht heute.</td></tr>
-    <tr><td><strong>erlöschen</strong></td><td>ist erloschen</td><td class="reveal-col">to expire, lapse</td><td class="ex">Der Anspruch <strong>erlischt</strong>, wenn man die Frist versäumt.</td></tr>
-    <tr><td><strong>gelten</strong></td><td>hat gegolten</td><td class="reveal-col">to be valid, apply</td><td class="ex">Diese Regelung <strong>gilt</strong> nur für Vollzeitmitarbeiter.</td></tr>
-    <tr><td><strong>erbringen</strong></td><td>hat erbracht</td><td class="reveal-col">to provide, render</td><td class="ex">Sie muss einen Nachweis über ihre Sprachkenntnisse <strong>erbringen</strong>.</td></tr>
-    <tr><td><strong>einreisen</strong></td><td>ist eingereist</td><td class="reveal-col">to enter (a country)</td><td class="ex">Er ist letzten Monat mit einem Touristenvisum <strong>eingereist</strong>.</td></tr>
-    <tr><td><strong>ausreisen</strong></td><td>ist ausgereist</td><td class="reveal-col">to leave (a country)</td><td class="ex">Sie muss vor Ablauf des Visums wieder <strong>ausreisen</strong>.</td></tr>
-    <tr><td><strong>niederlassen</strong></td><td>hat sich niedergelassen</td><td class="reveal-col">to settle (somewhere)</td><td class="ex">Die Familie hat sich vor fünf Jahren in Berlin <strong>niedergelassen</strong>.</td></tr>
-    <tr><td><strong>anerkennen</strong></td><td>hat anerkannt</td><td class="reveal-col">to recognize (officially)</td><td class="ex">Ihr ausländischer Abschluss wurde in Deutschland <strong>anerkannt</strong>.</td></tr>
-    <tr><td><strong>überzeugen</strong></td><td>hat sich überzeugt</td><td class="reveal-col">to make sure (of something)</td><td class="ex">Er hat sich vor der Abgabe noch einmal <strong>überzeugt</strong>, dass alles korrekt ist.</td></tr>
-    <tr><td><strong>begründen</strong></td><td>hat begründet</td><td class="reveal-col">to justify</td><td class="ex">Er musste seine Kündigung schriftlich <strong>begründen</strong>.</td></tr>
-    
-    <!-- NEW PERSONALIZED VERBS -->
-    <tr><td><strong>pürieren</strong></td><td>hat püriert</td><td class="reveal-col">to puree, blend</td><td class="ex">Ich habe den Spinat für das Essen <strong>püriert</strong>.</td></tr>
-    <tr><td><strong>automatisieren</strong></td><td>hat automatisiert</td><td class="reveal-col">to automate</td><td class="ex">Mit diesem Tool kann man Workflows <strong>automatisieren</strong>.</td></tr>
-    <tr><td><strong>visualisieren</strong></td><td>hat visualisiert</td><td class="reveal-col">to visualize</td><td class="ex">Power BI kann komplexe Daten sehr gut <strong>visualisieren</strong>.</td></tr>
-    <tr><td><strong>programmieren</strong></td><td>hat programmiert</td><td class="reveal-col">to program, code</td><td class="ex">Ich habe gestern ein neues Skript in Python <strong>programmiert</strong>.</td></tr>
-    <tr><td><strong>optimieren</strong></td><td>hat optimiert</td><td class="reveal-col">to optimize</td><td class="ex">Mein Ziel ist es, die Entwicklungsprozesse zu <strong>optimieren</strong>.</td></tr>
-    <tr><td><strong>entwerfen</strong></td><td>hat entworfen</td><td class="reveal-col">to design</td><td class="ex">Er hat in Japan viele neue Fahrzeugteile <strong>entworfen</strong>.</td></tr>
-    <tr><td><strong>hochladen</strong></td><td>hat hochgeladen</td><td class="reveal-col">to upload</td><td class="ex">Bitte vergessen Sie nicht, den Code auf GitHub <strong>hochzuladen</strong>.</td></tr>
-    <tr><td><strong>bewerten</strong></td><td>hat bewertet</td><td class="reveal-col">to evaluate, rate</td><td class="ex">Ich habe die Leistung der neuen Kameras <strong>bewertet</strong>.</td></tr>
-    <tr><td><strong>vergleichen</strong></td><td>hat verglichen</td><td class="reveal-col">to compare</td><td class="ex">Wir haben OLED- und Mini-LED-Bildschirme miteinander <strong>verglichen</strong>.</td></tr>
-    <tr><td><strong>abspielen</strong></td><td>hat abgespielt</td><td class="reveal-col">to play (media)</td><td class="ex">Können Sie bitte das Lied auf Spotify <strong>abspielen</strong>?</td></tr>
-    <tr><td><strong>backen</strong></td><td>hat gebacken</td><td class="reveal-col">to bake</td><td class="ex">Am Wochenende <strong>backen</strong> wir oft frische Pizza im Ofen.</td></tr>
-    </table>
-</div>
-
-<div id="sec-praepositionen" class="vokabel-section">
-    <h2>Verben mit Präpositionen</h2>
-    <table>
-    <tr><th>Wort</th><th>Präp. + Kasus</th><th>Bedeutung</th><th>Beispielsatz</th></tr>
-    <tr><td rowspan="2"><strong>sich bewerben</strong></td><td><span class="arrow">um</span> +Akk</td><td class="reveal-col">to apply for (a position)</td><td class="ex">Sie <strong>bewirbt sich</strong> um eine Stelle als Sachbearbeiterin.</td></tr>
-    <tr><td><span class="arrow">bei</span> +Dat</td><td class="reveal-col">to apply at (a company)</td><td class="ex">Er hat sich bei drei verschiedenen Firmen <strong>beworben</strong>.</td></tr>
-    <tr><td><strong>sich kümmern</strong></td><td><span class="arrow">um</span> +Akk</td><td class="reveal-col">to take care of</td><td class="ex">Er <strong>kümmert sich</strong> jeden Tag um seine kranke Mutter.</td></tr>
-    <tr><td><strong>bestehen</strong></td><td><span class="arrow">aus</span> +Dat</td><td class="reveal-col">to consist of</td><td class="ex">Die Prüfung <strong>besteht</strong> aus einem schriftlichen und einem mündlichen Teil.</td></tr>
-    <tr><td><strong>achten</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to pay attention to</td><td class="ex">Beim Ausfüllen des Formulars sollte man auf die Details <strong>achten</strong>.</td></tr>
-    <tr><td><strong>sich beziehen</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to refer to</td><td class="ex">Diese Regel <strong>bezieht sich</strong> nur auf Vollzeitmitarbeiter.</td></tr>
-    <tr><td rowspan="2"><strong>sich freuen</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to look forward to (future)</td><td class="ex">Er <strong>freut sich</strong> schon sehr auf den Urlaub im August.</td></tr>
-    <tr><td><span class="arrow">über</span> +Akk</td><td class="reveal-col">to be happy about (now/past)</td><td class="ex">Sie hat sich sehr über die gute Nachricht <strong>gefreut</strong>.</td></tr>
-    <tr><td rowspan="2"><strong>sich beschweren</strong></td><td><span class="arrow">über</span> +Akk</td><td class="reveal-col">to complain about (something)</td><td class="ex">Der Nachbar <strong>beschwert sich</strong> ständig über den Lärm.</td></tr>
-    <tr><td><span class="arrow">bei</span> +Dat</td><td class="reveal-col">to complain to (someone)</td><td class="ex">Sie <strong>beschwert sich</strong> beim Vermieter über die kaputte Heizung.</td></tr>
-    <tr><td><strong>bitten</strong></td><td><span class="arrow">um</span> +Akk</td><td class="reveal-col">to ask for</td><td class="ex">Ich <strong>bitte</strong> Sie um eine kurze Rückmeldung bis Montag.</td></tr>
-    <tr><td><strong>sich entscheiden</strong></td><td><span class="arrow">für</span> +Akk</td><td class="reveal-col">to decide on</td><td class="ex">Nach langem Überlegen hat sie sich für die kleinere Wohnung <strong>entschieden</strong>.</td></tr>
-    <tr><td><strong>abhängen</strong></td><td><span class="arrow">von</span> +Dat</td><td class="reveal-col">to depend on</td><td class="ex">Die Höhe der Miete <strong>hängt</strong> stark von der Lage <strong>ab</strong>.</td></tr>
-    <tr><td><strong>sich interessieren</strong></td><td><span class="arrow">für</span> +Akk</td><td class="reveal-col">to be interested in</td><td class="ex">Er <strong>interessiert sich</strong> sehr für die Politik seines neuen Landes.</td></tr>
-    <tr><td><strong>teilnehmen</strong></td><td><span class="arrow">an</span> +Dat</td><td class="reveal-col">to take part in</td><td class="ex">Alle Mitarbeiter sollen an der Fortbildung <strong>teilnehmen</strong>.</td></tr>
-    <tr><td><strong>sich gewöhnen</strong></td><td><span class="arrow">an</span> +Akk</td><td class="reveal-col">to get used to</td><td class="ex">Nach ein paar Monaten hat er sich an das kalte Wetter <strong>gewöhnt</strong>.</td></tr>
-    <tr><td><strong>rechnen</strong></td><td><span class="arrow">mit</span> +Dat</td><td class="reveal-col">to expect, count on</td><td class="ex">Mit einer schnellen Antwort der Behörde sollte man nicht <strong>rechnen</strong>.</td></tr>
-    <tr><td><strong>sich verlassen</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to rely on</td><td class="ex">Man kann sich auf ihre Pünktlichkeit immer <strong>verlassen</strong>.</td></tr>
-    <tr><td rowspan="2"><strong>leiden</strong></td><td><span class="arrow">unter</span> +Dat</td><td class="reveal-col">to suffer from/under (a situation)</td><td class="ex">Viele Pendler <strong>leiden</strong> unter dem Stress im Berufsverkehr.</td></tr>
-    <tr><td><span class="arrow">an</span> +Dat</td><td class="reveal-col">to suffer from (an illness)</td><td class="ex">Er <strong>leidet</strong> seit Jahren an einer chronischen Krankheit.</td></tr>
-    <tr><td><strong>bestehen</strong></td><td><span class="arrow">auf</span> +Dat</td><td class="reveal-col">to insist on</td><td class="ex">Der Chef <strong>besteht</strong> auf einer schriftlichen Bestätigung.</td></tr>
-    <tr><td><strong>sich wenden</strong></td><td><span class="arrow">an</span> +Akk</td><td class="reveal-col">to turn to, contact</td><td class="ex">Bei Fragen können Sie sich jederzeit an das Sekretariat <strong>wenden</strong>.</td></tr>
-    <tr><td><strong>verzichten</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to give up, forgo</td><td class="ex">Sie <strong>verzichtet</strong> auf den Bonus, um mehr Urlaub zu bekommen.</td></tr>
-    <tr><td><strong>sorgen</strong></td><td><span class="arrow">für</span> +Akk</td><td class="reveal-col">to take care of, ensure</td><td class="ex">Die Eltern <strong>sorgen</strong> dafür, dass die Kinder pünktlich zur Schule kommen.</td></tr>
-    
-    <!-- NEW PERSONALIZED PREP VERBS -->
-    <tr><td><strong>sich konzentrieren</strong></td><td><span class="arrow">auf</span> +Akk</td><td class="reveal-col">to concentrate on</td><td class="ex">Ich muss mich auf die Datenvisualisierung <strong>konzentrieren</strong>.</td></tr>
-    <tr><td><strong>passen</strong></td><td><span class="arrow">zu</span> +Dat</td><td class="reveal-col">to match, fit with</td><td class="ex">Ihre Erfahrung <strong>passt</strong> perfekt zu den Anforderungen der Stelle.</td></tr>
-    <tr><td><strong>denken</strong></td><td><span class="arrow">an</span> +Akk</td><td class="reveal-col">to think of, remember</td><td class="ex">Bitte <strong>denken</strong> Sie an das wichtige Live-Meeting am Dienstag.</td></tr>
-    <tr><td><strong>diskutieren</strong></td><td><span class="arrow">über</span> +Akk</td><td class="reveal-col">to discuss about</td><td class="ex">Wir haben lange über die neuen Display-Technologien <strong>diskutiert</strong>.</td></tr>
-    </table>
-</div>
+<!-- Dynamic Data Containers -->
+<div id="sec-nomen" class="vokabel-section"><h2>Nomen</h2></div>
+<div id="sec-adjektive" class="vokabel-section"><h2>Adjektive</h2></div>
+<div id="sec-verben" class="vokabel-section"><h2>Verben</h2></div>
+<div id="sec-praepositionen" class="vokabel-section"><h2>Verben mit Präpositionen</h2></div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        function updateProgress() {
-            const checkboxes = document.querySelectorAll('.learned-cb');
-            const total = checkboxes.length;
-            const learned = document.querySelectorAll('.learned-cb:checked').length;
-            const percentNum = total === 0 ? 0 : ((learned / total) * 100);
-            const percentText = Math.round(percentNum); 
-            document.getElementById('progress-count').textContent = learned;
-            document.getElementById('progress-total').textContent = total;
-            document.getElementById('progress-fill').style.width = percentNum + '%';
-            document.getElementById('progress-percentage-text').textContent = percentText + '%';
-            // --- NEW N8N WEBHOOK CONNECTION ---
-            const nomen = document.querySelectorAll('#sec-nomen .learned-cb:checked').length;
-            const adjektive = document.querySelectorAll('#sec-adjektive .learned-cb:checked').length;
-            const verben = document.querySelectorAll('#sec-verben .learned-cb:checked').length;
-            const praep = document.querySelectorAll('#sec-praepositionen .learned-cb:checked').length;
+document.addEventListener('DOMContentLoaded', function() {
+    let vocabData = { nomen: [], adjektive: [], verben: [], praepositionen: [] };
 
-            fetch('http://localhost:5678/webhook/fac25992-a97a-4a4f-b883-959632b0f877', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    nomen: nomen,
-                    adjektive: adjektive,
-                    verben: verben,
-                    praepositionen: praep,
-                    timestamp: new Date().toISOString()
-                })
-            }).catch(e => console.log("Webhook skipped (normal on live site)."));
-            // ----------------------------------
-        }
+    // Strips HTML tags to match the original localStorage keys perfectly
+    function getCleanWord(htmlString) {
+        const temp = document.createElement('div');
+        temp.innerHTML = htmlString;
+        return temp.textContent.trim();
+    }
 
-        const catFilters = document.querySelectorAll('.cat-filter');
-        catFilters.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                const targetSectionId = this.value;
-                const section = document.getElementById(targetSectionId);
-                section.style.display = this.checked ? 'block' : 'none';
+    function updateProgress() {
+        let counts = { nomen: 0, adjektive: 0, verben: 0, praepositionen: 0 };
+        let total = 0, learned = 0;
+
+        // Iterate through the DATA, not the DOM, to prevent filter bugs
+        const categories = ['nomen', 'adjektive', 'verben', 'praepositionen'];
+        categories.forEach(cat => {
+            vocabData[cat].forEach(item => {
+                total++;
+                const uniqueId = 'learned_' + encodeURIComponent(getCleanWord(item.word));
+                if (localStorage.getItem(uniqueId) === 'true') {
+                    counts[cat]++;
+                    learned++;
+                }
+            });
+        });
+
+        // Update UI Text
+        const percentNum = total === 0 ? 0 : ((learned / total) * 100);
+        document.getElementById('progress-count').textContent = learned;
+        document.getElementById('progress-total').textContent = total;
+        document.getElementById('progress-fill').style.width = percentNum + '%';
+        document.getElementById('progress-percentage-text').textContent = Math.round(percentNum) + '%';
+
+        // Trigger n8n Webhook with accurate data
+        fetch('http://localhost:5678/webhook/fac25992-a97a-4a4f-b883-959632b0f877', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nomen: counts.nomen,
+                adjektive: counts.adjektive,
+                verben: counts.verben,
+                praepositionen: counts.praepositionen,
+                timestamp: new Date().toISOString()
+            })
+        }).catch(e => console.log("Webhook skipped."));
+    }
+
+    function renderTable(containerId, data, headers, rowBuilder) {
+        const container = document.getElementById(containerId);
+        let html = '<table><tr><th style="width: 35px; text-align: center;">✔</th>';
+        headers.forEach(h => html += `<th>${h}</th>`);
+        html += '</tr>';
+
+        data.forEach(item => {
+            const uniqueId = 'learned_' + encodeURIComponent(getCleanWord(item.word));
+            const isLearned = localStorage.getItem(uniqueId) === 'true';
+            const rowClass = isLearned ? 'learned' : '';
+            const checked = isLearned ? 'checked' : '';
+
+            html += `<tr class="${rowClass}">
+                <td style="text-align: center;">
+                    <input type="checkbox" class="learned-cb" data-id="${uniqueId}" ${checked}>
+                </td>`;
+            html += rowBuilder(item);
+            html += `</tr>`;
+        });
+        html += '</table>';
+        container.innerHTML += html;
+    }
+
+    // Fetch Database and Render
+    fetch('vocab.json')
+        .then(res => res.json())
+        .then(data => {
+            vocabData = data;
+            
+            renderTable('sec-nomen', data.nomen, 
+                ['Wort (Plural)', 'Bedeutung', 'Synonyme / Ähnlich', 'Beispielsatz'], 
+                item => `<td><span class="${item.genderClass}">${item.word}</span></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.synonyms}</td><td class="ex">${item.example}</td>`
+            );
+            
+            renderTable('sec-adjektive', data.adjektive, 
+                ['Wort', 'Bedeutung', 'Gegenteil', 'Beispielsatz'], 
+                item => `<td><strong>${item.word}</strong></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.opposite}</td><td class="ex">${item.example}</td>`
+            );
+            
+            renderTable('sec-verben', data.verben, 
+                ['Wort', 'Perfekt', 'Bedeutung', 'Beispielsatz'], 
+                item => `<td><strong>${item.word}</strong></td><td>${item.perfekt}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
+            );
+            
+            renderTable('sec-praepositionen', data.praepositionen, 
+                ['Wort', 'Präp. + Kasus', 'Bedeutung', 'Beispielsatz'], 
+                item => `<td>${item.word}</td><td>${item.prep}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
+            );
+
+            // Attach checkbox event listeners
+            document.querySelectorAll('.learned-cb').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const tr = this.closest('tr');
+                    if (this.checked) {
+                        tr.classList.add('learned');
+                        localStorage.setItem(this.getAttribute('data-id'), 'true');
+                    } else {
+                        tr.classList.remove('learned');
+                        localStorage.removeItem(this.getAttribute('data-id'));
+                    }
+                    updateProgress();
+                });
+            });
+
+            setupUI();
+            updateProgress(); // Initial trigger
+        });
+
+    function setupUI() {
+        document.querySelectorAll('.cat-filter').forEach(cb => {
+            cb.addEventListener('change', function() {
+                document.getElementById(this.value).style.display = this.checked ? 'block' : 'none';
                 setTimeout(updateStickyOffsets, 50);
             });
         });
 
-        const quizToggle = document.getElementById('quizModeToggle');
-        quizToggle.addEventListener('change', function() {
+        document.getElementById('quizModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('quiz-mode', this.checked);
         });
 
-        const tables = document.querySelectorAll('table');
-        tables.forEach((table) => {
-            const rows = table.querySelectorAll('tr');
-            rows.forEach((row, rowIndex) => {
-                if (rowIndex === 0) {
-                    const th = document.createElement('th');
-                    th.innerHTML = '✔';
-                    th.style.width = '35px'; 
-                    th.style.textAlign = 'center';
-                    row.insertBefore(th, row.firstChild);
-                } else {
-                    const td = document.createElement('td');
-                    td.style.textAlign = 'center';
-                    const cb = document.createElement('input');
-                    cb.type = 'checkbox';
-                    cb.className = 'learned-cb';
-                    const wordText = row.cells[0].textContent.trim();
-                    const uniqueId = 'learned_' + encodeURIComponent(wordText);
-                    
-                    if (localStorage.getItem(uniqueId) === 'true') {
-                        cb.checked = true;
-                        row.classList.add('learned');
-                    }
-                    
-                    cb.addEventListener('change', function() {
-                        if (this.checked) {
-                            row.classList.add('learned');
-                            localStorage.setItem(uniqueId, 'true');
-                        } else {
-                            row.classList.remove('learned');
-                            localStorage.removeItem(uniqueId);
-                        }
-                        updateProgress(); 
-                    });
-                    td.appendChild(cb);
-                    row.insertBefore(td, row.firstChild);
-                }
-            });
-        });
-        
-        updateProgress();
-
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', function() {
+        document.getElementById('searchInput').addEventListener('input', function() {
             const term = this.value.toLowerCase();
-            const sections = document.querySelectorAll('.vokabel-section');
-            sections.forEach(section => {
-                const rows = section.querySelectorAll('table tr');
-                for(let i = 1; i < rows.length; i++) {
-                    const row = rows[i];
-                    row.style.display = row.textContent.toLowerCase().includes(term) ? '' : 'none';
-                }
+            document.querySelectorAll('.vokabel-section table tr').forEach(row => {
+                if (row.querySelector('th')) return;
+                row.style.display = row.textContent.toLowerCase().includes(term) ? '' : 'none';
             });
             setTimeout(updateStickyOffsets, 50);
         });
@@ -667,17 +263,13 @@ strong { color: #111; }
             const stickyHeader = document.getElementById('sticky-header');
             if (stickyHeader) {
                 const headerHeight = stickyHeader.offsetHeight;
-                document.querySelectorAll('th').forEach(th => {
-                    th.style.top = headerHeight + 'px';
-                });
+                document.querySelectorAll('th').forEach(th => th.style.top = headerHeight + 'px');
             }
         }
-        
         updateStickyOffsets();
         window.addEventListener('resize', updateStickyOffsets);
-        setTimeout(updateStickyOffsets, 150);
-    });
+    }
+});
 </script>
-
 </body>
 </html>

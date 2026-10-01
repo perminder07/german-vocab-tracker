@@ -1,19 +1,34 @@
 #!/bin/bash
 
-# 1. Get the current day of the month (e.g., "01", "15", "30")
-DAY=$(date +%d)
+# 1. Run your background data pipeline
+python3 generate_chart.py
 
-# 2. Only run the Python script if today is exactly the 1st or 15th
-if [ "$DAY" = "01" ] || [ "$DAY" = "15" ]; then
-    echo "Scheduled date detected. Generating new vocabulary chart..."
-    python3 generate_chart.py
+# 2. Check if vocabulary data was modified
+if git status --porcelain | grep -q "vocab.json"; then
+    echo "New vocabulary detected. Automating PATCH release..."
+    
+    # Run the version bumper
+    python3 bump_version.py patch
+    
+    # Read the newly generated version number
+    NEW_VERSION=$(cat version.txt)
+    
+    # Stage and commit the vocabulary and version files
+    git add vocab.json version.txt README.md index.html
+    git commit -m "Add new vocabulary (Auto-Release v${NEW_VERSION})"
+    
+    # Attach the tag
+    git tag -a "v${NEW_VERSION}" -m "Vocabulary Update v${NEW_VERSION}"
+    
+    # Push the changes AND the new tag to GitHub
+    git push origin main --tags
 else
-    echo "Off-schedule run. Skipping chart generation to protect the 15-day timeline."
+    echo "No vocabulary changes detected."
 fi
 
-# 3. Stage and commit any modified files
-git add .
-git commit -m "Repository sync: $(date +'%Y-%m-%d')"
-
-# 4. Push to GitHub
-git push origin main
+# 3. Handle standard chart updates (if any)
+if git status --porcelain | grep -q "progress.csv"; then
+    git add progress.csv progress-chart.png
+    git commit -m "Repository sync: $(date +%Y-%m-%d)"
+    git push origin main
+fi

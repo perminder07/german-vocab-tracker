@@ -1,0 +1,1834 @@
+{
+    "nomen": [
+        {
+            "word": "die Erfahrung (-en)",
+            "genderClass": "die",
+            "meaning": "experience",
+            "synonyms": "die Praxis, das Erlebnis",
+            "example": "Für diese Stelle braucht man mehrere Jahre <strong>Erfahrung</strong> im Verkauf."
+        },
+        {
+            "word": "die Verantwortung (-en)",
+            "genderClass": "die",
+            "meaning": "responsibility",
+            "synonyms": "die Pflicht, die Zuständigkeit",
+            "example": "Als Teamleiter trägt er die <strong>Verantwortung</strong> für zehn Mitarbeiter."
+        },
+        {
+            "word": "die Voraussetzung (-en)",
+            "genderClass": "die",
+            "meaning": "prerequisite",
+            "synonyms": "die Bedingung, das Kriterium",
+            "example": "Gute Deutschkenntnisse sind eine wichtige <strong>Voraussetzung</strong> für diesen Job."
+        },
+        {
+            "word": "der Antrag (Anträge)",
+            "genderClass": "der",
+            "meaning": "application, request",
+            "synonyms": "das Gesuch, die Bewerbung",
+            "example": "Sie muss den <strong>Antrag</strong> auf Elterngeld noch bis Freitag einreichen."
+        },
+        {
+            "word": "der Nachweis (-e)",
+            "genderClass": "der",
+            "meaning": "proof, evidence",
+            "synonyms": "der Beweis, das Zertifikat",
+            "example": "Ohne einen <strong>Nachweis</strong> über die Anmeldung bekommt er keinen Termin."
+        },
+        {
+            "word": "der Termin (-e)",
+            "genderClass": "der",
+            "meaning": "appointment",
+            "synonyms": "die Verabredung, die Frist",
+            "example": "Ich habe morgen einen <strong>Termin</strong> beim Zahnarzt um neun Uhr."
+        },
+        {
+            "word": "die Anmeldung (-en)",
+            "genderClass": "die",
+            "meaning": "registration",
+            "synonyms": "die Registrierung",
+            "example": "Die <strong>Anmeldung</strong> für den Kurs ist ab sofort online möglich."
+        },
+        {
+            "word": "die Bescheinigung (-en)",
+            "genderClass": "die",
+            "meaning": "certificate",
+            "synonyms": "das Zertifikat, der Nachweis",
+            "example": "Für das Kindergeld braucht das Amt eine <strong>Bescheinigung</strong> der Schule."
+        },
+        {
+            "word": "der Vertrag (Verträge)",
+            "genderClass": "der",
+            "meaning": "contract",
+            "synonyms": "die Vereinbarung, das Abkommen",
+            "example": "Bevor du unterschreibst, solltest du den <strong>Vertrag</strong> genau lesen."
+        },
+        {
+            "word": "die Kündigung (-en)",
+            "genderClass": "die",
+            "meaning": "termination, notice",
+            "synonyms": "die Entlassung, der Rücktritt",
+            "example": "Er hat die <strong>Kündigung</strong> seiner Wohnung drei Monate im Voraus geschickt."
+        },
+        {
+            "word": "das Einkommen (-)",
+            "genderClass": "das",
+            "meaning": "income",
+            "synonyms": "das Gehalt, der Lohn, der Verdienst",
+            "example": "Das monatliche <strong>Einkommen</strong> der Familie reicht kaum für die Miete."
+        },
+        {
+            "word": "die Ausbildung (-en)",
+            "genderClass": "die",
+            "meaning": "vocational training",
+            "synonyms": "die Lehre, das Studium",
+            "example": "Nach der Schule beginnt sie eine <strong>Ausbildung</strong> zur Krankenschwester."
+        },
+        {
+            "word": "der Arbeitgeber (-)",
+            "genderClass": "der",
+            "meaning": "employer",
+            "synonyms": "der Chef, das Unternehmen",
+            "example": "Ihr <strong>Arbeitgeber</strong> bietet flexible Arbeitszeiten und Homeoffice an."
+        },
+        {
+            "word": "der Lebenslauf (Lebensläufe)",
+            "genderClass": "der",
+            "meaning": "CV, resume",
+            "synonyms": "die Biografie, das Profil",
+            "example": "Bitte schicken Sie Ihren <strong>Lebenslauf</strong> zusammen mit dem Anschreiben."
+        },
+        {
+            "word": "die Behörde (-n)",
+            "genderClass": "die",
+            "meaning": "authority, agency",
+            "synonyms": "das Amt, die Verwaltung",
+            "example": "Für den neuen Pass muss man persönlich zur <strong>Behörde</strong> gehen."
+        },
+        {
+            "word": "die Frist (-en)",
+            "genderClass": "die",
+            "meaning": "deadline",
+            "synonyms": "der Termin, die Laufzeit",
+            "example": "Die <strong>Frist</strong> für die Steuererklärung endet Ende Juli."
+        },
+        {
+            "word": "die Unterlage (-n)",
+            "genderClass": "die",
+            "meaning": "document",
+            "synonyms": "das Dokument, das Papier",
+            "example": "Bringen Sie bitte alle <strong>Unterlagen</strong> im Original zum Termin mit."
+        },
+        {
+            "word": "der Umzug (Umzüge)",
+            "genderClass": "der",
+            "meaning": "move, relocation",
+            "synonyms": "der Wohnungswechsel",
+            "example": "Der <strong>Umzug</strong> in die neue Wohnung war anstrengend, aber es hat sich gelohnt."
+        },
+        {
+            "word": "die Miete (-n)",
+            "genderClass": "die",
+            "meaning": "rent",
+            "synonyms": "die Pacht",
+            "example": "Die <strong>Miete</strong> steigt jedes Jahr ein wenig in dieser Gegend."
+        },
+        {
+            "word": "der Mietvertrag (-verträge)",
+            "genderClass": "der",
+            "meaning": "rental contract",
+            "synonyms": "der Pachtvertrag",
+            "example": "Bevor sie einzieht, unterschreibt sie den <strong>Mietvertrag</strong> beim Vermieter."
+        },
+        {
+            "word": "die Rücksicht (-en)",
+            "genderClass": "die",
+            "meaning": "consideration",
+            "synonyms": "die Aufmerksamkeit, der Respekt",
+            "example": "Man sollte im Zug auf andere Fahrgäste <strong>Rücksicht</strong> nehmen."
+        },
+        {
+            "word": "der Streit (-e)",
+            "genderClass": "der",
+            "meaning": "argument, dispute",
+            "synonyms": "der Konflikt, die Diskussion",
+            "example": "Der <strong>Streit</strong> zwischen den Nachbarn ging um die laute Musik."
+        },
+        {
+            "word": "die Beschwerde (-n)",
+            "genderClass": "die",
+            "meaning": "complaint",
+            "synonyms": "die Reklamation, die Kritik",
+            "example": "Nach dem schlechten Service hat er eine <strong>Beschwerde</strong> beim Chef eingereicht."
+        },
+        {
+            "word": "der Versicherungsschutz (-)",
+            "genderClass": "der",
+            "meaning": "insurance coverage",
+            "synonyms": "die Absicherung",
+            "example": "Ohne <strong>Versicherungsschutz</strong> kann eine Behandlung im Ausland sehr teuer werden."
+        },
+        {
+            "word": "die Gesundheit (-)",
+            "genderClass": "die",
+            "meaning": "health",
+            "synonyms": "das Wohlbefinden",
+            "example": "Regelmäßiger Sport tut der <strong>Gesundheit</strong> auf lange Sicht gut."
+        },
+        {
+            "word": "der Fortschritt (-e)",
+            "genderClass": "der",
+            "meaning": "progress",
+            "synonyms": "die Entwicklung, die Verbesserung",
+            "example": "Sie macht in ihrem Deutschkurs jede Woche deutliche <strong>Fortschritte</strong>."
+        },
+        {
+            "word": "die Entscheidung (-en)",
+            "genderClass": "die",
+            "meaning": "decision",
+            "synonyms": "der Beschluss, das Urteil",
+            "example": "Die <strong>Entscheidung</strong>, umzuziehen, ist ihm nicht leichtgefallen."
+        },
+        {
+            "word": "der Zweck (-e)",
+            "genderClass": "der",
+            "meaning": "purpose",
+            "synonyms": "das Ziel, das Motiv",
+            "example": "Der <strong>Zweck</strong> des Formulars ist mir noch nicht ganz klar."
+        },
+        {
+            "word": "das Verhalten (-)",
+            "genderClass": "das",
+            "meaning": "behavior",
+            "synonyms": "das Benehmen, die Reaktion",
+            "example": "Sein <strong>Verhalten</strong> während der Prüfung war ruhig und konzentriert."
+        },
+        {
+            "word": "die Rücksprache (-n)",
+            "genderClass": "die",
+            "meaning": "consultation",
+            "synonyms": "die Beratung, das Gespräch",
+            "example": "Ich muss vor der Entscheidung noch <strong>Rücksprache</strong> mit meinem Chef halten."
+        },
+        {
+            "word": "der Aufenthalt (-e)",
+            "genderClass": "der",
+            "meaning": "stay, residence",
+            "synonyms": "die Anwesenheit",
+            "example": "Ihr <strong>Aufenthalt</strong> in Deutschland ist bis nächstes Jahr genehmigt."
+        },
+        {
+            "word": "die Staatsangehörigkeit (-en)",
+            "genderClass": "die",
+            "meaning": "nationality",
+            "synonyms": "die Bürgerschaft, die Nationalität",
+            "example": "Er hat seit letztem Jahr die deutsche <strong>Staatsangehörigkeit</strong>."
+        },
+        {
+            "word": "der Wohnsitz (-e)",
+            "genderClass": "der",
+            "meaning": "place of residence",
+            "synonyms": "die Adresse, der Aufenthaltsort",
+            "example": "Sie muss ihren neuen <strong>Wohnsitz</strong> innerhalb von zwei Wochen anmelden."
+        },
+        {
+            "word": "die Meldebescheinigung (-en)",
+            "genderClass": "die",
+            "meaning": "registration certificate",
+            "synonyms": "die Anmeldebestätigung",
+            "example": "Für die Bankkonto-Eröffnung braucht die Bank eine <strong>Meldebescheinigung</strong>."
+        },
+        {
+            "word": "der Ausweis (-e)",
+            "genderClass": "der",
+            "meaning": "ID card",
+            "synonyms": "der Pass, das Dokument",
+            "example": "Bitte zeigen Sie mir Ihren <strong>Ausweis</strong> am Schalter."
+        },
+        {
+            "word": "die Gebühr (-en)",
+            "genderClass": "die",
+            "meaning": "fee",
+            "synonyms": "die Kosten, der Preis",
+            "example": "Für die Verlängerung des Passes fällt eine <strong>Gebühr</strong> an."
+        },
+        {
+            "word": "die Steuer (-n)",
+            "genderClass": "die",
+            "meaning": "tax",
+            "synonyms": "die Abgabe, der Zoll",
+            "example": "Jeden Monat wird ein Teil des Gehalts als <strong>Steuer</strong> abgezogen."
+        },
+        {
+            "word": "das Finanzamt (-ämter)",
+            "genderClass": "das",
+            "meaning": "tax office",
+            "synonyms": "die Steuerbehörde",
+            "example": "Die Steuererklärung muss beim <strong>Finanzamt</strong> eingereicht werden."
+        },
+        {
+            "word": "der Beleg (-e)",
+            "genderClass": "der",
+            "meaning": "receipt",
+            "synonyms": "die Quittung, die Rechnung",
+            "example": "Ohne <strong>Beleg</strong> kann sie die Kosten nicht zurückfordern."
+        },
+        {
+            "word": "die Rechnung (-en)",
+            "genderClass": "die",
+            "meaning": "invoice, bill",
+            "synonyms": "der Beleg, die Quittung",
+            "example": "Die <strong>Rechnung</strong> für die Reparatur kam erst nach zwei Wochen."
+        },
+        {
+            "word": "das Konto (Konten)",
+            "genderClass": "das",
+            "meaning": "account",
+            "synonyms": "die Bankverbindung",
+            "example": "Er hat ein <strong>Konto</strong> bei einer Onlinebank eröffnet."
+        },
+        {
+            "word": "die Überweisung (-en)",
+            "genderClass": "die",
+            "meaning": "bank transfer",
+            "synonyms": "die Zahlung, der Transfer",
+            "example": "Die <strong>Überweisung</strong> dauert bei dieser Bank meist zwei Werktage."
+        },
+        {
+            "word": "das Gehalt (Gehälter)",
+            "genderClass": "das",
+            "meaning": "salary",
+            "synonyms": "das Einkommen, der Lohn",
+            "example": "Ihr <strong>Gehalt</strong> wird immer am letzten Werktag des Monats überwiesen."
+        },
+        {
+            "word": "die Kündigungsfrist (-en)",
+            "genderClass": "die",
+            "meaning": "notice period",
+            "synonyms": "die Abmeldefrist",
+            "example": "Die <strong>Kündigungsfrist</strong> für die Wohnung beträgt drei Monate."
+        },
+        {
+            "word": "der Vermieter (-)",
+            "genderClass": "der",
+            "meaning": "landlord",
+            "synonyms": "der Eigentümer",
+            "example": "Der <strong>Vermieter</strong> hat die Reparatur der Heizung zugesagt."
+        },
+        {
+            "word": "der Mieter (-)",
+            "genderClass": "der",
+            "meaning": "tenant",
+            "synonyms": "der Bewohner",
+            "example": "Der <strong>Mieter</strong> muss den Schaden dem Vermieter sofort melden."
+        },
+        {
+            "word": "die Nebenkosten (Pl.)",
+            "genderClass": "die",
+            "meaning": "utility costs",
+            "synonyms": "die Betriebskosten",
+            "example": "Die <strong>Nebenkosten</strong> für Heizung und Wasser sind stark gestiegen."
+        },
+        {
+            "word": "der Schaden (Schäden)",
+            "genderClass": "der",
+            "meaning": "damage",
+            "synonyms": "der Defekt, der Nachteil",
+            "example": "Der <strong>Schaden</strong> am Auto wurde von der Versicherung übernommen."
+        },
+        {
+            "word": "die Versicherung (-en)",
+            "genderClass": "die",
+            "meaning": "insurance",
+            "synonyms": "die Absicherung, der Schutz",
+            "example": "Ohne <strong>Versicherung</strong> darf man in Deutschland kein Auto fahren."
+        },
+        {
+            "word": "der Anspruch (Ansprüche)",
+            "genderClass": "der",
+            "meaning": "entitlement, claim",
+            "synonyms": "das Recht, die Forderung",
+            "example": "Sie hat <strong>Anspruch</strong> auf Elterngeld, weil sie vorher gearbeitet hat."
+        },
+        {
+            "word": "die Leistung (-en)",
+            "genderClass": "die",
+            "meaning": "benefit, performance",
+            "synonyms": "das Ergebnis, der Service",
+            "example": "Das Jobcenter zahlt bestimmte <strong>Leistungen</strong> nur bei Bedürftigkeit."
+        },
+        {
+            "word": "das Jobcenter (-)",
+            "genderClass": "das",
+            "meaning": "job center",
+            "synonyms": "die Arbeitsagentur",
+            "example": "Er hat einen Termin beim <strong>Jobcenter</strong> wegen seiner Bewerbung."
+        },
+        {
+            "word": "die Stelle (-n)",
+            "genderClass": "die",
+            "meaning": "position, job",
+            "synonyms": "der Arbeitsplatz, der Job",
+            "example": "Die <strong>Stelle</strong> wurde intern schon lange vor der Ausschreibung besetzt."
+        },
+        {
+            "word": "der Betrieb (-e)",
+            "genderClass": "der",
+            "meaning": "company, operation",
+            "synonyms": "das Unternehmen, die Firma",
+            "example": "Der <strong>Betrieb</strong> beschäftigt über hundert Mitarbeiter in zwei Städten."
+        },
+        {
+            "word": "die Fortbildung (-en)",
+            "genderClass": "die",
+            "meaning": "further training",
+            "synonyms": "die Weiterbildung, der Kurs",
+            "example": "Der Arbeitgeber bietet regelmäßig <strong>Fortbildungen</strong> für das Team an."
+        },
+        {
+            "word": "das Zeugnis (-se)",
+            "genderClass": "das",
+            "meaning": "certificate, reference",
+            "synonyms": "die Bescheinigung, das Zertifikat",
+            "example": "Am Ende der Ausbildung bekommt sie ein <strong>Zeugnis</strong> mit einer guten Note."
+        },
+        {
+            "word": "die Qualifikation (-en)",
+            "genderClass": "die",
+            "meaning": "qualification",
+            "synonyms": "die Fähigkeit, die Kompetenz",
+            "example": "Für diese Position werden mehrere Jahre <strong>Qualifikation</strong> im Bereich verlangt."
+        },
+        {
+            "word": "das Vorstellungsgespräch (-e)",
+            "genderClass": "das",
+            "meaning": "job interview",
+            "synonyms": "das Interview, das Bewerbungsgespräch",
+            "example": "Sie hat sich intensiv auf das <strong>Vorstellungsgespräch</strong> vorbereitet."
+        },
+        {
+            "word": "die Probezeit (-en)",
+            "genderClass": "die",
+            "meaning": "probation period",
+            "synonyms": "die Testphase",
+            "example": "In der <strong>Probezeit</strong> kann der Vertrag mit kurzer Frist gekündigt werden."
+        },
+        {
+            "word": "der Arbeitsvertrag (-verträge)",
+            "genderClass": "der",
+            "meaning": "employment contract",
+            "synonyms": "die Anstellung",
+            "example": "Im <strong>Arbeitsvertrag</strong> stehen die genaue Arbeitszeit und das Gehalt."
+        },
+        {
+            "word": "die Kinderbetreuung (-en)",
+            "genderClass": "die",
+            "meaning": "childcare",
+            "synonyms": "die Kita, die Pflege",
+            "example": "Ohne gute <strong>Kinderbetreuung</strong> ist es für sie schwer, Vollzeit zu arbeiten."
+        },
+        {
+            "word": "der Kindergarten (Kindergärten)",
+            "genderClass": "der",
+            "meaning": "kindergarten",
+            "synonyms": "die Kita, die Vorschule",
+            "example": "Ihr Sohn geht seit September in den <strong>Kindergarten</strong>."
+        },
+        {
+            "word": "die Elternzeit (-en)",
+            "genderClass": "die",
+            "meaning": "parental leave",
+            "synonyms": "der Mutterschutz (similar)",
+            "example": "Er nimmt sechs Monate <strong>Elternzeit</strong>, um sich um das Baby zu kümmern."
+        },
+        {
+            "word": "das Elterngeld (-er)",
+            "genderClass": "das",
+            "meaning": "parental allowance",
+            "synonyms": "die Förderung, die Hilfe",
+            "example": "Das <strong>Elterngeld</strong> wird vom Staat für bis zu vierzehn Monate gezahlt."
+        },
+        {
+            "word": "die Geburtsurkunde (-n)",
+            "genderClass": "die",
+            "meaning": "birth certificate",
+            "synonyms": "die Bescheinigung",
+            "example": "Für den Antrag braucht man die <strong>Geburtsurkunde</strong> des Kindes."
+        },
+        {
+            "word": "die Heirat (-en)",
+            "genderClass": "die",
+            "meaning": "marriage",
+            "synonyms": "die Hochzeit, die Eheschließung",
+            "example": "Nach der <strong>Heirat</strong> hat sie ihren Nachnamen geändert."
+        },
+        {
+            "word": "das Standesamt (-ämter)",
+            "genderClass": "das",
+            "meaning": "registry office",
+            "synonyms": "die Behörde",
+            "example": "Die Hochzeit findet im <strong>Standesamt</strong> am Freitagmorgen statt."
+        },
+        {
+            "word": "die Scheidung (-en)",
+            "genderClass": "die",
+            "meaning": "divorce",
+            "synonyms": "die Trennung",
+            "example": "Nach der <strong>Scheidung</strong> zog er in eine kleinere Wohnung."
+        },
+        {
+            "word": "der Umgang (Umgänge)",
+            "genderClass": "der",
+            "meaning": "contact, handling",
+            "synonyms": "der Kontakt, die Beziehung",
+            "example": "Der <strong>Umgang</strong> mit den Kunden erfordert viel Geduld."
+        },
+        {
+            "word": "die Sprechstunde (-n)",
+            "genderClass": "die",
+            "meaning": "consultation hours",
+            "synonyms": "die Öffnungszeit",
+            "example": "Die <strong>Sprechstunde</strong> des Arztes ist nur dienstags und donnerstags."
+        },
+        {
+            "word": "die Untersuchung (-en)",
+            "genderClass": "die",
+            "meaning": "examination",
+            "synonyms": "die Prüfung, der Check-up",
+            "example": "Die <strong>Untersuchung</strong> beim Hausarzt hat nichts Ernstes ergeben."
+        },
+        {
+            "word": "die Überweisung (-en)",
+            "genderClass": "die",
+            "meaning": "referral (medical)",
+            "synonyms": "die Zuweisung",
+            "example": "Der Hausarzt hat ihr eine <strong>Überweisung</strong> zum Facharzt gegeben."
+        },
+        {
+            "word": "das Rezept (-e)",
+            "genderClass": "das",
+            "meaning": "prescription",
+            "synonyms": "die Verordnung",
+            "example": "Ohne <strong>Rezept</strong> bekommt man dieses Medikament nicht in der Apotheke."
+        },
+        {
+            "word": "die Nebenwirkung (-en)",
+            "genderClass": "die",
+            "meaning": "side effect",
+            "synonyms": "die Begleiterscheinung",
+            "example": "Der Arzt hat vor möglichen <strong>Nebenwirkungen</strong> des Medikaments gewarnt."
+        },
+        {
+            "word": "die Praxis (Praxen)",
+            "genderClass": "die",
+            "meaning": "doctor's office",
+            "synonyms": "die Klinik (similar)",
+            "example": "Die <strong>Praxis</strong> hat mittwochs nachmittags geschlossen."
+        },
+        {
+            "word": "der Krankenschein (-e)",
+            "genderClass": "der",
+            "meaning": "medical certificate",
+            "synonyms": "die Krankschreibung, das Attest",
+            "example": "Bei Krankheit muss man dem Arbeitgeber einen <strong>Krankenschein</strong> schicken."
+        },
+        {
+            "word": "die Impfung (-en)",
+            "genderClass": "die",
+            "meaning": "vaccination",
+            "synonyms": "der Schutz, die Spritze",
+            "example": "Die <strong>Impfung</strong> gegen Grippe wird jedes Jahr im Herbst empfohlen."
+        },
+        {
+            "word": "der Notfall (Notfälle)",
+            "genderClass": "der",
+            "meaning": "emergency",
+            "synonyms": "die Krise, die Gefahr",
+            "example": "Im <strong>Notfall</strong> sollte man sofort die Notaufnahme aufsuchen."
+        },
+        {
+            "word": "die Beratung (-en)",
+            "genderClass": "die",
+            "meaning": "counselling, advice",
+            "synonyms": "das Gespräch, die Hilfe",
+            "example": "Die <strong>Beratung</strong> bei der Behörde war freundlich und ausführlich."
+        },
+        {
+            "word": "der Sachbearbeiter (-)",
+            "genderClass": "der",
+            "meaning": "clerk, caseworker",
+            "synonyms": "der Beamte, der Mitarbeiter",
+            "example": "Der <strong>Sachbearbeiter</strong> hat ihren Antrag noch nicht bearbeitet."
+        },
+        {
+            "word": "das Formular (-e)",
+            "genderClass": "das",
+            "meaning": "form",
+            "synonyms": "das Dokument, das Blatt",
+            "example": "Das <strong>Formular</strong> muss in Blockschrift ausgefüllt werden."
+        },
+        {
+            "word": "der Bescheid (-e)",
+            "genderClass": "der",
+            "meaning": "official notice",
+            "synonyms": "die Antwort, der Brief",
+            "example": "Der <strong>Bescheid</strong> vom Amt kam erst nach sechs Wochen."
+        },
+        {
+            "word": "der Widerspruch (Widersprüche)",
+            "genderClass": "der",
+            "meaning": "objection",
+            "synonyms": "der Protest, die Beschwerde",
+            "example": "Gegen den Bescheid kann man innerhalb eines Monats <strong>Widerspruch</strong> einlegen."
+        },
+        {
+            "word": "die Ausschreibung (-en)",
+            "genderClass": "die",
+            "meaning": "job posting, tender",
+            "synonyms": "die Anzeige, das Angebot",
+            "example": "Die <strong>Ausschreibung</strong> für die Stelle endet nächste Woche."
+        },
+        {
+            "word": "der Nachmieter (-)",
+            "genderClass": "der",
+            "meaning": "next tenant",
+            "synonyms": "der neue Mieter",
+            "example": "Wenn sie einen <strong>Nachmieter</strong> findet, kommt sie früher aus dem Vertrag raus."
+        },
+        {
+            "word": "die Kaution (-en)",
+            "genderClass": "die",
+            "meaning": "deposit",
+            "synonyms": "die Sicherheit, das Pfand",
+            "example": "Die <strong>Kaution</strong> beträgt meist drei Monatsmieten."
+        },
+        {
+            "word": "der Nebenjob (-s)",
+            "genderClass": "der",
+            "meaning": "side job",
+            "synonyms": "die Aushilfe, der Minijob",
+            "example": "Neben dem Studium hat sie einen <strong>Nebenjob</strong> im Café."
+        },
+        {
+            "word": "die Arbeitszeit (-en)",
+            "genderClass": "die",
+            "meaning": "working hours",
+            "synonyms": "die Schicht, die Gleitzeit",
+            "example": "Die <strong>Arbeitszeit</strong> kann in dieser Firma flexibel gestaltet werden."
+        },
+        {
+            "word": "der Feiertag (-e)",
+            "genderClass": "der",
+            "meaning": "public holiday",
+            "synonyms": "das Fest, der Ruhetag",
+            "example": "An gesetzlichen <strong>Feiertagen</strong> bleiben die meisten Geschäfte geschlossen."
+        },
+        {
+            "word": "der Urlaubsanspruch (-ansprüche)",
+            "genderClass": "der",
+            "meaning": "vacation entitlement",
+            "synonyms": "die Ferientage, das Recht",
+            "example": "Ihr <strong>Urlaubsanspruch</strong> liegt bei dreißig Tagen im Jahr."
+        },
+        {
+            "word": "die Überstunde (-n)",
+            "genderClass": "die",
+            "meaning": "overtime",
+            "synonyms": "die Mehrarbeit",
+            "example": "Er macht diese Woche viele <strong>Überstunden</strong> wegen eines wichtigen Projekts."
+        },
+        {
+            "word": "die Gleitzeit (-en)",
+            "genderClass": "die",
+            "meaning": "flexitime",
+            "synonyms": "die flexible Arbeitszeit",
+            "example": "Dank der <strong>Gleitzeit</strong> kann sie morgens später anfangen."
+        },
+        {
+            "word": "der Betriebsrat (-räte)",
+            "genderClass": "der",
+            "meaning": "works council",
+            "synonyms": "die Personalvertretung",
+            "example": "Bei Problemen mit dem Chef kann man sich an den <strong>Betriebsrat</strong> wenden."
+        },
+        {
+            "word": "die Gewerkschaft (-en)",
+            "genderClass": "die",
+            "meaning": "trade union",
+            "synonyms": "die Arbeitnehmervertretung",
+            "example": "Viele Kollegen sind Mitglied in einer <strong>Gewerkschaft</strong>."
+        },
+        {
+            "word": "der Tarifvertrag (-verträge)",
+            "genderClass": "der",
+            "meaning": "collective agreement",
+            "synonyms": "der Arbeitsvertrag (similar)",
+            "example": "Das Gehalt richtet sich nach dem <strong>Tarifvertrag</strong> der Branche."
+        },
+        {
+            "word": "die Abfindung (-en)",
+            "genderClass": "die",
+            "meaning": "severance payment",
+            "synonyms": "die Entschädigung",
+            "example": "Nach der Kündigung erhielt er eine kleine <strong>Abfindung</strong>."
+        },
+        {
+            "word": "das Arbeitslosengeld (-er)",
+            "genderClass": "das",
+            "meaning": "unemployment benefit",
+            "synonyms": "die Stütze, die Hilfe",
+            "example": "Nach der Kündigung beantragte sie sofort <strong>Arbeitslosengeld</strong>."
+        },
+        {
+            "word": "die Meldung (-en)",
+            "genderClass": "die",
+            "meaning": "notification, report",
+            "synonyms": "die Nachricht, die Anzeige",
+            "example": "Die <strong>Meldung</strong> des Umzugs muss innerhalb von zwei Wochen erfolgen."
+        },
+        {
+            "word": "der Wohnungswechsel (-)",
+            "genderClass": "der",
+            "meaning": "change of residence",
+            "synonyms": "der Umzug",
+            "example": "Ein <strong>Wohnungswechsel</strong> muss beim Bürgeramt angemeldet werden."
+        },
+        {
+            "word": "das Bürgeramt (-ämter)",
+            "genderClass": "das",
+            "meaning": "citizens' registration office",
+            "synonyms": "die Behörde, das Amt",
+            "example": "Für die Anmeldung braucht man einen Termin beim <strong>Bürgeramt</strong>."
+        },
+        {
+            "word": "die Warteliste (-n)",
+            "genderClass": "die",
+            "meaning": "waiting list",
+            "synonyms": "die Reservierung",
+            "example": "Für den Kitaplatz steht sie schon seit Monaten auf der <strong>Warteliste</strong>."
+        },
+        {
+            "word": "der Anlass (Anlässe)",
+            "genderClass": "der",
+            "meaning": "occasion, reason",
+            "synonyms": "der Grund, das Motiv",
+            "example": "Aus welchem <strong>Anlass</strong> wurde die Feier eigentlich organisiert?"
+        },
+        {
+            "word": "die Norm (-en)",
+            "genderClass": "die",
+            "meaning": "standard, norm",
+            "synonyms": "die Regel, der Standard",
+            "example": "Bei der Konstruktion müssen wir die UN ECE <strong>Normen</strong> beachten."
+        },
+        {
+            "word": "das Dashboard (-s)",
+            "genderClass": "das",
+            "meaning": "dashboard",
+            "synonyms": "die Übersicht, die Tafel",
+            "example": "Ich habe ein neues <strong>Dashboard</strong> in Power BI erstellt."
+        },
+        {
+            "word": "die Visualisierung (-en)",
+            "genderClass": "die",
+            "meaning": "visualization",
+            "synonyms": "die Darstellung",
+            "example": "Mit Python ist die <strong>Visualisierung</strong> der Daten sehr einfach."
+        },
+        {
+            "word": "die Umgebung (-en)",
+            "genderClass": "die",
+            "meaning": "environment",
+            "synonyms": "der Bereich, die Sphäre",
+            "example": "Ich habe Docker Desktop für meine lokale <strong>Umgebung</strong> installiert."
+        },
+        {
+            "word": "das Visum (Visa)",
+            "genderClass": "das",
+            "meaning": "visa",
+            "synonyms": "die Einreiseerlaubnis",
+            "example": "Wir brauchen ein gültiges <strong>Visum</strong> für die Reise nach Asien."
+        },
+        {
+            "word": "das Gewürz (-e)",
+            "genderClass": "das",
+            "meaning": "spice",
+            "synonyms": "das Kraut, das Aroma",
+            "example": "Dieses traditionelle iranische Gericht braucht viele <strong>Gewürze</strong>."
+        },
+        {
+            "word": "der Schläger (-)",
+            "genderClass": "der",
+            "meaning": "racket (sports)",
+            "synonyms": "das Sportgerät",
+            "example": "Ich habe mir gestern einen neuen <strong>Schläger</strong> für das Training gekauft."
+        },
+        {
+            "word": "die Zutat (-en)",
+            "genderClass": "die",
+            "meaning": "ingredient",
+            "synonyms": "der Bestandteil, das Element",
+            "example": "Spinat ist eine wichtige <strong>Zutat</strong> für dieses Rezept."
+        },
+        {
+            "word": "die Automatisierung (-en)",
+            "genderClass": "die",
+            "meaning": "automation",
+            "synonyms": "die Steuerung",
+            "example": "Die <strong>Automatisierung</strong> spart im Projektmanagement viel Zeit."
+        },
+        {
+            "word": "der Meilenstein (-e)",
+            "genderClass": "der",
+            "meaning": "milestone",
+            "synonyms": "die Etappe, das Ziel",
+            "example": "Wir haben unseren wichtigsten <strong>Meilenstein</strong> heute erreicht."
+        },
+        {
+            "word": "die Optimierung (-en)",
+            "genderClass": "die",
+            "meaning": "optimization",
+            "synonyms": "die Verbesserung",
+            "example": "Mein Fokus liegt auf der <strong>Optimierung</strong> der internen Prozesse."
+        },
+        {
+            "word": "der Stoßfänger (-)",
+            "genderClass": "der",
+            "meaning": "bumper (car)",
+            "synonyms": "die Stoßstange",
+            "example": "Das Design des <strong>Stoßfängers</strong> ist wichtig für die Sicherheit."
+        }
+    ],
+    "adjektive": [
+        {
+            "word": "zuverlässig",
+            "meaning": "reliable",
+            "opposite": "unzuverlässig",
+            "example": "Meine Kollegin ist sehr <strong>zuverlässig</strong>, sie kommt nie zu spät."
+        },
+        {
+            "word": "gründlich",
+            "meaning": "thorough",
+            "opposite": "oberflächlich, flüchtig",
+            "example": "Der Arzt hat die Untersuchung sehr <strong>gründlich</strong> durchgeführt."
+        },
+        {
+            "word": "erforderlich",
+            "meaning": "required, necessary",
+            "opposite": "unnötig, freiwillig",
+            "example": "Für die Anmeldung ist ein gültiger Ausweis <strong>erforderlich</strong>."
+        },
+        {
+            "word": "gering",
+            "meaning": "low, small (amount)",
+            "opposite": "hoch, groß, viel",
+            "example": "Die Wahrscheinlichkeit für Regen ist heute eher <strong>gering</strong>."
+        },
+        {
+            "word": "freiwillig",
+            "meaning": "voluntary",
+            "opposite": "verpflichtend, gezwungen",
+            "example": "Die Teilnahme an dem Kurs ist <strong>freiwillig</strong> und kostet nichts."
+        },
+        {
+            "word": "verpflichtend",
+            "meaning": "mandatory",
+            "opposite": "freiwillig, optional",
+            "example": "Die Impfung ist für dieses Land leider <strong>verpflichtend</strong>."
+        },
+        {
+            "word": "dringend",
+            "meaning": "urgent",
+            "opposite": "unwichtig, gelassen",
+            "example": "Er braucht <strong>dringend</strong> einen Termin, weil die Frist bald endet."
+        },
+        {
+            "word": "ausführlich",
+            "meaning": "detailed",
+            "opposite": "kurz, knapp",
+            "example": "Die Lehrerin hat die Aufgabe noch einmal <strong>ausführlich</strong> erklärt."
+        },
+        {
+            "word": "selbstständig",
+            "meaning": "independent",
+            "opposite": "abhängig, angestellt",
+            "example": "Sie arbeitet <strong>selbstständig</strong> und hat keinen festen Chef."
+        },
+        {
+            "word": "geeignet",
+            "meaning": "suitable",
+            "opposite": "ungeeignet, falsch",
+            "example": "Dieser Kurs ist auch für Anfänger <strong>geeignet</strong>."
+        },
+        {
+            "word": "vorläufig",
+            "meaning": "temporary, provisional",
+            "opposite": "endgültig, definitiv",
+            "example": "Das ist erst ein <strong>vorläufiges</strong> Ergebnis, die genaue Zahl folgt später."
+        },
+        {
+            "word": "gültig",
+            "meaning": "valid",
+            "opposite": "ungültig, abgelaufen",
+            "example": "Der Ausweis ist nur noch bis Ende des Jahres <strong>gültig</strong>."
+        },
+        {
+            "word": "üblich",
+            "meaning": "usual, common",
+            "opposite": "unüblich, selten",
+            "example": "Es ist in Deutschland <strong>üblich</strong>, sich für Termine vorher anzumelden."
+        },
+        {
+            "word": "widersprüchlich",
+            "meaning": "contradictory",
+            "opposite": "einstimmig, logisch",
+            "example": "Die Angaben in den beiden Dokumenten sind leider <strong>widersprüchlich</strong>."
+        },
+        {
+            "word": "rücksichtsvoll",
+            "meaning": "considerate",
+            "opposite": "rücksichtslos, egoistisch",
+            "example": "Er ist ein <strong>rücksichtsvoller</strong> Nachbar, der nie laute Musik spielt."
+        },
+        {
+            "word": "beruflich",
+            "meaning": "professional, work-related",
+            "opposite": "privat, persönlich",
+            "example": "Sie ist <strong>beruflich</strong> viel unterwegs und selten im Büro."
+        },
+        {
+            "word": "angemessen",
+            "meaning": "appropriate, reasonable",
+            "opposite": "unangemessen, übertrieben",
+            "example": "Die Miete für diese Wohnung ist für die Lage <strong>angemessen</strong>."
+        },
+        {
+            "word": "unabhängig",
+            "meaning": "independent",
+            "opposite": "abhängig, gebunden",
+            "example": "Er möchte finanziell <strong>unabhängig</strong> von seinen Eltern sein."
+        },
+        {
+            "word": "überzeugend",
+            "meaning": "convincing",
+            "opposite": "schwach, unglaubwürdig",
+            "example": "Ihre Argumente im Gespräch waren sehr <strong>überzeugend</strong>."
+        },
+        {
+            "word": "belastend",
+            "meaning": "stressful, burdensome",
+            "opposite": "entspannend, leicht",
+            "example": "Die lange Pendelzeit ist für ihn ziemlich <strong>belastend</strong>."
+        },
+        {
+            "word": "vorhanden",
+            "meaning": "available, existing",
+            "opposite": "fehlend, abwesend",
+            "example": "In der Küche ist bereits ein Kühlschrank <strong>vorhanden</strong>."
+        },
+        {
+            "word": "fristgerecht",
+            "meaning": "on time, within deadline",
+            "opposite": "verspätet, zu spät",
+            "example": "Die Unterlagen müssen <strong>fristgerecht</strong> bei der Behörde eingereicht werden."
+        },
+        {
+            "word": "nachvollziehbar",
+            "meaning": "understandable",
+            "opposite": "unverständlich, unlogisch",
+            "example": "Seine Entscheidung, zu kündigen, ist für mich gut <strong>nachvollziehbar</strong>."
+        },
+        {
+            "word": "hilfsbereit",
+            "meaning": "helpful",
+            "opposite": "egoistisch, abweisend",
+            "example": "Die neuen Nachbarn sind sehr <strong>hilfsbereit</strong> und freundlich."
+        },
+        {
+            "word": "unzufrieden",
+            "meaning": "dissatisfied",
+            "opposite": "zufrieden, glücklich",
+            "example": "Viele Mitarbeiter sind mit der neuen Regelung <strong>unzufrieden</strong>."
+        },
+        {
+            "word": "effizient",
+            "meaning": "efficient",
+            "opposite": "ineffizient, verschwenderisch",
+            "example": "Das neue Design des Propellers ist extrem <strong>effizient</strong>."
+        },
+        {
+            "word": "komplex",
+            "meaning": "complex",
+            "opposite": "einfach, simpel",
+            "example": "Die Architektur der neuen Datenbank ist sehr <strong>komplex</strong>."
+        },
+        {
+            "word": "pflanzlich",
+            "meaning": "plant-based",
+            "opposite": "tierisch",
+            "example": "Ich trinke meinen Kaffee am liebsten mit <strong>pflanzlicher</strong> Milch."
+        },
+        {
+            "word": "hochauflösend",
+            "meaning": "high-resolution",
+            "opposite": "unscharf, verpixelt",
+            "example": "Der neue Fernseher hat ein <strong>hochauflösendes</strong> Display."
+        },
+        {
+            "word": "fließend",
+            "meaning": "fluent",
+            "opposite": "stockend, gebrochen",
+            "example": "Er spricht <strong>fließend</strong> Englisch und lernt jetzt Deutsch."
+        },
+        {
+            "word": "sportlich",
+            "meaning": "sporty, athletic",
+            "opposite": "unsportlich, faul",
+            "example": "Am Wochenende bin ich oft <strong>sportlich</strong> aktiv."
+        },
+        {
+            "word": "traditionell",
+            "meaning": "traditional",
+            "opposite": "modern, innovativ",
+            "example": "Wir kochen am Samstag oft <strong>traditionelle</strong> Gerichte."
+        },
+        {
+            "word": "übersichtlich",
+            "meaning": "clear, well-arranged",
+            "opposite": "unübersichtlich, chaotisch",
+            "example": "Das neue Layout macht den Bericht viel <strong>übersichtlicher</strong>."
+        }
+    ],
+    "verben": [
+        {
+            "word": "beantragen",
+            "perfekt": "hat beantragt",
+            "meaning": "to apply for (official)",
+            "example": "Er möchte nächste Woche ein neues Visum <strong>beantragen</strong>."
+        },
+        {
+            "word": "erledigen",
+            "perfekt": "hat erledigt",
+            "meaning": "to take care of, finish",
+            "example": "Ich muss noch schnell ein paar Sachen im Amt <strong>erledigen</strong>."
+        },
+        {
+            "word": "vermeiden",
+            "perfekt": "hat vermieden",
+            "meaning": "to avoid",
+            "example": "Um Stress zu <strong>vermeiden</strong>, plant sie ihre Termine früh im Voraus."
+        },
+        {
+            "word": "bestehen",
+            "perfekt": "hat bestanden",
+            "meaning": "to pass (an exam)",
+            "example": "Wenn er fleißig lernt, wird er die Prüfung sicher <strong>bestehen</strong>."
+        },
+        {
+            "word": "berücksichtigen",
+            "perfekt": "hat berücksichtigt",
+            "meaning": "to take into account",
+            "example": "Bei der Planung sollte man auch das Wetter <strong>berücksichtigen</strong>."
+        },
+        {
+            "word": "einreichen",
+            "perfekt": "hat eingereicht",
+            "meaning": "to submit",
+            "example": "Sie muss den Antrag bis Freitag beim Amt <strong>einreichen</strong>."
+        },
+        {
+            "word": "überprüfen",
+            "perfekt": "hat überprüft",
+            "meaning": "to check, verify",
+            "example": "Der Sachbearbeiter <strong>überprüft</strong> alle Unterlagen, bevor er entscheidet."
+        },
+        {
+            "word": "unterschreiben",
+            "perfekt": "hat unterschrieben",
+            "meaning": "to sign",
+            "example": "Bitte <strong>unterschreiben</strong> Sie den Vertrag auf der letzten Seite."
+        },
+        {
+            "word": "verlängern",
+            "perfekt": "hat verlängert",
+            "meaning": "to extend, renew",
+            "example": "Sie möchte ihren Aufenthaltstitel um zwei Jahre <strong>verlängern</strong>."
+        },
+        {
+            "word": "kündigen",
+            "perfekt": "hat gekündigt",
+            "meaning": "to terminate, quit",
+            "example": "Er hat seine Stelle <strong>gekündigt</strong>, um sich selbstständig zu machen."
+        },
+        {
+            "word": "verzichten",
+            "perfekt": "hat verzichtet",
+            "meaning": "to do without, give up",
+            "example": "Sie <strong>verzichtet</strong> dieses Jahr auf den Urlaub, um Geld zu sparen."
+        },
+        {
+            "word": "ausfüllen",
+            "perfekt": "hat ausgefüllt",
+            "meaning": "to fill out (a form)",
+            "example": "Bitte <strong>füllen</strong> Sie das Formular vollständig <strong>aus</strong>."
+        },
+        {
+            "word": "abschließen",
+            "perfekt": "hat abgeschlossen",
+            "meaning": "to complete, conclude",
+            "example": "Er hat seine Ausbildung letztes Jahr erfolgreich <strong>abgeschlossen</strong>."
+        },
+        {
+            "word": "abschließen",
+            "perfekt": "hat abgeschlossen",
+            "meaning": "to lock (a door)",
+            "example": "Vergiss nicht, die Wohnungstür <strong>abzuschließen</strong>, bevor du gehst."
+        },
+        {
+            "word": "überweisen",
+            "perfekt": "hat überwiesen",
+            "meaning": "to transfer (money)",
+            "example": "Bitte <strong>überweisen</strong> Sie die Miete bis zum dritten Werktag."
+        },
+        {
+            "word": "beraten",
+            "perfekt": "hat beraten",
+            "meaning": "to advise",
+            "example": "Die Mitarbeiterin hat mich ausführlich zu meinen Möglichkeiten <strong>beraten</strong>."
+        },
+        {
+            "word": "vereinbaren",
+            "perfekt": "hat vereinbart",
+            "meaning": "to arrange, agree on",
+            "example": "Wir haben einen neuen Termin für nächste Woche <strong>vereinbart</strong>."
+        },
+        {
+            "word": "nachweisen",
+            "perfekt": "hat nachgewiesen",
+            "meaning": "to prove, provide evidence",
+            "example": "Er musste seine Sprachkenntnisse mit einem Zertifikat <strong>nachweisen</strong>."
+        },
+        {
+            "word": "versäumen",
+            "perfekt": "hat versäumt",
+            "meaning": "to miss (a deadline/chance)",
+            "example": "Wenn Sie die Frist <strong>versäumen</strong>, verlieren Sie den Anspruch."
+        },
+        {
+            "word": "einhalten",
+            "perfekt": "hat eingehalten",
+            "meaning": "to comply with, meet (a deadline)",
+            "example": "Es ist wichtig, die vereinbarte Frist <strong>einzuhalten</strong>."
+        },
+        {
+            "word": "beeinflussen",
+            "perfekt": "hat beeinflusst",
+            "meaning": "to influence",
+            "example": "Das Wetter kann die Stimmung stark <strong>beeinflussen</strong>."
+        },
+        {
+            "word": "gestalten",
+            "perfekt": "hat gestaltet",
+            "meaning": "to design, organize",
+            "example": "Sie <strong>gestaltet</strong> ihre Arbeitszeit ganz flexibel."
+        },
+        {
+            "word": "erfordern",
+            "perfekt": "hat erfordert",
+            "meaning": "to require",
+            "example": "Die neue Stelle <strong>erfordert</strong> gute Kenntnisse in Excel."
+        },
+        {
+            "word": "verursachen",
+            "perfekt": "hat verursacht",
+            "meaning": "to cause",
+            "example": "Der Stau wurde durch einen Unfall auf der Autobahn <strong>verursacht</strong>."
+        },
+        {
+            "word": "ermöglichen",
+            "perfekt": "hat ermöglicht",
+            "meaning": "to enable, make possible",
+            "example": "Das Stipendium <strong>ermöglicht</strong> ihr ein Studium im Ausland."
+        },
+        {
+            "word": "widersprechen",
+            "perfekt": "hat widersprochen",
+            "meaning": "to contradict, object",
+            "example": "Er hat dem Bescheid des Amtes schriftlich <strong>widersprochen</strong>."
+        },
+        {
+            "word": "abnehmen",
+            "perfekt": "hat abgenommen",
+            "meaning": "to lose weight",
+            "example": "Seit sie täglich joggt, hat sie fünf Kilo <strong>abgenommen</strong>."
+        },
+        {
+            "word": "abnehmen",
+            "perfekt": "hat abgenommen",
+            "meaning": "to take off, remove",
+            "example": "Er <strong>nimmt</strong> beim Betreten der Wohnung immer die Schuhe <strong>ab</strong>."
+        },
+        {
+            "word": "abnehmen",
+            "perfekt": "hat abgenommen",
+            "meaning": "to decrease",
+            "example": "Die Zahl der Bewerbungen hat in diesem Jahr deutlich <strong>abgenommen</strong>."
+        },
+        {
+            "word": "abnehmen",
+            "perfekt": "hat abgenommen",
+            "meaning": "to answer (the phone)",
+            "example": "Er hat den Anruf nicht <strong>abgenommen</strong>, weil er im Meeting war."
+        },
+        {
+            "word": "aufnehmen",
+            "perfekt": "hat aufgenommen",
+            "meaning": "to take up, start",
+            "example": "Sie <strong>nimmt</strong> im Herbst ihr Studium an der Universität <strong>auf</strong>."
+        },
+        {
+            "word": "aufnehmen",
+            "perfekt": "hat aufgenommen",
+            "meaning": "to record",
+            "example": "Das Gespräch wurde zu Schulungszwecken <strong>aufgenommen</strong>."
+        },
+        {
+            "word": "aufnehmen",
+            "perfekt": "hat aufgenommen",
+            "meaning": "to take in, accept",
+            "example": "Die Familie hat einen Austauschschüler bei sich <strong>aufgenommen</strong>."
+        },
+        {
+            "word": "anmelden",
+            "perfekt": "hat angemeldet",
+            "meaning": "to register (a person/thing)",
+            "example": "Nach dem Umzug muss man sich innerhalb von zwei Wochen <strong>anmelden</strong>."
+        },
+        {
+            "word": "anmelden",
+            "perfekt": "hat angemeldet",
+            "meaning": "to enroll (in a course)",
+            "example": "Sie hat sich für den Deutschkurs im Herbst <strong>angemeldet</strong>."
+        },
+        {
+            "word": "abmelden",
+            "perfekt": "hat abgemeldet",
+            "meaning": "to deregister",
+            "example": "Vor dem Wegzug ins Ausland muss man sich beim Bürgeramt <strong>abmelden</strong>."
+        },
+        {
+            "word": "umziehen",
+            "perfekt": "ist umgezogen",
+            "meaning": "to move (house)",
+            "example": "Nächsten Monat <strong>zieht</strong> die Familie in eine größere Wohnung <strong>um</strong>."
+        },
+        {
+            "word": "umziehen",
+            "perfekt": "hat umgezogen",
+            "meaning": "to change clothes",
+            "example": "Nach dem Sport <strong>zieht</strong> er sich schnell <strong>um</strong>."
+        },
+        {
+            "word": "ausziehen",
+            "perfekt": "ist ausgezogen",
+            "meaning": "to move out",
+            "example": "Sie ist mit achtzehn bei ihren Eltern <strong>ausgezogen</strong>."
+        },
+        {
+            "word": "ausziehen",
+            "perfekt": "hat ausgezogen",
+            "meaning": "to take off (clothes)",
+            "example": "Bitte <strong>ziehen</strong> Sie im Wartezimmer schon die Jacke <strong>aus</strong>."
+        },
+        {
+            "word": "einziehen",
+            "perfekt": "ist eingezogen",
+            "meaning": "to move in",
+            "example": "Nächste Woche <strong>zieht</strong> das neue Paar in die Wohnung nebenan <strong>ein</strong>."
+        },
+        {
+            "word": "vorlegen",
+            "perfekt": "hat vorgelegt",
+            "meaning": "to present, submit (a document)",
+            "example": "Am Schalter muss man den Ausweis <strong>vorlegen</strong>."
+        },
+        {
+            "word": "vorschlagen",
+            "perfekt": "hat vorgeschlagen",
+            "meaning": "to suggest",
+            "example": "Der Kollege hat einen neuen Termin für das Meeting <strong>vorgeschlagen</strong>."
+        },
+        {
+            "word": "vorbereiten",
+            "perfekt": "hat vorbereitet",
+            "meaning": "to prepare",
+            "example": "Sie <strong>bereitet</strong> sich seit Wochen auf die Prüfung <strong>vor</strong>."
+        },
+        {
+            "word": "durchführen",
+            "perfekt": "hat durchgeführt",
+            "meaning": "to carry out, conduct",
+            "example": "Die Behörde <strong>führt</strong> regelmäßig Kontrollen <strong>durch</strong>."
+        },
+        {
+            "word": "durchsetzen",
+            "perfekt": "hat durchgesetzt",
+            "meaning": "to enforce, get through",
+            "example": "Er konnte seine Forderung leider nicht <strong>durchsetzen</strong>."
+        },
+        {
+            "word": "durchsetzen",
+            "perfekt": "hat sich durchgesetzt",
+            "meaning": "to prevail, assert oneself",
+            "example": "Trotz vieler Konkurrenten hat sie sich im Bewerbungsverfahren <strong>durchgesetzt</strong>."
+        },
+        {
+            "word": "klären",
+            "perfekt": "hat geklärt",
+            "meaning": "to clarify",
+            "example": "Wir sollten diese Frage vor dem Termin telefonisch <strong>klären</strong>."
+        },
+        {
+            "word": "bearbeiten",
+            "perfekt": "hat bearbeitet",
+            "meaning": "to process, handle",
+            "example": "Der Antrag wird momentan von der Behörde <strong>bearbeitet</strong>."
+        },
+        {
+            "word": "zustellen",
+            "perfekt": "hat zugestellt",
+            "meaning": "to deliver",
+            "example": "Die Post wird meistens am Vormittag <strong>zugestellt</strong>."
+        },
+        {
+            "word": "zusenden",
+            "perfekt": "hat zugesendet",
+            "meaning": "to send (to someone)",
+            "example": "Bitte <strong>senden</strong> Sie mir die Unterlagen per E-Mail <strong>zu</strong>."
+        },
+        {
+            "word": "weiterleiten",
+            "perfekt": "hat weitergeleitet",
+            "meaning": "to forward",
+            "example": "Ich habe die E-Mail direkt an die zuständige Kollegin <strong>weitergeleitet</strong>."
+        },
+        {
+            "word": "informieren",
+            "perfekt": "hat informiert",
+            "meaning": "to inform",
+            "example": "Die Schule <strong>informiert</strong> die Eltern über wichtige Termine per Brief."
+        },
+        {
+            "word": "benachrichtigen",
+            "perfekt": "hat benachrichtigt",
+            "meaning": "to notify",
+            "example": "Der Vermieter hat die Mieter über die Reparatur <strong>benachrichtigt</strong>."
+        },
+        {
+            "word": "mitteilen",
+            "perfekt": "hat mitgeteilt",
+            "meaning": "to inform, announce",
+            "example": "Bitte <strong>teilen</strong> Sie uns Ihre neue Adresse rechtzeitig <strong>mit</strong>."
+        },
+        {
+            "word": "beantworten",
+            "perfekt": "hat beantwortet",
+            "meaning": "to answer",
+            "example": "Er hat meine Fragen zum Vertrag ausführlich <strong>beantwortet</strong>."
+        },
+        {
+            "word": "bestätigen",
+            "perfekt": "hat bestätigt",
+            "meaning": "to confirm",
+            "example": "Bitte <strong>bestätigen</strong> Sie den Termin per E-Mail."
+        },
+        {
+            "word": "ablehnen",
+            "perfekt": "hat abgelehnt",
+            "meaning": "to reject",
+            "example": "Das Amt hat ihren Antrag leider <strong>abgelehnt</strong>."
+        },
+        {
+            "word": "genehmigen",
+            "perfekt": "hat genehmigt",
+            "meaning": "to approve",
+            "example": "Der Chef hat den zusätzlichen Urlaubstag <strong>genehmigt</strong>."
+        },
+        {
+            "word": "überzeugen",
+            "perfekt": "hat überzeugt",
+            "meaning": "to convince",
+            "example": "Mit guten Argumenten konnte sie den Kollegen <strong>überzeugen</strong>."
+        },
+        {
+            "word": "überprüfen",
+            "perfekt": "hat überprüft",
+            "meaning": "to double-check",
+            "example": "Bevor Sie senden, <strong>überprüfen</strong> Sie bitte alle Angaben noch einmal."
+        },
+        {
+            "word": "festlegen",
+            "perfekt": "hat festgelegt",
+            "meaning": "to determine, set (a date/rule)",
+            "example": "Die genaue Uhrzeit wird noch gemeinsam <strong>festgelegt</strong>."
+        },
+        {
+            "word": "verschieben",
+            "perfekt": "hat verschoben",
+            "meaning": "to postpone",
+            "example": "Wegen Krankheit musste der Termin auf nächste Woche <strong>verschoben</strong> werden."
+        },
+        {
+            "word": "absagen",
+            "perfekt": "hat abgesagt",
+            "meaning": "to cancel",
+            "example": "Sie musste den Termin kurzfristig <strong>absagen</strong>."
+        },
+        {
+            "word": "zusagen",
+            "perfekt": "hat zugesagt",
+            "meaning": "to accept, confirm attendance",
+            "example": "Er hat für die Feier am Samstag bereits <strong>zugesagt</strong>."
+        },
+        {
+            "word": "verpflichten",
+            "perfekt": "hat verpflichtet",
+            "meaning": "to obligate",
+            "example": "Der Vertrag <strong>verpflichtet</strong> ihn zu einer Mindestlaufzeit von einem Jahr."
+        },
+        {
+            "word": "befreien",
+            "perfekt": "hat befreit",
+            "meaning": "to exempt",
+            "example": "Schüler mit einem Attest werden vom Schwimmunterricht <strong>befreit</strong>."
+        },
+        {
+            "word": "beziehen",
+            "perfekt": "hat bezogen",
+            "meaning": "to receive (benefits)",
+            "example": "Sie <strong>bezieht</strong> seit der Geburt des Kindes Elterngeld."
+        },
+        {
+            "word": "beziehen",
+            "perfekt": "hat bezogen",
+            "meaning": "to move into (a home)",
+            "example": "Nächsten Monat <strong>beziehen</strong> sie ihre neue Wohnung."
+        },
+        {
+            "word": "ausstellen",
+            "perfekt": "hat ausgestellt",
+            "meaning": "to issue (a document)",
+            "example": "Der neue Ausweis wird direkt am Schalter <strong>ausgestellt</strong>."
+        },
+        {
+            "word": "hinterlassen",
+            "perfekt": "hat hinterlassen",
+            "meaning": "to leave (a message/impression)",
+            "example": "Er hat mir eine kurze Nachricht auf dem Anrufbeantworter <strong>hinterlassen</strong>."
+        },
+        {
+            "word": "abholen",
+            "perfekt": "hat abgeholt",
+            "meaning": "to pick up, collect",
+            "example": "Sie muss den neuen Pass persönlich beim Amt <strong>abholen</strong>."
+        },
+        {
+            "word": "abgeben",
+            "perfekt": "hat abgegeben",
+            "meaning": "to hand in, submit",
+            "example": "Die Steuererklärung muss bis Ende Juli <strong>abgegeben</strong> werden."
+        },
+        {
+            "word": "abgeben",
+            "perfekt": "hat abgegeben",
+            "meaning": "to give away, hand over",
+            "example": "Er hat sein altes Fahrrad an einen Nachbarn <strong>abgegeben</strong>."
+        },
+        {
+            "word": "überlassen",
+            "perfekt": "hat überlassen",
+            "meaning": "to leave (a decision) to someone",
+            "example": "Die Wahl des Restaurants <strong>überlasse</strong> ich dir."
+        },
+        {
+            "word": "berechnen",
+            "perfekt": "hat berechnet",
+            "meaning": "to calculate, charge",
+            "example": "Die Firma <strong>berechnet</strong> für die Lieferung eine kleine Gebühr."
+        },
+        {
+            "word": "einschätzen",
+            "perfekt": "hat eingeschätzt",
+            "meaning": "to assess, estimate",
+            "example": "Der Anwalt <strong>schätzt</strong> die Erfolgschancen der Klage als gering <strong>ein</strong>."
+        },
+        {
+            "word": "voraussetzen",
+            "perfekt": "hat vorausgesetzt",
+            "meaning": "to presuppose, require",
+            "example": "Die Stelle <strong>setzt</strong> gute Deutschkenntnisse <strong>voraus</strong>."
+        },
+        {
+            "word": "gewährleisten",
+            "perfekt": "hat gewährleistet",
+            "meaning": "to ensure, guarantee",
+            "example": "Der Betrieb muss die Sicherheit der Mitarbeiter <strong>gewährleisten</strong>."
+        },
+        {
+            "word": "verfügen",
+            "perfekt": "hat verfügt",
+            "meaning": "to have at one's disposal",
+            "example": "Er <strong>verfügt</strong> über langjährige Erfahrung in dieser Branche."
+        },
+        {
+            "word": "bewilligen",
+            "perfekt": "hat bewilligt",
+            "meaning": "to grant, approve",
+            "example": "Der Kredit wurde von der Bank ohne Probleme <strong>bewilligt</strong>."
+        },
+        {
+            "word": "zurückziehen",
+            "perfekt": "hat zurückgezogen",
+            "meaning": "to withdraw (an application)",
+            "example": "Sie hat ihre Bewerbung nach dem Gespräch wieder <strong>zurückgezogen</strong>."
+        },
+        {
+            "word": "einlegen",
+            "perfekt": "hat eingelegt",
+            "meaning": "to file (an objection)",
+            "example": "Gegen den Bescheid kann man Widerspruch <strong>einlegen</strong>."
+        },
+        {
+            "word": "überschreiten",
+            "perfekt": "hat überschritten",
+            "meaning": "to exceed",
+            "example": "Mit diesem Verdienst <strong>überschreitet</strong> er die Einkommensgrenze."
+        },
+        {
+            "word": "einhalten",
+            "perfekt": "hat eingehalten",
+            "meaning": "to keep, observe (rules)",
+            "example": "Die Firma muss die gesetzlichen Vorschriften <strong>einhalten</strong>."
+        },
+        {
+            "word": "anpassen",
+            "perfekt": "hat angepasst",
+            "meaning": "to adjust",
+            "example": "Die Miete wurde an die aktuelle Marktlage <strong>angepasst</strong>."
+        },
+        {
+            "word": "reduzieren",
+            "perfekt": "hat reduziert",
+            "meaning": "to reduce",
+            "example": "Sie möchte nach der Geburt ihre Arbeitszeit <strong>reduzieren</strong>."
+        },
+        {
+            "word": "erhöhen",
+            "perfekt": "hat erhöht",
+            "meaning": "to increase",
+            "example": "Der Vermieter darf die Miete nicht ohne Grund <strong>erhöhen</strong>."
+        },
+        {
+            "word": "senken",
+            "perfekt": "hat gesenkt",
+            "meaning": "to lower, decrease",
+            "example": "Die Firma musste wegen der Krise die Preise <strong>senken</strong>."
+        },
+        {
+            "word": "entfallen",
+            "perfekt": "ist entfallen",
+            "meaning": "to be cancelled, not apply",
+            "example": "Wegen Krankheit des Lehrers <strong>entfällt</strong> der Unterricht heute."
+        },
+        {
+            "word": "erlöschen",
+            "perfekt": "ist erloschen",
+            "meaning": "to expire, lapse",
+            "example": "Der Anspruch <strong>erlischt</strong>, wenn man die Frist versäumt."
+        },
+        {
+            "word": "gelten",
+            "perfekt": "hat gegolten",
+            "meaning": "to be valid, apply",
+            "example": "Diese Regelung <strong>gilt</strong> nur für Vollzeitmitarbeiter."
+        },
+        {
+            "word": "erbringen",
+            "perfekt": "hat erbracht",
+            "meaning": "to provide, render",
+            "example": "Sie muss einen Nachweis über ihre Sprachkenntnisse <strong>erbringen</strong>."
+        },
+        {
+            "word": "einreisen",
+            "perfekt": "ist eingereist",
+            "meaning": "to enter (a country)",
+            "example": "Er ist letzten Monat mit einem Touristenvisum <strong>eingereist</strong>."
+        },
+        {
+            "word": "ausreisen",
+            "perfekt": "ist ausgereist",
+            "meaning": "to leave (a country)",
+            "example": "Sie muss vor Ablauf des Visums wieder <strong>ausreisen</strong>."
+        },
+        {
+            "word": "niederlassen",
+            "perfekt": "hat sich niedergelassen",
+            "meaning": "to settle (somewhere)",
+            "example": "Die Familie hat sich vor fünf Jahren in Berlin <strong>niedergelassen</strong>."
+        },
+        {
+            "word": "anerkennen",
+            "perfekt": "hat anerkannt",
+            "meaning": "to recognize (officially)",
+            "example": "Ihr ausländischer Abschluss wurde in Deutschland <strong>anerkannt</strong>."
+        },
+        {
+            "word": "überzeugen",
+            "perfekt": "hat sich überzeugt",
+            "meaning": "to make sure (of something)",
+            "example": "Er hat sich vor der Abgabe noch einmal <strong>überzeugt</strong>, dass alles korrekt ist."
+        },
+        {
+            "word": "begründen",
+            "perfekt": "hat begründet",
+            "meaning": "to justify",
+            "example": "Er musste seine Kündigung schriftlich <strong>begründen</strong>."
+        },
+        {
+            "word": "pürieren",
+            "perfekt": "hat püriert",
+            "meaning": "to puree, blend",
+            "example": "Ich habe den Spinat für das Essen <strong>püriert</strong>."
+        },
+        {
+            "word": "automatisieren",
+            "perfekt": "hat automatisiert",
+            "meaning": "to automate",
+            "example": "Mit diesem Tool kann man Workflows <strong>automatisieren</strong>."
+        },
+        {
+            "word": "visualisieren",
+            "perfekt": "hat visualisiert",
+            "meaning": "to visualize",
+            "example": "Power BI kann komplexe Daten sehr gut <strong>visualisieren</strong>."
+        },
+        {
+            "word": "programmieren",
+            "perfekt": "hat programmiert",
+            "meaning": "to program, code",
+            "example": "Ich habe gestern ein neues Skript in Python <strong>programmiert</strong>."
+        },
+        {
+            "word": "optimieren",
+            "perfekt": "hat optimiert",
+            "meaning": "to optimize",
+            "example": "Mein Ziel ist es, die Entwicklungsprozesse zu <strong>optimieren</strong>."
+        },
+        {
+            "word": "entwerfen",
+            "perfekt": "hat entworfen",
+            "meaning": "to design",
+            "example": "Er hat in Japan viele neue Fahrzeugteile <strong>entworfen</strong>."
+        },
+        {
+            "word": "hochladen",
+            "perfekt": "hat hochgeladen",
+            "meaning": "to upload",
+            "example": "Bitte vergessen Sie nicht, den Code auf GitHub <strong>hochzuladen</strong>."
+        },
+        {
+            "word": "bewerten",
+            "perfekt": "hat bewertet",
+            "meaning": "to evaluate, rate",
+            "example": "Ich habe die Leistung der neuen Kameras <strong>bewertet</strong>."
+        },
+        {
+            "word": "vergleichen",
+            "perfekt": "hat verglichen",
+            "meaning": "to compare",
+            "example": "Wir haben OLED- und Mini-LED-Bildschirme miteinander <strong>verglichen</strong>."
+        },
+        {
+            "word": "abspielen",
+            "perfekt": "hat abgespielt",
+            "meaning": "to play (media)",
+            "example": "Können Sie bitte das Lied auf Spotify <strong>abspielen</strong>?"
+        },
+        {
+            "word": "backen",
+            "perfekt": "hat gebacken",
+            "meaning": "to bake",
+            "example": "Am Wochenende <strong>backen</strong> wir oft frische Pizza im Ofen."
+        }
+    ],
+    "praepositionen": [
+        {
+            "word": "<strong>sich bewerben</strong>",
+            "prep": "<span class=\"arrow\">um</span> +Akk",
+            "meaning": "to apply for (a position)",
+            "example": "Sie <strong>bewirbt sich</strong> um eine Stelle als Sachbearbeiterin."
+        },
+        {
+            "word": "<strong>sich bewerben</strong>",
+            "prep": "<span class=\"arrow\">bei</span> +Dat",
+            "meaning": "to apply at (a company)",
+            "example": "Er hat sich bei drei verschiedenen Firmen <strong>beworben</strong>."
+        },
+        {
+            "word": "<strong>sich kümmern</strong>",
+            "prep": "<span class=\"arrow\">um</span> +Akk",
+            "meaning": "to take care of",
+            "example": "Er <strong>kümmert sich</strong> jeden Tag um seine kranke Mutter."
+        },
+        {
+            "word": "<strong>bestehen</strong>",
+            "prep": "<span class=\"arrow\">aus</span> +Dat",
+            "meaning": "to consist of",
+            "example": "Die Prüfung <strong>besteht</strong> aus einem schriftlichen und einem mündlichen Teil."
+        },
+        {
+            "word": "<strong>achten</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to pay attention to",
+            "example": "Beim Ausfüllen des Formulars sollte man auf die Details <strong>achten</strong>."
+        },
+        {
+            "word": "<strong>sich beziehen</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to refer to",
+            "example": "Diese Regel <strong>bezieht sich</strong> nur auf Vollzeitmitarbeiter."
+        },
+        {
+            "word": "<strong>sich freuen</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to look forward to (future)",
+            "example": "Er <strong>freut sich</strong> schon sehr auf den Urlaub im August."
+        },
+        {
+            "word": "<strong>sich freuen</strong>",
+            "prep": "<span class=\"arrow\">über</span> +Akk",
+            "meaning": "to be happy about (now/past)",
+            "example": "Sie hat sich sehr über die gute Nachricht <strong>gefreut</strong>."
+        },
+        {
+            "word": "<strong>sich beschweren</strong>",
+            "prep": "<span class=\"arrow\">über</span> +Akk",
+            "meaning": "to complain about (something)",
+            "example": "Der Nachbar <strong>beschwert sich</strong> ständig über den Lärm."
+        },
+        {
+            "word": "<strong>sich beschweren</strong>",
+            "prep": "<span class=\"arrow\">bei</span> +Dat",
+            "meaning": "to complain to (someone)",
+            "example": "Sie <strong>beschwert sich</strong> beim Vermieter über die kaputte Heizung."
+        },
+        {
+            "word": "<strong>bitten</strong>",
+            "prep": "<span class=\"arrow\">um</span> +Akk",
+            "meaning": "to ask for",
+            "example": "Ich <strong>bitte</strong> Sie um eine kurze Rückmeldung bis Montag."
+        },
+        {
+            "word": "<strong>sich entscheiden</strong>",
+            "prep": "<span class=\"arrow\">für</span> +Akk",
+            "meaning": "to decide on",
+            "example": "Nach langem Überlegen hat sie sich für die kleinere Wohnung <strong>entschieden</strong>."
+        },
+        {
+            "word": "<strong>abhängen</strong>",
+            "prep": "<span class=\"arrow\">von</span> +Dat",
+            "meaning": "to depend on",
+            "example": "Die Höhe der Miete <strong>hängt</strong> stark von der Lage <strong>ab</strong>."
+        },
+        {
+            "word": "<strong>sich interessieren</strong>",
+            "prep": "<span class=\"arrow\">für</span> +Akk",
+            "meaning": "to be interested in",
+            "example": "Er <strong>interessiert sich</strong> sehr für die Politik seines neuen Landes."
+        },
+        {
+            "word": "<strong>teilnehmen</strong>",
+            "prep": "<span class=\"arrow\">an</span> +Dat",
+            "meaning": "to take part in",
+            "example": "Alle Mitarbeiter sollen an der Fortbildung <strong>teilnehmen</strong>."
+        },
+        {
+            "word": "<strong>sich gewöhnen</strong>",
+            "prep": "<span class=\"arrow\">an</span> +Akk",
+            "meaning": "to get used to",
+            "example": "Nach ein paar Monaten hat er sich an das kalte Wetter <strong>gewöhnt</strong>."
+        },
+        {
+            "word": "<strong>rechnen</strong>",
+            "prep": "<span class=\"arrow\">mit</span> +Dat",
+            "meaning": "to expect, count on",
+            "example": "Mit einer schnellen Antwort der Behörde sollte man nicht <strong>rechnen</strong>."
+        },
+        {
+            "word": "<strong>sich verlassen</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to rely on",
+            "example": "Man kann sich auf ihre Pünktlichkeit immer <strong>verlassen</strong>."
+        },
+        {
+            "word": "<strong>leiden</strong>",
+            "prep": "<span class=\"arrow\">unter</span> +Dat",
+            "meaning": "to suffer from/under (a situation)",
+            "example": "Viele Pendler <strong>leiden</strong> unter dem Stress im Berufsverkehr."
+        },
+        {
+            "word": "<strong>leiden</strong>",
+            "prep": "<span class=\"arrow\">an</span> +Dat",
+            "meaning": "to suffer from (an illness)",
+            "example": "Er <strong>leidet</strong> seit Jahren an einer chronischen Krankheit."
+        },
+        {
+            "word": "<strong>bestehen</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Dat",
+            "meaning": "to insist on",
+            "example": "Der Chef <strong>besteht</strong> auf einer schriftlichen Bestätigung."
+        },
+        {
+            "word": "<strong>sich wenden</strong>",
+            "prep": "<span class=\"arrow\">an</span> +Akk",
+            "meaning": "to turn to, contact",
+            "example": "Bei Fragen können Sie sich jederzeit an das Sekretariat <strong>wenden</strong>."
+        },
+        {
+            "word": "<strong>verzichten</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to give up, forgo",
+            "example": "Sie <strong>verzichtet</strong> auf den Bonus, um mehr Urlaub zu bekommen."
+        },
+        {
+            "word": "<strong>sorgen</strong>",
+            "prep": "<span class=\"arrow\">für</span> +Akk",
+            "meaning": "to take care of, ensure",
+            "example": "Die Eltern <strong>sorgen</strong> dafür, dass die Kinder pünktlich zur Schule kommen."
+        },
+        {
+            "word": "<strong>sich konzentrieren</strong>",
+            "prep": "<span class=\"arrow\">auf</span> +Akk",
+            "meaning": "to concentrate on",
+            "example": "Ich muss mich auf die Datenvisualisierung <strong>konzentrieren</strong>."
+        },
+        {
+            "word": "<strong>passen</strong>",
+            "prep": "<span class=\"arrow\">zu</span> +Dat",
+            "meaning": "to match, fit with",
+            "example": "Ihre Erfahrung <strong>passt</strong> perfekt zu den Anforderungen der Stelle."
+        },
+        {
+            "word": "<strong>denken</strong>",
+            "prep": "<span class=\"arrow\">an</span> +Akk",
+            "meaning": "to think of, remember",
+            "example": "Bitte <strong>denken</strong> Sie an das wichtige Live-Meeting am Dienstag."
+        },
+        {
+            "word": "<strong>diskutieren</strong>",
+            "prep": "<span class=\"arrow\">über</span> +Akk",
+            "meaning": "to discuss about",
+            "example": "Wir haben lange über die neuen Display-Technologien <strong>diskutiert</strong>."
+        }
+    ]
+}

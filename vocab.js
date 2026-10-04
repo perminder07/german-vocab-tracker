@@ -1,4 +1,4 @@
-{
+const VOCAB_DATABASE ={
     "nomen": [
         {
             "word": "die Erfahrung (-en)",
@@ -2571,4 +2571,4 @@
             "example": "Wann <strong>hörst</strong> du heute Nachmittag <strong>mit</strong> der Gartenarbeit <strong>auf</strong>?"
         }
     ]
-}
+};

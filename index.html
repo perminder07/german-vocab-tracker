@@ -85,7 +85,7 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
 <div id="sticky-header">
     <div class="top-header">
         <div class="title-area">
-            <h1>DTZ B1 Vokabeln <span style="font-size: 0.5em; color: #888; vertical-align: middle;">v2.0.1</span></h1>
+            <h1>DTZ B1 Vokabeln <span style="font-size: 0.5em; color: #888; vertical-align: middle;">v2.1.0</span></h1>
             <p class="legend">
                 <span class="der">der</span> = maskulin &nbsp; <span class="die">die</span> = feminin &nbsp; <span class="das">das</span> = neutral
             </p>
@@ -121,6 +121,7 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
 <div id="sec-verben" class="vokabel-section"><h2>Verben</h2></div>
 <div id="sec-praepositionen" class="vokabel-section"><h2>Verben mit Präpositionen</h2></div>
 
+<script src="vocab.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     let vocabData = { nomen: [], adjektive: [], verben: [], praepositionen: [] };
@@ -193,50 +194,48 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML += html;
     }
 
-    // Fetch Database and Render
-    fetch('vocab.json')
-        .then(res => res.json())
-        .then(data => {
-            vocabData = data;
-            
-            renderTable('sec-nomen', data.nomen, 
-                ['Wort (Plural)', 'Bedeutung', 'Synonyme / Ähnlich', 'Beispielsatz'], 
-                item => `<td><span class="${item.genderClass}">${item.word}</span></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.synonyms}</td><td class="ex">${item.example}</td>`
-            );
-            
-            renderTable('sec-adjektive', data.adjektive, 
-                ['Wort', 'Bedeutung', 'Gegenteil', 'Beispielsatz'], 
-                item => `<td><strong>${item.word}</strong></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.opposite}</td><td class="ex">${item.example}</td>`
-            );
-            
-            renderTable('sec-verben', data.verben, 
-                ['Wort', 'Perfekt', 'Bedeutung', 'Beispielsatz'], 
-                item => `<td><strong>${item.word}</strong></td><td>${item.perfekt}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
-            );
-            
-            renderTable('sec-praepositionen', data.praepositionen, 
-                ['Wort', 'Präp. + Kasus', 'Bedeutung', 'Beispielsatz'], 
-                item => `<td>${item.word}</td><td>${item.prep}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
-            );
 
-            // Attach checkbox event listeners
-            document.querySelectorAll('.learned-cb').forEach(cb => {
-                cb.addEventListener('change', function() {
-                    const tr = this.closest('tr');
-                    if (this.checked) {
-                        tr.classList.add('learned');
-                        localStorage.setItem(this.getAttribute('data-id'), 'true');
-                    } else {
-                        tr.classList.remove('learned');
-                        localStorage.removeItem(this.getAttribute('data-id'));
-                    }
-                    updateProgress();
-                });
-            });
+    // Load Database directly from vocab.js
+    vocabData = VOCAB_DATABASE;
+    
+    renderTable('sec-nomen', vocabData.nomen, 
+        ['Wort (Plural)', 'Bedeutung', 'Synonyme / Ähnlich', 'Beispielsatz'], 
+        item => `<td><span class="${item.genderClass}">${item.word}</span></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.synonyms}</td><td class="ex">${item.example}</td>`
+    );
+    
+    renderTable('sec-adjektive', vocabData.adjektive, 
+        ['Wort', 'Bedeutung', 'Gegenteil', 'Beispielsatz'], 
+        item => `<td><strong>${item.word}</strong></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.opposite}</td><td class="ex">${item.example}</td>`
+    );
+    
+    renderTable('sec-verben', vocabData.verben, 
+        ['Wort', 'Perfekt', 'Bedeutung', 'Beispielsatz'], 
+        item => `<td><strong>${item.word}</strong></td><td>${item.perfekt}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
+    );
+    
+    renderTable('sec-praepositionen', vocabData.praepositionen, 
+        ['Wort', 'Präp. + Kasus', 'Bedeutung', 'Beispielsatz'], 
+        item => `<td>${item.word}</td><td>${item.prep}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
+    );
 
-            setupUI();
-            updateProgress(); // Initial trigger
+    // Attach checkbox event listeners
+    document.querySelectorAll('.learned-cb').forEach(cb => {
+        cb.addEventListener('change', function() {
+            const tr = this.closest('tr');
+            if (this.checked) {
+                tr.classList.add('learned');
+                localStorage.setItem(this.getAttribute('data-id'), 'true');
+            } else {
+                tr.classList.remove('learned');
+                localStorage.removeItem(this.getAttribute('data-id'));
+            }
+            updateProgress();
         });
+    });
+
+    setupUI();
+    updateProgress(); // Initial trigger
+
 
     function setupUI() {
         document.querySelectorAll('.cat-filter').forEach(cb => {

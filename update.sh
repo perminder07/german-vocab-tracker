@@ -4,7 +4,7 @@
 python3 generate_chart.py
 
 # 2. Check if vocabulary data was modified
-if git status --porcelain | grep -q "vocab.json"; then
+if git status --porcelain | grep -q "vocab.js"; then
     echo "New vocabulary detected. Automating PATCH release..."
     
     # Run the version bumper
@@ -14,7 +14,7 @@ if git status --porcelain | grep -q "vocab.json"; then
     NEW_VERSION=$(cat version.txt)
     
     # Stage and commit the vocabulary and version files
-    git add vocab.json version.txt README.md index.html
+    git add vocab.js version.txt README.md index.html
     git commit -m "Add new vocabulary (Auto-Release v${NEW_VERSION})"
     
     # Attach the tag

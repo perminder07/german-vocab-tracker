@@ -1,7 +1,7 @@
 # German Vocabulary Tracker (DTZ B1)
 ![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 
-## Live Progress
+## Progress
 ![Vocabulary Progress](data/progress-chart.png)
 
 A personal tool for learning the vocabulary for the DTZ B1 exam: a single-page vocabulary list with
@@ -12,8 +12,7 @@ I built it on purpose as a hands-on project for n8n, Docker, Python data handlin
 and the trade-offs are documented below.
 
 ## Just want to use it?
-Open `index.html` in a browser (double-click, no server needed). Tick words as you learn them; progress is
-stored in the browser's `localStorage`. Everything below the "Optional automation" heading is optional.
+Clone this repository, then open `index.html` in a browser (double-click, no server needed). Tick words as you learn them; progress is stored in the browser's `localStorage`. Everything below the "Optional automation" heading is optional.
 
 ## What it contains
 

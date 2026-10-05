@@ -97,11 +97,30 @@ def clean_ledger():
 
 
 def draw(df):
-    fig, ax = plt.subplots(figsize=(10, 5))
-    series = [("Nomen", "#3498db", "Nomen"), ("Adjektive", "#e67e22", "Adjektive"),
-              ("Verben", "#2ecc71", "Verben"), ("Praepositionen", "#9b59b6", "Verben m. Präp.")]
+    fig, ax = plt.subplots(figsize=(11, 6))
+    series = [
+        ("Nomen", "#3498db", "Nomen"), 
+        ("Adjektive", "#e67e22", "Adjektive"),
+        ("Verben", "#2ecc71", "Verben"), 
+        ("Praepositionen", "#9b59b6", "Verben m. Präp.")
+    ]
+    
     for col, color, label in series:
         ax.plot(df["Date"], df[col], marker="o", color=color, linewidth=2.5, label=label)
+        
+        # Annotate each data point with its exact word count value
+        for x, y in zip(df["Date"], df[col]):
+            ax.annotate(
+                str(int(y)),
+                (x, y),
+                textcoords="offset points",
+                xytext=(0, 7),  # Shifts the number 7 points above the dot
+                ha='center',
+                fontsize=8,
+                fontweight='semibold',
+                color='#2c3e50'
+            )
+
     span_days = max((df["Date"].max() - df["Date"].min()).days, 1)
     ax.xaxis.set_major_locator(mdates.DayLocator(interval=max(1, math.ceil(span_days / 8))))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d"))
@@ -115,7 +134,7 @@ def draw(df):
     plt.tight_layout()
     plt.savefig(PNG_PATH)
     plt.close(fig)
-    print("Success: multi-line chart generated.")
+    print("Success: multi-line chart generated with data labels.")
 
 
 def main():

@@ -1,66 +1,136 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import urllib.request
+#!/usr/bin/env python3
+"""Fetch the current learning counts from n8n, append them to progress.csv and redraw the chart.
+
+Usage:
+    python3 generate_chart.py             # fetch, append today's row, redraw
+    python3 generate_chart.py --no-fetch  # only redraw from progress.csv
+
+Configuration (environment variables, or a git-ignored .env file next to this script):
+    N8N_SCORE_URL   GET webhook URL   (default http://localhost:5678/webhook/current-score)
+    N8N_TOKEN       value for the X-Api-Key header (needed if the webhook uses Header Auth)
+"""
+import csv
 import json
+import math
 import os
+import sys
+import urllib.request
 from datetime import datetime
+from pathlib import Path
 
-# 1. Fetch live score from n8n Data Table
-try:
-    url = "http://localhost:5678/webhook/current-score"
-    response = urllib.request.urlopen(url)
-    data = json.loads(response.read().decode())
-    
-    # Safely get data; if n8n sends Null (None), default to 0
-    nomen = data.get('nomen') or 0
-    adjektive = data.get('adjektive') or 0
-    verben = data.get('verben') or 0
-    praep = data.get('praepositionen') or 0
-    
-    today = datetime.now().strftime('%Y-%m-%d')
-    
-    # Create the CSV with headers if it doesn't exist OR if it is empty (0 bytes)
-    if not os.path.isfile('progress.csv') or os.path.getsize('progress.csv') == 0:
-        with open('progress.csv', 'w') as f:
-            f.write("Date,Nomen,Adjektive,Verben,Praepositionen\n")
-            
-    df_new = pd.DataFrame({'Date': [today], 'Nomen': [nomen], 'Adjektive': [adjektive], 'Verben': [verben], 'Praepositionen': [praep]})
-    df_new.to_csv('progress.csv', mode='a', header=False, index=False)
-    print(f"Successfully fetched live data - Nomen: {nomen}, Adjektive: {adjektive}, Verben: {verben}, Präp: {praep}")
-except Exception as e:
-    print(f"Could not fetch live score from n8n. Error: {e}")
+import matplotlib
+matplotlib.use("Agg")  # headless: works under cron/launchd
+import matplotlib.dates as mdates
+import matplotlib.pyplot as plt
+import pandas as pd
 
-# 2. Read, clean, and chronologically sort the data
-try:
-    df = pd.read_csv('progress.csv')
-    df = df.drop_duplicates(subset=['Date'], keep='last')
-    df['Date'] = pd.to_datetime(df['Date'])
-    df = df.sort_values('Date')
-    df.to_csv('progress.csv', index=False, date_format='%Y-%m-%d')
+ROOT = Path(__file__).resolve().parent
+CSV_PATH = ROOT / "progress.csv"
+PNG_PATH = ROOT / "progress-chart.png"
+FIELDS = ["Nomen", "Adjektive", "Verben", "Praepositionen"]
+API_KEYS = ["nomen", "adjektive", "verben", "praepositionen"]   # JSON keys sent by n8n
+HEADER = ["Date"] + FIELDS
 
-    # 3. Draw the multi-line chart
+
+def load_env_file():
+    env = ROOT / ".env"
+    if not env.exists():
+        return
+    for line in env.read_text(encoding="utf8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, v = line.split("=", 1)
+            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
+def fetch_counts():
+    """Return a list of 4 ints, or None (with a message) if the data is missing or invalid."""
+    url = os.environ.get("N8N_SCORE_URL", "http://localhost:5678/webhook/current-score")
+    req = urllib.request.Request(url)
+    if os.environ.get("N8N_TOKEN"):
+        req.add_header("X-Api-Key", os.environ["N8N_TOKEN"])
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode())
+    except Exception as e:
+        print(f"WARNING: could not fetch live score from n8n ({e}). Chart redrawn from existing CSV only.")
+        return None
+    values = []
+    for key in API_KEYS:
+        v = data.get(key) if isinstance(data, dict) else None
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or v < 0 or int(v) != v:
+            print(f"WARNING: n8n returned {key!r}={v!r} (missing/invalid). No row appended; "
+                  "a made-up 0 would corrupt the history.")
+            return None
+        values.append(int(v))
+    return values
+
+
+def append_row(values):
+    today = datetime.now().strftime("%Y-%m-%d")
+    new_file = not CSV_PATH.exists() or CSV_PATH.stat().st_size == 0
+    with open(CSV_PATH, "a", newline="", encoding="utf8") as f:
+        w = csv.writer(f)
+        if new_file:
+            w.writerow(HEADER)
+        w.writerow([today] + values)
+    print("Fetched live data - " + ", ".join(f"{k}: {v}" for k, v in zip(FIELDS, values)))
+
+
+def clean_ledger():
+    df = pd.read_csv(CSV_PATH)
+    for col in FIELDS:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+    df = df.dropna(subset=FIELDS)
+    df[FIELDS] = df[FIELDS].astype(int)
+    df["Date"] = pd.to_datetime(df["Date"])
+    df = df.drop_duplicates(subset=["Date"], keep="last").sort_values("Date").reset_index(drop=True)
+    df.to_csv(CSV_PATH, index=False, date_format="%Y-%m-%d")
+    # Early-warning for the "browser with empty storage overwrote n8n" failure mode
+    if len(df) >= 2:
+        prev, last = df.iloc[-2], df.iloc[-1]
+        dropped = [f for f in FIELDS if last[f] < prev[f]]
+        if dropped:
+            print(f"WARNING: counts dropped since {prev['Date']:%Y-%m-%d} for {', '.join(dropped)}. "
+                  "If that was not intentional, check the browser/profile you tick words in.")
+    return df
+
+
+def draw(df):
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.plot(df['Date'], df['Nomen'], marker='o', color='#3498db', linewidth=2.5, label='Nomen')
-    ax.plot(df['Date'], df['Adjektive'], marker='o', color='#e67e22', linewidth=2.5, label='Adjektive')
-    ax.plot(df['Date'], df['Verben'], marker='o', color='#2ecc71', linewidth=2.5, label='Verben')
-    ax.plot(df['Date'], df['Praepositionen'], marker='o', color='#9b59b6', linewidth=2.5, label='Verben m. Präp.')
-
-    # 4. Auto-format X-axis to prevent overlapping dates
-    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-    ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+    series = [("Nomen", "#3498db", "Nomen"), ("Adjektive", "#e67e22", "Adjektive"),
+              ("Verben", "#2ecc71", "Verben"), ("Praepositionen", "#9b59b6", "Verben m. Präp.")]
+    for col, color, label in series:
+        ax.plot(df["Date"], df[col], marker="o", color=color, linewidth=2.5, label=label)
+    span_days = max((df["Date"].max() - df["Date"].min()).days, 1)
+    ax.xaxis.set_major_locator(mdates.DayLocator(interval=max(1, math.ceil(span_days / 8))))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d"))
     fig.autofmt_xdate(rotation=45)
-
-    # 5. Styling
-    ax.set_title('DTZ B1 Vocabulary Progress by Category', fontsize=14, fontweight='bold')
-    ax.set_xlabel('Date', fontsize=11)
-    ax.set_ylabel('Words Learned', fontsize=11)
-    ax.legend(loc='upper left', frameon=True)
-    ax.grid(True, linestyle='--', alpha=0.7)
+    ax.set_title("DTZ B1 Vocabulary Progress by Category", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Date", fontsize=11)
+    ax.set_ylabel("Words Learned", fontsize=11)
+    ax.set_ylim(bottom=0)
+    ax.legend(loc="upper left", frameon=True)
+    ax.grid(True, linestyle="--", alpha=0.7)
     plt.tight_layout()
+    plt.savefig(PNG_PATH)
+    plt.close(fig)
+    print("Success: multi-line chart generated.")
 
-    # 6. Save image
-    plt.savefig('progress-chart.png')
-    print("Success: Multi-line chart generated!")
-except Exception as e:
-    print(f"Chart generation failed. Check if progress.csv is formatted correctly. Error: {e}")
+
+def main():
+    load_env_file()
+    if "--no-fetch" not in sys.argv:
+        values = fetch_counts()
+        if values is not None:
+            append_row(values)
+    if not CSV_PATH.exists():
+        sys.exit("progress.csv does not exist yet and no data could be fetched.")
+    try:
+        draw(clean_ledger())
+    except Exception as e:
+        sys.exit(f"Chart generation failed. Check that progress.csv is well-formed. Error: {e}")
+
+
+if __name__ == "__main__":
+    main()

@@ -2,7 +2,7 @@
 ![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 
 ## Live Progress
-![Vocabulary Progress](progress-chart.png)
+![Vocabulary Progress](data/progress-chart.png)
 
 A personal tool for learning the vocabulary for the DTZ B1 exam: a single-page vocabulary list with
 progress tracking, plus a small local automation chain that logs my daily progress and redraws the chart above.

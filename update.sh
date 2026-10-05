@@ -22,13 +22,13 @@ if [ -x .venv/bin/python ]; then PY=.venv/bin/python; else PY=python3; fi
 BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
 # 1. Data pipeline: fetch counts from n8n, append to progress.csv, redraw the chart
-"$PY" generate_chart.py
+"$PY" scripts/generate_chart.py
 
 # 2. Release when the vocabulary changed
 if [ -n "$(git status --porcelain -- vocab.js)" ]; then
     echo "vocab.js changed: validating and automating a PATCH release..."
-    "$PY" validate_vocab.py --assign-ids      # aborts the run on any error
-    "$PY" bump_version.py patch
+    "$PY" scripts/validate_vocab.py --assign-ids      # aborts the run on any error
+    "$PY" scripts/bump_version.py patch
     NEW_VERSION="$(tr -d '[:space:]' < version.txt)"
 
     git add vocab.js version.txt README.md index.html
@@ -40,8 +40,8 @@ else
 fi
 
 # 3. Chart/ledger updates
-if [ -n "$(git status --porcelain -- progress.csv progress-chart.png)" ]; then
-    git add progress.csv progress-chart.png
+if [ -n "$(git status --porcelain -- data/progress.csv data/progress-chart.png)" ]; then
+    git add data/progress.csv data/progress-chart.png
     git commit -m "Repository sync: $(date +%Y-%m-%d)"
     git push origin "$BRANCH"
 fi

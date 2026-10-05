@@ -24,16 +24,16 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
-CSV_PATH = ROOT / "progress.csv"
-PNG_PATH = ROOT / "progress-chart.png"
+ROOT = Path(__file__).resolve().parent.parent  # Points to project root
+CSV_PATH = ROOT / "data/progress.csv"
+PNG_PATH = ROOT / "data/progress-chart.png"
 FIELDS = ["Nomen", "Adjektive", "Verben", "Praepositionen"]
 API_KEYS = ["nomen", "adjektive", "verben", "praepositionen"]   # JSON keys sent by n8n
 HEADER = ["Date"] + FIELDS
 
 
 def load_env_file():
-    env = ROOT / ".env"
+    env = ROOT / ".env"  # Looks for .env in the project root
     if not env.exists():
         return
     for line in env.read_text(encoding="utf8").splitlines():

@@ -7,7 +7,18 @@
 A personal tool for learning the vocabulary for the DTZ B1 exam: a single-page vocabulary list with
 progress tracking, plus a small local automation chain that logs my daily progress and redraws the chart above.
 
-**Honest scope note:** for four counters this is more machinery than needed (a browser export would do).
+## Interface & Features
+
+![DTZ B1 Vokabeln UI](docs/ui-preview.png)
+
+Designed as a offline-first single-page application (SPA), the interface provides an immersive learning experience with the following key features:
+
+* Gender Color-Coding
+* Real-Time Progress Tracking(Gelernt)
+* Filtering & Search: Toggle parts of speech on or off (Nouns, Adjectives, Verbs, Verbs with Prepositions) or use the live search bar to find terms instantly.
+* Interactive Study Modes: Includes a built-in *Quiz Mode* toggle and local data synchronization powered by the browser's `localStorage`.
+
+**Honest note:** for four counters this is more machinery than needed (a browser export would do).
 I built it on purpose as a hands-on project for n8n, Docker, Python data handling and Git automation,
 and the trade-offs are documented below.
 

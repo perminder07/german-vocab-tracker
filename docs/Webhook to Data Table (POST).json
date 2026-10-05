@@ -1,0 +1,175 @@
+{
+  "name": "Webhook to Data Table (POST)",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d54e6b95-28cf-4521-849c-d537cea34e3f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "REPLACE-ME",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "88f2194f-a2d0-4775-8645-3465b7127404",
+      "name": "Webhook",
+      "webhookId": "fac25992-a97a-4a4f-b883-959632b0f877",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "moUkJv4P8Dii8qJb",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "value": "WCd8To1zdNq9n1uX",
+          "mode": "list",
+          "cachedResultName": "current_progress",
+          "cachedResultUrl": "/projects/pkdqDxYhIghUa2zS/datatables/WCd8To1zdNq9n1uX"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyValue": "1"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "praepositionen": "={{ $json.body.praepositionen }}",
+            "verben": "={{ $json.body.verben }}",
+            "adjektive": "={{ $json.body.adjektive }}",
+            "nomen": "={{ $json.body.nomen }}"
+          },
+          "matchingColumns": [
+            "score"
+          ],
+          "schema": [
+            {
+              "id": "nomen",
+              "displayName": "nomen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "adjektive",
+              "displayName": "adjektive",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "verben",
+              "displayName": "verben",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "praepositionen",
+              "displayName": "praepositionen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        672,
+        0
+      ],
+      "id": "3b81b1f9-f6c2-4b8c-871b-a286c3f2b2e4",
+      "name": "Upsert row(s)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body ?? {};\nconst keys = ['nomen', 'adjektive', 'verben', 'praepositionen'];\nconst totals = body.totals ?? {};\nfor (const k of keys) {\n  const v = body[k], max = totals[k];\n  if (!Number.isInteger(v) || !Number.isInteger(max) || v < 0 || v > max || max > 5000) {\n    throw new Error(`Invalid payload for \"${k}\"`);\n  }\n}\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "5fd0704c-761f-480f-ac95-b7b155665e75",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Upsert row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "f8c70486-ae76-4ea3-b890-7fc14c1a9e4d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3f1433ba31118ab8cf2a8eba0b7dff8d271beedcc75912f4e7aa70a5349047eb"
+  },
+  "nodeGroups": [],
+  "id": "mo1GmTdOnhtS8XU8",
+  "tags": []
+}

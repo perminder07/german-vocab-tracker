@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DTZ B1 Vokabeln</title>
 <style>
 /* Base Styles */
@@ -78,6 +79,12 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
 .ex{font-style:italic;color:#444} .arrow{font-family:monospace;color:#a05a00;font-weight:bold}
 .legend span{padding:1px 6px;border-radius:4px;margin-right:6px;font-weight:bold}
 .sub{color:#888;font-size:.82em} strong { color: #111; } .syn { color: #555; font-size: 0.9em; }
+
+/* Sync control */
+.sync-area { display: flex; align-items: center; gap: 8px; font-size: .85em; color: #666; }
+#sync-btn { cursor: pointer; padding: 3px 10px; border: 1px solid #b3b3b3; border-radius: 4px; background: #fff; font-size: 1em; }
+#sync-btn:disabled { cursor: default; opacity: .5; }
+#id-banner { display: none; background: #fde8e8; border: 1px solid #e0a0a0; color: #7a1f1f; padding: 8px 12px; margin: 8px 0; border-radius: 4px; }
 </style>
 </head>
 <body>
@@ -85,7 +92,7 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
 <div id="sticky-header">
     <div class="top-header">
         <div class="title-area">
-            <h1>DTZ B1 Vokabeln <span style="font-size: 0.5em; color: #888; vertical-align: middle;">v2.1.0</span></h1>
+            <h1>DTZ B1 Vokabeln <span id="app-version" style="font-size: 0.5em; color: #888; vertical-align: middle;">v2.2.0</span></h1>
             <p class="legend">
                 <span class="der">der</span> = maskulin &nbsp; <span class="die">die</span> = feminin &nbsp; <span class="das">das</span> = neutral
             </p>
@@ -95,6 +102,10 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
             <div class="progress-bar">
                 <div class="progress-fill" id="progress-fill"></div>
                 <div class="progress-percentage" id="progress-percentage-text">0%</div>
+            </div>
+            <div class="sync-area">
+                <button id="sync-btn" type="button" title="Fortschritt jetzt an n8n senden">&#8635; Sync</button>
+                <span id="sync-status"></span>
             </div>
         </div>
     </div>
@@ -115,61 +126,133 @@ tr.learned * { text-decoration: line-through; text-decoration-color: #888; }
     </div>
 </div>
 
+<div id="id-banner"></div>
+
 <!-- Dynamic Data Containers -->
 <div id="sec-nomen" class="vokabel-section"><h2>Nomen</h2></div>
 <div id="sec-adjektive" class="vokabel-section"><h2>Adjektive</h2></div>
 <div id="sec-verben" class="vokabel-section"><h2>Verben</h2></div>
 <div id="sec-praepositionen" class="vokabel-section"><h2>Verben mit Präpositionen</h2></div>
 
+<!-- config.js is optional and git-ignored (see config.example.js). Without it, n8n sync is simply off. -->
+<script src="config.js" onerror="void 0"></script>
 <script src="vocab.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    let vocabData = { nomen: [], adjektive: [], verben: [], praepositionen: [] };
+    const CATEGORIES = ['nomen', 'adjektive', 'verben', 'praepositionen'];
+    const STORE_KEY = 'vocab_progress_v3';          // { "<entry id>": "<ISO timestamp>" }
+    const MIGRATED_KEY = 'vocab_progress_v3_migrated';
+    const CFG = (typeof APP_CONFIG !== 'undefined' && APP_CONFIG) ? APP_CONFIG : {};
+    // Only sync from a local page (file:// or localhost) and only if config.js provides a URL.
+    // This keeps a GitHub Pages copy from ever calling localhost.
+    const IS_LOCAL = ['', 'localhost', '127.0.0.1'].includes(location.hostname);
+    const SYNC_ON = IS_LOCAL && !!CFG.syncUrl;
+    const vocabData = VOCAB_DATABASE;
 
-    // Strips HTML tags to match the original localStorage keys perfectly
-    function getCleanWord(htmlString) {
-        const temp = document.createElement('div');
-        temp.innerHTML = htmlString;
-        return temp.textContent.trim();
+    // ---------- progress state (keyed by stable entry id) ----------
+    function loadProgress() {
+        try {
+            const p = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+            return (p && typeof p === 'object' && !Array.isArray(p)) ? p : {};
+        } catch (e) { return {}; }
     }
+    function saveProgress() {
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(progress)); return true; }
+        catch (e) { setStatus('⚠ Speichern im Browser nicht möglich'); return false; }
+    }
+    let progress = loadProgress();
 
-    function updateProgress() {
-        let counts = { nomen: 0, adjektive: 0, verben: 0, praepositionen: 0 };
-        let total = 0, learned = 0;
-
-        // Iterate through the DATA, not the DOM, to prevent filter bugs
-        const categories = ['nomen', 'adjektive', 'verben', 'praepositionen'];
-        categories.forEach(cat => {
-            vocabData[cat].forEach(item => {
-                total++;
-                const uniqueId = 'learned_' + encodeURIComponent(getCleanWord(item.word));
-                if (localStorage.getItem(uniqueId) === 'true') {
-                    counts[cat]++;
-                    learned++;
+    // ---------- one-time migration from the old "learned_<word>" keys ----------
+    // DOMParser creates an inert document (no scripts, no image loading), unlike innerHTML.
+    function legacyKey(html) {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        return 'learned_' + encodeURIComponent(doc.body.textContent.trim());
+    }
+    function migrateLegacy() {
+        try {
+            if (localStorage.getItem(MIGRATED_KEY)) return;
+            CATEGORIES.forEach(cat => vocabData[cat].forEach(item => {
+                if (item.id && !progress[item.id] && localStorage.getItem(legacyKey(item.word)) === 'true') {
+                    progress[item.id] = 'legacy';
                 }
-            });
-        });
-
-        // Update UI Text
-        const percentNum = total === 0 ? 0 : ((learned / total) * 100);
-        document.getElementById('progress-count').textContent = learned;
-        document.getElementById('progress-total').textContent = total;
-        document.getElementById('progress-fill').style.width = percentNum + '%';
-        document.getElementById('progress-percentage-text').textContent = Math.round(percentNum) + '%';
-
-        // Trigger n8n Webhook with accurate data
-        fetch('http://localhost:5678/webhook/fac25992-a97a-4a4f-b883-959632b0f877', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                nomen: counts.nomen,
-                adjektive: counts.adjektive,
-                verben: counts.verben,
-                praepositionen: counts.praepositionen,
-                timestamp: new Date().toISOString()
-            })
-        }).catch(e => console.log("Webhook skipped."));
+            }));
+            saveProgress();
+            localStorage.setItem(MIGRATED_KEY, new Date().toISOString());
+        } catch (e) { console.warn('Legacy migration skipped:', e); }
     }
+
+    function checkIds() {
+        const seen = new Set(), bad = [];
+        CATEGORIES.forEach(cat => vocabData[cat].forEach(item => {
+            if (!item.id || seen.has(item.id)) bad.push(cat + ': ' + item.word);
+            seen.add(item.id);
+        }));
+        if (bad.length) {
+            const b = document.getElementById('id-banner');
+            b.style.display = 'block';
+            b.textContent = 'vocab.js: ' + bad.length + ' Eintrag/Einträge ohne eindeutige id. Bitte "python3 validate_vocab.py --assign-ids" ausführen.';
+        }
+    }
+
+    // ---------- stats + UI ----------
+    function computeStats() {
+        const counts = {}, totals = {};
+        let learned = 0, total = 0;
+        CATEGORIES.forEach(cat => {
+            totals[cat] = vocabData[cat].length;
+            counts[cat] = vocabData[cat].filter(item => progress[item.id]).length;
+            learned += counts[cat];
+            total += totals[cat];
+        });
+        return { counts, totals, learned, total };
+    }
+    function updateProgress() {
+        const s = computeStats();
+        const pct = s.total === 0 ? 0 : (s.learned / s.total) * 100;
+        document.getElementById('progress-count').textContent = s.learned;
+        document.getElementById('progress-total').textContent = s.total;
+        document.getElementById('progress-fill').style.width = pct + '%';
+        document.getElementById('progress-percentage-text').textContent = Math.round(pct) + '%';
+    }
+
+    // ---------- n8n sync: only on user action, never on page load ----------
+    const statusEl = document.getElementById('sync-status');
+    const syncBtn = document.getElementById('sync-btn');
+    function setStatus(text) { statusEl.textContent = text; }
+    let syncTimer = null;
+    function scheduleSync() {
+        if (!SYNC_ON) return;
+        clearTimeout(syncTimer);
+        setStatus('…');
+        syncTimer = setTimeout(syncNow, 800);   // debounce bursts of ticking
+    }
+    async function syncNow() {
+        if (!SYNC_ON) return;
+        const s = computeStats();
+        const headers = { 'Content-Type': 'application/json' };
+        if (CFG.syncToken) headers['X-Api-Key'] = CFG.syncToken;
+        try {
+            const r = await fetch(CFG.syncUrl, {
+                method: 'POST',
+                headers,
+                body: JSON.stringify(Object.assign({}, s.counts, { totals: s.totals, timestamp: new Date().toISOString() }))
+            });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            setStatus('✓ synchronisiert ' + new Date().toLocaleTimeString());
+        } catch (e) {
+            setStatus('⚠ Sync fehlgeschlagen');
+            console.warn('Sync failed:', e);
+        }
+    }
+    if (SYNC_ON) {
+        syncBtn.addEventListener('click', syncNow);
+    } else {
+        syncBtn.disabled = true;
+        setStatus(IS_LOCAL ? 'Sync aus (keine config.js)' : 'Sync aus (nur lokal)');
+    }
+
+    // ---------- rendering ----------
+    function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
     function renderTable(containerId, data, headers, rowBuilder) {
         const container = document.getElementById(containerId);
@@ -178,14 +261,10 @@ document.addEventListener('DOMContentLoaded', function() {
         html += '</tr>';
 
         data.forEach(item => {
-            const uniqueId = 'learned_' + encodeURIComponent(getCleanWord(item.word));
-            const isLearned = localStorage.getItem(uniqueId) === 'true';
-            const rowClass = isLearned ? 'learned' : '';
-            const checked = isLearned ? 'checked' : '';
-
-            html += `<tr class="${rowClass}">
+            const isLearned = !!progress[item.id];
+            html += `<tr class="${isLearned ? 'learned' : ''}">
                 <td style="text-align: center;">
-                    <input type="checkbox" class="learned-cb" data-id="${uniqueId}" ${checked}>
+                    <input type="checkbox" class="learned-cb" data-id="${esc(item.id)}" ${isLearned ? 'checked' : ''}>
                 </td>`;
             html += rowBuilder(item);
             html += `</tr>`;
@@ -194,48 +273,49 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML += html;
     }
 
+    checkIds();
+    migrateLegacy();
+    progress = loadProgress();
 
-    // Load Database directly from vocab.js
-    vocabData = VOCAB_DATABASE;
-    
-    renderTable('sec-nomen', vocabData.nomen, 
-        ['Wort (Plural)', 'Bedeutung', 'Synonyme / Ähnlich', 'Beispielsatz'], 
+    renderTable('sec-nomen', vocabData.nomen,
+        ['Wort (Plural)', 'Bedeutung', 'Synonyme / Ähnlich', 'Beispielsatz'],
         item => `<td><span class="${item.genderClass}">${item.word}</span></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.synonyms}</td><td class="ex">${item.example}</td>`
     );
-    
-    renderTable('sec-adjektive', vocabData.adjektive, 
-        ['Wort', 'Bedeutung', 'Gegenteil', 'Beispielsatz'], 
+
+    renderTable('sec-adjektive', vocabData.adjektive,
+        ['Wort', 'Bedeutung', 'Gegenteil', 'Beispielsatz'],
         item => `<td><strong>${item.word}</strong></td><td class="reveal-col">${item.meaning}</td><td class="syn">${item.opposite}</td><td class="ex">${item.example}</td>`
     );
-    
-    renderTable('sec-verben', vocabData.verben, 
-        ['Wort', 'Perfekt', 'Bedeutung', 'Beispielsatz'], 
+
+    renderTable('sec-verben', vocabData.verben,
+        ['Wort', 'Perfekt', 'Bedeutung', 'Beispielsatz'],
         item => `<td><strong>${item.word}</strong></td><td>${item.perfekt}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
     );
-    
-    renderTable('sec-praepositionen', vocabData.praepositionen, 
-        ['Wort', 'Präp. + Kasus', 'Bedeutung', 'Beispielsatz'], 
+
+    renderTable('sec-praepositionen', vocabData.praepositionen,
+        ['Wort', 'Präp. + Kasus', 'Bedeutung', 'Beispielsatz'],
         item => `<td>${item.word}</td><td>${item.prep}</td><td class="reveal-col">${item.meaning}</td><td class="ex">${item.example}</td>`
     );
 
-    // Attach checkbox event listeners
     document.querySelectorAll('.learned-cb').forEach(cb => {
         cb.addEventListener('change', function() {
             const tr = this.closest('tr');
+            const id = this.getAttribute('data-id');
             if (this.checked) {
                 tr.classList.add('learned');
-                localStorage.setItem(this.getAttribute('data-id'), 'true');
+                progress[id] = new Date().toISOString();
             } else {
                 tr.classList.remove('learned');
-                localStorage.removeItem(this.getAttribute('data-id'));
+                delete progress[id];
             }
+            saveProgress();
             updateProgress();
+            scheduleSync();
         });
     });
 
     setupUI();
-    updateProgress(); // Initial trigger
-
+    updateProgress();   // display only: no network call on page load
 
     function setupUI() {
         document.querySelectorAll('.cat-filter').forEach(cb => {

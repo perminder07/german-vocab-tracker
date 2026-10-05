@@ -1,0 +1,77 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "REPLACE-ME",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "51547767-9377-446c-b01a-e2f262648da3",
+      "name": "Webhook",
+      "webhookId": "27d0876f-5d4e-4f72-8b6b-f85f111ca618",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "moUkJv4P8Dii8qJb",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "value": "WCd8To1zdNq9n1uX",
+          "mode": "list",
+          "cachedResultName": "current_progress",
+          "cachedResultUrl": "/projects/pkdqDxYhIghUa2zS/datatables/WCd8To1zdNq9n1uX"
+        },
+        "returnAll": true
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "0bb99618-ac25-4932-9677-d37043a17c57",
+      "name": "Get row(s)"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get row(s)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "e45f0285-8e60-4b96-b4d8-58da0b63bb83",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3f1433ba31118ab8cf2a8eba0b7dff8d271beedcc75912f4e7aa70a5349047eb"
+  },
+  "nodeGroups": [],
+  "id": "GJ2fw1koV190KKFT",
+  "tags": []
+}

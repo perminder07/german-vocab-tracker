@@ -1,63 +1,96 @@
 # German Vocabulary Tracker (DTZ B1)
-![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 
 ## Live Progress
 ![Vocabulary Progress](progress-chart.png)
 
-A fully automated, local-first data pipeline and visualization dashboard built to track my progression in learning German vocabulary for the DTZ B1 examination. 
+A personal tool for learning the vocabulary for the DTZ B1 exam: a single-page vocabulary list with
+progress tracking, plus a small local automation chain that logs my daily progress and redraws the chart above.
 
-This project bridges language acquisition with data engineering, transforming daily study habits into structured data, automated visual reports, and a version-controlled portfolio.
+**Honest scope note:** for four counters this is more machinery than needed (a browser export would do).
+I built it on purpose as a hands-on project for n8n, Docker, Python data handling and Git automation,
+and the trade-offs are documented below.
 
-## System Architecture & Tech Stack
+## Just want to use it?
+Open `index.html` in a browser (double-click, no server needed). Tick words as you learn them; progress is
+stored in the browser's `localStorage`. Everything below the "Optional automation" heading is optional.
 
-The system utilizes a decoupled architecture, relying on local microservices, a separated data layer, and automated bash scripting to extract, transform, load (ETL), visualize data, and manage versions.
+## What it contains
 
-1. **Frontend (User Interface):** Vanilla `HTML5`, `CSS3`, and `JavaScript`. Operating as a Single Page Application (SPA), it dynamically generates interactive tables and DOM elements on the fly by reading the decoupled data layer.
-2. **Data Layer (Database):** `vocab.js`. Acts as the local offline database containing over 400 vocabulary entries. It utilizes the "JS Data Variable" pattern to bypass local browser CORS restrictions, allowing the app to run completely offline without a local web server.
-3. **Backend & API:** `n8n` (running in a local Docker container). Acts as the webhook listener and data router.
-4. **Metrics Database:** `n8n Data Tables`. A local SQLite-backed table (`current_progress`) that stores the latest integer counts for each vocabulary category.
-5. **Data Visualization:** `Python 3` (`Pandas`, `Matplotlib`). Fetches the live JSON payload from the n8n API, cleans the data, appends it to a historical `progress.csv` ledger, and renders a multi-line time-series graph.
-6. **Deployment & CI/CD Automation:** `Bash` + `Python` + macOS `cron`. The `update.sh` pipeline acts as a CI/CD runner. It detects changes in the vocabulary database, automatically triggers a custom Python Semantic Versioning script (`bump_version.py`) to apply PATCH updates, generates new chart artifacts, tags the release, and pushes to GitHub.
+| Part | Technology | Role |
+|---|---|---|
+| `index.html` | HTML, CSS, vanilla JavaScript | Renders the tables, search, filters, quiz mode (blur/reveal) and progress bar from the data file |
+| `vocab.js` | Static data file (`const VOCAB_DATABASE = {...}`) | 395 entries in four categories. A JS file instead of JSON so the page works from `file://` without CORS problems. Every entry has a permanent `id` |
+| `validate_vocab.py` | Python | Checks the data file (ids, required fields, duplicates, article/gender match) and assigns ids to new entries |
+| n8n (local, Docker) | n8n webhooks + Data Table (SQLite) | Optional: receives the current counts from the browser and stores them in one row |
+| `generate_chart.py` | Python (pandas, matplotlib) | Fetches the counts from n8n, appends a row to `progress.csv`, redraws `progress-chart.png` |
+| `update.sh`, `bump_version.py` | Bash, Python | Daily script: refresh chart, release a patch version when `vocab.js` changed, push to GitHub |
 
-## How It Works (The Workflow)
+## How it works
 
-1. **Vocabulary Expansion:** I add new German words directly to the `vocab.js` data dictionary.
-2. **Auto-Release:** Running `./update.sh` detects the new data, automatically rolls the semantic version (e.g., v2.0.1 -> v2.0.2), tags the Git commit, and pushes the release to GitHub.
-3. **Data Entry:** I open `index.html` locally in my browser (double-click, no server required) and check off newly memorized words.
-4. **Event Trigger:** The JavaScript listens for checkbox state changes, computes the true total from the underlying JSON array, and fires a `POST` request to the local n8n webhook.
-5. **Data Storage:** The n8n Upsert node overwrites the single row in the `current_progress` data table with the fresh counts.
-6. **Scheduled Execution & Charting:** On a cron schedule, the pipeline retrieves the latest numbers via a `GET` webhook, updates the CSV ledger, generates `progress-chart.png`, and commits the visual timeline.
-7. **Version Control:** The bash script automatically stages, commits with a timestamp, and pushes the updates to GitHub, keeping the visual timeline on this README permanently up to date.
+1. **Add words:** add entries to `vocab.js` without an `id`. `update.sh` (or `python3 validate_vocab.py --assign-ids`) gives them the next free id.
+2. **Study:** tick words in `index.html`. Progress is saved per entry id, with a timestamp, in `localStorage`.
+3. **Sync (optional):** after a tick the page sends the four counts to the n8n webhook, or on demand with the **Sync** button. Nothing is sent on page load, so opening the page in a fresh browser cannot overwrite the stored counts.
+4. **Log and chart:** `generate_chart.py` reads the counts via a second webhook, appends them to `progress.csv` and redraws the chart.
+5. **Release and push:** `update.sh` validates `vocab.js`, bumps the patch version (`version.txt`, README badge, page header), tags it and pushes. Chart/CSV updates are committed separately.
 
-## System Analysis
+## Optional automation: setup
+
+```bash
+pip install -r requirements.txt
+cp config.example.js config.js     # n8n POST webhook URL + token (git-ignored)
+cp .env.example .env               # n8n GET webhook URL + token (git-ignored)
+python3 validate_vocab.py          # sanity-check the data
+./update.sh                        # manual run; logs to logs/update.log
+```
+
+Add these lines to `.gitignore`: `config.js`, `.env`, `logs/`, `.venv/`, `__pycache__/`.
+
+- n8n hardening (localhost-only port binding, token auth on the webhooks, payload validation): [`docs/n8n-setup.md`](docs/n8n-setup.md)
+- Scheduling on macOS with launchd (runs missed jobs after sleep): [`docs/automation.md`](docs/automation.md)
+
+## Security notes
+
+- n8n must listen on `127.0.0.1` only, and both webhooks require an `X-Api-Key` header. The token and webhook URLs live in git-ignored files, not in this repo.
+- Sync is disabled automatically when the page is not served from `file://` or `localhost` (for example on GitHub Pages), so a hosted copy never calls `localhost`.
+- The page treats `vocab.js` as trusted: some fields intentionally contain HTML (`<strong>`, `<span>`). Only add content you wrote or checked.
+- No third-party scripts, CDNs or analytics are loaded.
+
+## System analysis
 
 ### Advantages
-* **Decoupled Architecture:** Separating the presentation layer (`index.html`) from the database (`vocab.js`) ensures UI bugs do not impact data integrity and eliminates DOM-counting state errors.
-* **Zero Cloud Costs:** By running n8n and the database locally via Docker, the entire infrastructure is free.
-* **Complete Data Ownership:** The historical ledger (`progress.csv`), the vocabulary database, and the raw application state are entirely contained on my local machine.
-* **Frictionless Routine:** The CI/CD Bash automation and cron jobs remove the need to manually execute scripts or manage minor Git tags. I simply study or add words, and the reporting handles itself.
+* **Data separated from the UI:** the vocabulary lives in `vocab.js`; the page computes totals from the data, not from what is visible, so filters cannot distort the counts.
+* **No cloud cost, full ownership:** the history (`progress.csv`), the vocabulary and the browser state are all on my machine.
+* **Works offline:** double-click `index.html`; the automation is a bonus, not a dependency.
+* **Guard rails:** a validation script stops releases with broken data; the automation script stops at the first error and logs everything.
 
-### Disadvantages & Compromises
-* **Device Dependency (The Cron Trap):** The automation relies on macOS `cron`. If the laptop lid is closed on the scheduled day, the execution is skipped entirely until the next cycle.
-* **Resource Overhead:** Docker Desktop must be running in the background to capture the webhook events, which consumes RAM and impacts laptop battery life.
-* **Single-Device State:** Because the app relies on the browser's local `localStorage` to map UI checkmarks to the offline `vocab.js` IDs, cross-device syncing (e.g., studying on a phone) is not supported without migrating to a cloud database.
+### Disadvantages & compromises
+* **Single-device state:** progress lives in one browser's `localStorage`. A different browser, profile, private window or the GitHub Pages copy has its own separate progress.
+* **Moving parts:** Docker, n8n, a scheduler and Git credentials all have to work for the chart to update.
+* **Sleeping laptop:** cron skips missed runs; launchd (see docs) catches up after wake.
+* **Binary "learned" flag:** there is no spaced repetition; the quiz mode is a blur/reveal helper, not a scheduler.
 
-## Key Learnings
-* **API Payload Mapping:** I learned how to structure JSON payloads in frontend `fetch()` requests and map them accurately into database columns using n8n expressions (`{{ $json.body.nomen }}`).
-* **State Management:** I discovered the pitfalls of tying logic to the DOM (visual row counting) which broke when UI filters were applied. Migrating to an SPA pattern that computes totals strictly from the underlying data arrays permanently solved state mismatch bugs.
-* **Data Sanitization in Python:** I implemented robust error handling in `generate_chart.py` to intercept `Null` or empty payloads, forcing fallback values (`0`) and generating CSV headers dynamically if the file is wiped.
+## Key learnings
+* **API payload mapping:** structuring JSON in `fetch()` requests and mapping it to n8n Data Table columns with expressions (`{{ $json.body.nomen }}`).
+* **State tied to the DOM breaks:** counting visible rows broke when filters were applied; computing totals from the data fixed it.
+* **Keys must be stable ids, not display text:** progress was once keyed by the word's text, so words with several meanings (e.g. *abnehmen*) shared one checkbox, and fixing a typo silently reset progress. Entries now have permanent ids.
+* **Never write on load:** the page used to post counts on every load, so one visit from a browser with empty storage overwrote the real counts and put a bogus row in the history. Writes now only happen on a user action.
+* **Don't turn missing data into zeros:** a `null` from the API used to be stored as `0`; now the row is skipped and a warning is logged.
+* **Automation hygiene:** relative paths, silent failures and `git push --tags` are fragile under a scheduler; the script now changes into its own folder, logs, locks and pushes only the new tag.
 
-## Version History & Progression
+## Version history & progression
 
-* **`v2.1.0`** - **Offline-First SPA:** Transitioned the data layer from `vocab.json` to `vocab.js`, resolving CORS security blocks and enabling serverless, double-click offline execution.
-* **`v2.0.1`** - **CI/CD Pipeline:** Upgraded `update.sh` to auto-detect vocabulary additions, bundle automatic PATCH releases, and expanded the database from ~~285~~ -> 400 B1 words.
-* **`v2.0.0`** - **Decoupled Architecture (Major):** Migrated the static HTML monolith into a dynamic Single Page Application (SPA), isolating data into a dedicated JSON database to fix DOM-counting state bugs.
-* **`v1.0.1`** - **State Patch:** Resolved local browser cache mismatches crashing the Python Matplotlib generator.
-* **`v1.0.0`** - **Initial Launch:** Static HTML vocabulary tracker connected to local n8n Docker webhooks with automated Python chron-job visualizations.
+* **`v2.2.0`** - **Hardening & data integrity:** progress keyed by stable entry ids (with automatic migration of old progress), no sync on page load, token-protected webhooks and payload validation, `validate_vocab.py`, safer `update.sh` / `bump_version.py` / `generate_chart.py`, duplicates removed and synonyms corrected (395 entries).
+* **`v2.1.0`** - **Offline-first single page:** moved the data from `vocab.json` to `vocab.js`, which avoids CORS blocks and allows double-click offline use.
+* **`v2.0.1`** - **Release automation:** `update.sh` detects vocabulary additions and creates automatic PATCH releases; database grown from ~~285~~ -> 400 B1 words.
+* **`v2.0.0`** - **Decoupled architecture (major):** moved from a static HTML monolith to a dynamic page with the data in a separate file, fixing DOM-counting state bugs.
+* **`v1.0.1`** - **State patch:** resolved local browser cache mismatches crashing the Python Matplotlib generator.
+* **`v1.0.0`** - **Initial launch:** static HTML vocabulary tracker connected to local n8n Docker webhooks with a scheduled Python chart.
 
-## Future Roadmap
+## Future roadmap
 
-* ~~**Automated Semantic Versioning:** Implement a script to detect modifications in `index.html` (e.g., adding new vocabulary words) and automatically bump the patch version (e.g., `v1.0.1` -> `v1.0.2`), applying Git Tags to track vocabulary expansion over time.~~ *(Completed in v2.0.1)*
-* **Cloud Database Migration:** Replace local n8n Data Tables with a cloud solution (like Supabase or Firebase) to decouple the system from Docker and enable cross-device studying.
-* **GitHub Pages Hosting:** Deploy the frontend to GitHub Pages so the tracker can be accessed and used via mobile while commuting.
-* **Power BI Integration:** Connect the n8n API endpoint directly to Microsoft Power BI to build an interactive, drill-down dashboard of my learning habits.
+* **Per-word history:** timestamps are already stored per word; use them for words-per-day and review reminders.
+* **Export/import of progress:** a JSON export button to move progress between browsers and devices (the GitHub Pages copy has its own storage).
+* **Cloud database (Supabase/Firebase):** replace the local n8n table for cross-device use; requires Row Level Security and no service keys in client code.
+* **Power BI dashboard:** worth doing once there is enough history to explore.
+* ~~**Automated semantic versioning**~~ *(done in v2.0.1)*

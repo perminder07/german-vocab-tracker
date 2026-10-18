@@ -13,7 +13,7 @@ import re
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 VERSION_FILE = ROOT / "version.txt"
 README = ROOT / "README.md"
 INDEX = ROOT / "index.html"

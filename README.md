@@ -1,5 +1,5 @@
 # German Vocabulary Tracker (DTZ B1)
-![Version](https://img.shields.io/badge/version-2.2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.3.0-blue.svg)
 
 ## Progress
 ![Vocabulary Progress](data/progress-chart.png)
@@ -90,6 +90,7 @@ Add these lines to `.gitignore`: `config.js`, `.env`, `logs/`, `.venv/`, `__pyca
 
 ## Version history & progression
 
+- **v2.3.0** - **Project Governance & Resiliency**: Integrated professional Kanban workflow with strict issue templates, added `safe_push` to handle offline `launchd` executions gracefully, and isolated chart rendering behind a `--chart` flag to protect the automated schedule.
 * **`v2.2.0`** - **Hardening & data integrity:** progress keyed by stable entry ids (with automatic migration of old progress), no sync on page load, token-protected webhooks and payload validation, `validate_vocab.py`, safer `update.sh` / `bump_version.py` / `generate_chart.py`, duplicates removed and synonyms corrected (395 entries).
 * **`v2.1.0`** - **Offline-first single page:** moved the data from `vocab.json` to `vocab.js`, which avoids CORS blocks and allows double-click offline use.
 * **`v2.0.1`** - **Release automation:** `update.sh` detects vocabulary additions and creates automatic PATCH releases; database grown from ~~285~~ -> 400 B1 words.

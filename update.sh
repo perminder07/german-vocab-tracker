@@ -29,8 +29,13 @@ safe_push() {
     fi
 }
 
-# 1. Data pipeline: fetch counts from n8n, append to progress.csv, redraw the chart
-"$PY" scripts/generate_chart.py
+# 1. Data pipeline: (only run if invoked with --chart) fetch counts from n8n, append to progress.csv, redraw the chart
+if [ "${1:-}" = "--chart" ]; then
+    echo "Chart update requested via --chart flag..."
+    "$PY" scripts/generate_chart.py
+else
+    echo "No --chart flag provided. Skipping chart generation to preserve the 1st/15th schedule."
+fi
 
 # 2. Release when the vocabulary changed
 if [ -n "$(git status --porcelain -- vocab.js)" ]; then
